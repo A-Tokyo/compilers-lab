@@ -23,10 +23,6 @@ public class StateTransitions {
 		return transitions.get(alphabetKey);
 	}
 	
-//	public String removeTransitionFor(String alphabetKey){
-//		return transitions.remove(alphabetKey);
-//	}
-	
 	public String toString(){
 		return "<Name:(" + this.state + ")##" + "Transitions: (" + this.transitions.toString()+")>";
 	}

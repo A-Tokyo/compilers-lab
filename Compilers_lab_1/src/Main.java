@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
+	private static String inFilePath = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/in1.in";
+	
 	public static ArrayList<String> parseFileToDFAs() throws FileNotFoundException, IOException{
 		BufferedReader br;
 		String currentDFA = "";
@@ -12,7 +14,7 @@ public class Main {
 		int currLineIndex = 0;
 
 		try {
-			br = new BufferedReader(new FileReader("/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/in1.in"));
+			br = new BufferedReader(new FileReader(inFilePath));
 			try {
 				String currLine;
 				while ( (currLine = br.readLine()) != null ) {
@@ -40,20 +42,22 @@ public class Main {
 		return null;
 	}
 
-	public static void constructDFA (String dfaStr){		
+	public static DFA constructDFA (String dfaStr){		
 		String[] dfaState = (dfaStr.split(System.lineSeparator()));
 		String [] transitions = dfaState[4].split("#");
 		String [] inputs = dfaState[5].split("#");
-		DFA currDFA = new DFA(dfaState[0].split(","), dfaState[1].split(","), dfaState[2].split(","), dfaState[3], transitions, inputs);
-		currDFA.runOnInputs();
+		return new DFA(dfaState[0].split(","), dfaState[1].split(","), dfaState[2].split(","), dfaState[3], transitions, inputs);
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		ArrayList<String> rawInputDFAs = parseFileToDFAs();
-		System.out.println(rawInputDFAs.size());
-
-		for (int i = 0; i < 3; i++) {
-			constructDFA(rawInputDFAs.get(i));
-		}	
+		for (int i = 0; i < rawInputDFAs.size(); i++) {
+			try {
+				DFA currDFA = constructDFA(rawInputDFAs.get(i));
+				currDFA.runOnInputs();
+			} catch (Error e) {
+				System.out.println(e.getMessage());
+			}
+		}
 	}
 }

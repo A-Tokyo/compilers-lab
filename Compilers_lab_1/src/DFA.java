@@ -12,14 +12,6 @@ public class DFA {
 	private String[] inputs;
 	private boolean invalid = false;
 
-	public boolean isInvalid() {
-		return invalid;
-	}
-
-	public void setInvalid(boolean isInvalid) {
-		this.invalid = isInvalid;
-	}
-
 	public DFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
 		// States
 		this.states = new TreeSet<String>();
@@ -69,15 +61,18 @@ public class DFA {
 			String transitionString = transitionsInputArray[i];			
 			String [] splitted = transitionString.split(",");
 
+			// validate transition string
 			if(splitted.length < 3){
 				throw new Error("Invalid Incomplete " + transitionString);
 			}
-			
+
+			// destruct values from transition string
 			String currState = splitted[0];
 			String nextState = splitted[1];
 			String alphabetKey = splitted[2];
 			StateTransitions currStateTransition = null;
-			
+
+			// validate transition string values
 			if(!this.states.contains(currState)){
 				throw new Error("Invalid transition " + transitionString + " " + "state " + currState +" is not in the states");
 			}
@@ -99,11 +94,21 @@ public class DFA {
 			}
 		}
 
+		// validate that all the states have transitions
 		Iterator<String> statesIterator = this.states.iterator();
 		while(statesIterator.hasNext()) {
 			String currState = statesIterator.next();
 			if(!this.transitions.containsKey(currState)){
 				throw new Error("Missing transition for state " + currState);
+			}
+			StateTransitions currStateTransition = this.transitions.get(currState);
+			// validate that all the transitions have all the alphabet
+			Iterator<String> alphabetIterator = this.alphabet.iterator();
+			while(alphabetIterator.hasNext()){
+				String currAlphabetKey = alphabetIterator.next();
+				if(!currStateTransition.containsTransitionFor(currAlphabetKey)){
+					throw new Error("Missing transition for state " + currState);
+				}
 			}
 		}
 
@@ -147,7 +152,7 @@ public class DFA {
 			}
 			System.out.println("Rejected");
 		}
-		System.out.println("Run Complete");
+		System.out.println("");
 		return toReturn;
 	}
 
@@ -170,5 +175,21 @@ public class DFA {
 			return false;
 		}
 		return isAcceptedState(currState);
+	}
+
+	public String[] getInputs() {
+		return inputs;
+	}
+
+	public void setInputs(String[] inputs) {
+		this.inputs = inputs;
+	}
+
+	public boolean isInvalid() {
+		return invalid;
+	}
+
+	public void setInvalid(boolean isInvalid) {
+		this.invalid = isInvalid;
 	}
 }
