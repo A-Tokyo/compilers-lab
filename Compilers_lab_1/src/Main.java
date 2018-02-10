@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
-	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/in1.in";
-	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/out1.out";
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/in.in";
+	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/out.out";
 	
 	private static String NORMAL_SEPERATOR_STRING = ",";
 	private static String SECONDARY_SEPERATOR_STRING = "#";
@@ -53,6 +53,7 @@ public class Main {
 	public static DFA constructDFA (String dfaStr){		
 		String[] dfaState = (dfaStr.split(System.lineSeparator()));
 		String [] transitions = dfaState[4].split(SECONDARY_SEPERATOR_STRING);
+		System.out.println(transitions[0]);
 		String [] inputs = dfaState[5].split(SECONDARY_SEPERATOR_STRING);
 		return new DFA(dfaState[0].split(NORMAL_SEPERATOR_STRING), dfaState[1].split(NORMAL_SEPERATOR_STRING), dfaState[2].split(NORMAL_SEPERATOR_STRING), dfaState[3], transitions, inputs);
 	}
