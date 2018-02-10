@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import dfa.DFA;
+import nfa.NFA;
 import utils.Utils;
 
 public class Lab2 {
@@ -47,8 +47,8 @@ public class Lab2 {
 	}
 	
 	public static void runTask() throws FileNotFoundException, IOException{
-		ArrayList<String> rawInputDFAs = parseFileToNFAs(DEFAULT_IN_FILEPATH);
-		String resultFileText = DFA.rawInputDFAsToOutputString(rawInputDFAs);
+		ArrayList<String> rawInputNFAs = parseFileToNFAs(DEFAULT_IN_FILEPATH);
+		String resultFileText = NFA.rawInputNFAsToOutputString(rawInputNFAs);
 		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
 	}
 }
