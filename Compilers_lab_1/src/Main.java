@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
-	private static String inFilePath = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/in1.in";
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/in1.in";
 	
 	private static String NORMAL_SEPERATOR_STRING = ",";
 	private static String SECONDARY_SEPERATOR_STRING = "#";
@@ -13,7 +13,7 @@ public class Main {
 	private static String DFA_CONSTRUCTED = "DFA constructed";
 	private static String IGNORED = "Ignored";
 	
-	public static ArrayList<String> parseFileToDFAs() throws FileNotFoundException, IOException{
+	public static ArrayList<String> parseFileToDFAs(String inFilePath) throws FileNotFoundException, IOException{
 		BufferedReader br;
 		String currentDFA = "";
 		ArrayList<String> dfasToReturn = new ArrayList<String>();		
@@ -41,7 +41,7 @@ public class Main {
 			}
 		}
 		catch (FileNotFoundException e) {
-			System.out.println(e);
+			System.err.println(e);
 			e.printStackTrace();
 		}
 		return null;
@@ -59,26 +59,41 @@ public class Main {
 		String [] inputs = dfaState[5].split(SECONDARY_SEPERATOR_STRING);
 		return inputs.length;
 	}
-
-	public static void main(String[] args) throws FileNotFoundException, IOException {
-		ArrayList<String> rawInputDFAs = parseFileToDFAs();
+	
+	private static String appendNewLine(String str){
+		return str + System.lineSeparator();
+	}
+	
+	private static String rawInputDFAsToOutputString(ArrayList<String> rawInputDFAs){
+		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < rawInputDFAs.size(); i++) {
 			String currRawInputDFA = rawInputDFAs.get(i);
 			try {
 				DFA currDFA = constructDFA(currRawInputDFA);
-				System.out.println(DFA_CONSTRUCTED);
+				sb.append(appendNewLine(DFA_CONSTRUCTED));
 				String [] currDFAResults = currDFA.runOnInputs();
 				for (int j = 0; j < currDFAResults.length; j++) {
-					System.out.println(currDFAResults[j]);
+					sb.append(appendNewLine(currDFAResults[j]));
 				}
-				System.out.println("");
+				sb.append(appendNewLine(""));
 			} catch (Error e) {
-				System.out.println(e.getMessage());
+				sb.append(appendNewLine(e.getMessage()));
 				for (int j = 0; j <extractInputsLengthFromRawDFAStr(currRawInputDFA); j++) {
-					System.out.println(IGNORED);
+					sb.append(appendNewLine(IGNORED));
 				}
-				System.out.println("");
+				sb.append(appendNewLine(""));
 			}
 		}
+		return sb.toString();
+	}
+	
+	public static void writeOutputFile(String fileText){
+		System.out.print(fileText);
+	}
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		ArrayList<String> rawInputDFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
+		String resultFileText = rawInputDFAsToOutputString(rawInputDFAs);
+		writeOutputFile(resultFileText);
 	}
 }
