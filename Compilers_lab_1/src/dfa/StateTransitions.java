@@ -1,5 +1,5 @@
+package dfa;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 public class StateTransitions {
 	private String state;
