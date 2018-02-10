@@ -14,6 +14,9 @@ public class DFA {
 	
 	private static String NORMAL_SEPERATOR_STRING = ",";
 //	private static String SECONDARY_SEPERATOR_STRING = "#";
+	
+	private static String ACCEPTED = "Accepted";
+	private static String REJECTED = "Rejected";
 
 	public DFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
 		// States
@@ -126,8 +129,6 @@ public class DFA {
 				}
 			}
 		}
-
-		System.out.println("DFA constructed");
 	}
 
 	private boolean isAcceptedState(String state){
@@ -138,34 +139,25 @@ public class DFA {
 		return this.transitions.containsKey(state);
 	}
 
-	public boolean [] runOnInputs(){
-		boolean[] toReturn = new boolean[this.inputs.length];
+	public String [] runOnInputs(){
+		String [] toReturn = new String[this.inputs.length];
 		for (int i = 0; i < this.inputs.length; i++) {
-			boolean currResult = runOnInput(inputs[i].split(NORMAL_SEPERATOR_STRING));
+			String currResult = runOnInput(inputs[i].split(NORMAL_SEPERATOR_STRING));
 			toReturn[i] = currResult;
 		}
-		for (int i = 0; i < toReturn.length; i++) {
-			if(this.isInvalid()){
-				System.out.println("Ignored");
-				continue;
-			}
-			if(toReturn[i]){
-				System.out.println("Accepted");
-				continue;
-			}
-			System.out.println("Rejected");
-		}
-		System.out.println("");
 		return toReturn;
 	}
 
-	public boolean runOnInput(String[] input){
+	public String runOnInput(String[] input){
 		String currState = this.startState;
 		if(isAcceptedState(currState)){
-			return true;
+			return ACCEPTED;
 		}
 		for (int i = 0; i < input.length; i++) {
 			String currAlphabetKey = input[i];
+			if(!this.alphabet.contains(currAlphabetKey)){
+				return "Invalid input string at " + currAlphabetKey;
+			}
 			if(hasTransitionFor(currState)){
 				StateTransitions currStateTransition = this.transitions.get(currState);
 				String nextState = currStateTransition.getTransitionStateFor(currAlphabetKey);
@@ -175,9 +167,9 @@ public class DFA {
 			}
 		}
 		if(currState == null){
-			return false;
+			return REJECTED;
 		}
-		return isAcceptedState(currState);
+		return isAcceptedState(currState) ? ACCEPTED : REJECTED;
 	}
 
 	public String[] getInputs() {

@@ -10,6 +10,9 @@ public class Main {
 	private static String NORMAL_SEPERATOR_STRING = ",";
 	private static String SECONDARY_SEPERATOR_STRING = "#";
 	
+	private static String DFA_CONSTRUCTED = "DFA constructed";
+	private static String IGNORED = "Ignored";
+	
 	public static ArrayList<String> parseFileToDFAs() throws FileNotFoundException, IOException{
 		BufferedReader br;
 		String currentDFA = "";
@@ -60,11 +63,21 @@ public class Main {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		ArrayList<String> rawInputDFAs = parseFileToDFAs();
 		for (int i = 0; i < rawInputDFAs.size(); i++) {
+			String currRawInputDFA = rawInputDFAs.get(i);
 			try {
-				DFA currDFA = constructDFA(rawInputDFAs.get(i));
-				currDFA.runOnInputs();
+				DFA currDFA = constructDFA(currRawInputDFA);
+				System.out.println(DFA_CONSTRUCTED);
+				String [] currDFAResults = currDFA.runOnInputs();
+				for (int j = 0; j < currDFAResults.length; j++) {
+					System.out.println(currDFAResults[j]);
+				}
+				System.out.println("");
 			} catch (Error e) {
 				System.out.println(e.getMessage());
+				for (int j = 0; j <extractInputsLengthFromRawDFAStr(currRawInputDFA); j++) {
+					System.out.println(IGNORED);
+				}
+				System.out.println("");
 			}
 		}
 	}
