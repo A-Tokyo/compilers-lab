@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import dfa.DFA;
+import utils.Utils;
 
 public class Main {
 	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/lab1/in.in";
@@ -66,43 +67,32 @@ public class Main {
 		return inputs.length;
 	}
 
-	private static String appendNewLine(String str){
-		return str + System.lineSeparator();
-	}
-
 	private static String rawInputDFAsToOutputString(ArrayList<String> rawInputDFAs){
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < rawInputDFAs.size(); i++) {
 			String currRawInputDFA = rawInputDFAs.get(i);
 			try {
 				DFA currDFA = constructDFA(currRawInputDFA);
-				sb.append(appendNewLine(DFA_CONSTRUCTED));
+				sb.append(Utils.appendNewLine(DFA_CONSTRUCTED));
 				String [] currDFAResults = currDFA.runOnInputs();
 				for (int j = 0; j < currDFAResults.length; j++) {
-					sb.append(appendNewLine(currDFAResults[j]));
+					sb.append(Utils.appendNewLine(currDFAResults[j]));
 				}
-				sb.append(appendNewLine(""));
+				sb.append(Utils.appendNewLine(""));
 			} catch (Error e) {
-				sb.append(appendNewLine(e.getMessage()));
+				sb.append(Utils.appendNewLine(e.getMessage()));
 				for (int j = 0; j <extractInputsLengthFromRawDFAStr(currRawInputDFA); j++) {
-					sb.append(appendNewLine(IGNORED));
+					sb.append(Utils.appendNewLine(IGNORED));
 				}
-				sb.append(appendNewLine(""));
+				sb.append(Utils.appendNewLine(""));
 			}
 		}
 		return sb.toString();
-	}
-	
-	public static void writeOutputFile(String fileText, String outFilePath)
-			throws IOException {
-		BufferedWriter writer = new BufferedWriter(new FileWriter(outFilePath));
-		writer.write(fileText);
-		writer.close();
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		ArrayList<String> rawInputDFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
 		String resultFileText = rawInputDFAsToOutputString(rawInputDFAs);
-		writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
+		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
 	}
 }
