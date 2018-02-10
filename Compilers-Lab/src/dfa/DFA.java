@@ -1,6 +1,10 @@
 package dfa;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import utils.Utils;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 
 
@@ -14,10 +18,12 @@ public class DFA {
 	private boolean invalid = false;
 	
 	private static String NORMAL_SEPERATOR_STRING = ",";
-//	private static String SECONDARY_SEPERATOR_STRING = "#";
+	private static String SECONDARY_SEPERATOR_STRING = "#";
 	
 	private static String ACCEPTED = "Accepted";
 	private static String REJECTED = "Rejected";
+	private static String DFA_CONSTRUCTED = "DFA constructed";
+	private static String IGNORED = "Ignored";
 	
 	public DFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
 		// States
@@ -161,6 +167,42 @@ public class DFA {
 			}
 		}
 		return isAcceptedState(currState) ? ACCEPTED : REJECTED;
+	}
+	
+	public static DFA constructDFA (String dfaStr){		
+		String[] dfaState = (dfaStr.split(System.lineSeparator()));
+		String [] transitions = dfaState[4].split(SECONDARY_SEPERATOR_STRING);
+		String [] inputs = dfaState[5].split(SECONDARY_SEPERATOR_STRING);
+		return new DFA(dfaState[0].split(NORMAL_SEPERATOR_STRING), dfaState[1].split(NORMAL_SEPERATOR_STRING), dfaState[2].split(NORMAL_SEPERATOR_STRING), dfaState[3], transitions, inputs);
+	}
+	
+	private static int extractInputsLengthFromRawDFAStr(String dfaStr){
+		String[] dfaState = (dfaStr.split(System.lineSeparator()));
+		String [] inputs = dfaState[5].split(SECONDARY_SEPERATOR_STRING);
+		return inputs.length;
+	}
+
+	public static String rawInputDFAsToOutputString(ArrayList<String> rawInputDFAs){
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < rawInputDFAs.size(); i++) {
+			String currRawInputDFA = rawInputDFAs.get(i);
+			try {
+				DFA currDFA = DFA.constructDFA(currRawInputDFA);
+				sb.append(Utils.appendNewLine(DFA_CONSTRUCTED));
+				String [] currDFAResults = currDFA.runOnInputs();
+				for (int j = 0; j < currDFAResults.length; j++) {
+					sb.append(Utils.appendNewLine(currDFAResults[j]));
+				}
+				sb.append(Utils.appendNewLine(""));
+			} catch (Error e) {
+				sb.append(Utils.appendNewLine(e.getMessage()));
+				for (int j = 0; j <extractInputsLengthFromRawDFAStr(currRawInputDFA); j++) {
+					sb.append(Utils.appendNewLine(IGNORED));
+				}
+				sb.append(Utils.appendNewLine(""));
+			}
+		}
+		return sb.toString();
 	}
 
 	public String[] getInputs() {
