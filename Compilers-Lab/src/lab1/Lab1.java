@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import dfa.DFA;
 import utils.Utils;
 
-public class Main {
+public class Lab1 {
 	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/lab1/in.in";
 	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/lab1/out.out";
 
@@ -45,8 +45,8 @@ public class Main {
 		}
 		return null;
 	}
-
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	
+	public static void runTask() throws FileNotFoundException, IOException{
 		ArrayList<String> rawInputDFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
 		String resultFileText = DFA.rawInputDFAsToOutputString(rawInputDFAs);
 		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
