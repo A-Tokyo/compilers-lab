@@ -17,7 +17,7 @@ public class DFA {
 	
 	private static String ACCEPTED = "Accepted";
 	private static String REJECTED = "Rejected";
-
+	
 	public DFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
 		// States
 		this.states = new TreeSet<String>();
@@ -65,7 +65,6 @@ public class DFA {
 		this.transitions = new TreeMap<String, StateTransitions>();
 		for (int i = 0; i < transitionsInputArray.length; i++) {
 			String transitionString = transitionsInputArray[i];
-			System.out.println(transitionString);
 			String [] splitted = transitionString.split(NORMAL_SEPERATOR_STRING);
 			
 			// validate transition string
@@ -137,7 +136,8 @@ public class DFA {
 	public String [] runOnInputs(){
 		String [] toReturn = new String[this.inputs.length];
 		for (int i = 0; i < this.inputs.length; i++) {
-			String currResult = runOnInput(inputs[i].split(NORMAL_SEPERATOR_STRING));
+			String currInput = inputs[i];
+			String currResult = runOnInput(currInput.split(NORMAL_SEPERATOR_STRING));
 			toReturn[i] = currResult;
 		}
 		return toReturn;
@@ -145,9 +145,6 @@ public class DFA {
 
 	public String runOnInput(String[] input){
 		String currState = this.startState;
-		if(isAcceptedState(currState)){
-			return ACCEPTED;
-		}
 		for (int i = 0; i < input.length; i++) {
 			String currAlphabetKey = input[i];
 			if(!this.alphabet.contains(currAlphabetKey)){
@@ -159,10 +156,8 @@ public class DFA {
 				currState = nextState;
 			}else {
 				currState = null;
+				return REJECTED;
 			}
-		}
-		if(currState == null){
-			return REJECTED;
 		}
 		return isAcceptedState(currState) ? ACCEPTED : REJECTED;
 	}

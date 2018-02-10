@@ -53,7 +53,6 @@ public class Main {
 	public static DFA constructDFA (String dfaStr){		
 		String[] dfaState = (dfaStr.split(System.lineSeparator()));
 		String [] transitions = dfaState[4].split(SECONDARY_SEPERATOR_STRING);
-		System.out.println(transitions[0]);
 		String [] inputs = dfaState[5].split(SECONDARY_SEPERATOR_STRING);
 		return new DFA(dfaState[0].split(NORMAL_SEPERATOR_STRING), dfaState[1].split(NORMAL_SEPERATOR_STRING), dfaState[2].split(NORMAL_SEPERATOR_STRING), dfaState[3], transitions, inputs);
 	}
