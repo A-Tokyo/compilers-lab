@@ -11,6 +11,9 @@ public class DFA {
 	private TreeMap<String, StateTransitions> transitions;
 	private String[] inputs;
 	private boolean invalid = false;
+	
+	private static String NORMAL_SEPERATOR_STRING = ",";
+//	private static String SECONDARY_SEPERATOR_STRING = "#";
 
 	public DFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
 		// States
@@ -59,7 +62,7 @@ public class DFA {
 		this.transitions = new TreeMap<String, StateTransitions>();
 		for (int i = 0; i < transitionsInputArray.length; i++) {
 			String transitionString = transitionsInputArray[i];			
-			String [] splitted = transitionString.split(",");
+			String [] splitted = transitionString.split(NORMAL_SEPERATOR_STRING);
 
 			// validate transition string
 			if(splitted.length < 3){
@@ -115,7 +118,7 @@ public class DFA {
 		// Inputs
 		this.inputs = inputs;
 		for (int i = 0; i < this.inputs.length; i++) {
-			String [] currInputArray = inputs[i].split(",");
+			String [] currInputArray = inputs[i].split(NORMAL_SEPERATOR_STRING);
 			for (int j = 0; j < currInputArray.length; j++) {
 				String alphabetKey = currInputArray[j];
 				if(!this.alphabet.contains(alphabetKey)){
@@ -138,7 +141,7 @@ public class DFA {
 	public boolean [] runOnInputs(){
 		boolean[] toReturn = new boolean[this.inputs.length];
 		for (int i = 0; i < this.inputs.length; i++) {
-			boolean currResult = runOnInput(inputs[i].split(","));
+			boolean currResult = runOnInput(inputs[i].split(NORMAL_SEPERATOR_STRING));
 			toReturn[i] = currResult;
 		}
 		for (int i = 0; i < toReturn.length; i++) {
