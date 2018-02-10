@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
-	public static ArrayList<String> readFileToString() throws FileNotFoundException, IOException{
+	public static ArrayList<String> parseFileToDFAs() throws FileNotFoundException, IOException{
 		BufferedReader br;
 		String currentDFA = "";
 		ArrayList<String> dfas = new ArrayList<String>();		
@@ -49,9 +49,11 @@ public class Main {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		ArrayList<String> file = readFileToString();
-		System.out.println(file.size());	
+		ArrayList<String> rawInputDFAs = parseFileToDFAs();
+		System.out.println(rawInputDFAs.size());
 
-		constructDFA(file.get(0));		
+		for (int i = 0; i < 3; i++) {
+			constructDFA(rawInputDFAs.get(i));
+		}	
 	}
 }
