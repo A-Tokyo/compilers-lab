@@ -24,8 +24,4 @@ hs_err_pid*
 # IDEs
 .idea
 
-# Compilers
-.vscode
-
-# Assets Compilers Course
-src/assets/*.out
+/bin/

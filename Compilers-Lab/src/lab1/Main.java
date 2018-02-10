@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import dfa.DFA;
 
 public class Main {
-	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/assets/in.in";
-	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/assets/out.out";
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/lab1/in.in";
+	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/lab1/out.out";
 	
 	private static String NORMAL_SEPERATOR_STRING = ",";
 	private static String SECONDARY_SEPERATOR_STRING = "#";
