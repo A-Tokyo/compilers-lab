@@ -26,3 +26,6 @@ hs_err_pid*
 
 # Compilers
 .vscode
+
+# Assets Compilers Course
+src/assets/*.out

@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
-	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/in.in";
-	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/out.out";
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/assets/in.in";
+	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers_lab_1/src/assets/out.out";
 	
 	private static String NORMAL_SEPERATOR_STRING = ",";
 	private static String SECONDARY_SEPERATOR_STRING = "#";
