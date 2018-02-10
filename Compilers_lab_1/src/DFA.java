@@ -40,7 +40,7 @@ public class DFA {
 				continue;
 			}
 			if(!this.states.contains(item)){
-				throw new Error("Invalid accepted state (" + item+")");
+				throw new Error("Invalid accept state " + item);
 			}
 			this.acceptedStates.add(item);
 		}
@@ -69,7 +69,7 @@ public class DFA {
 
 			// validate transition string
 			if(splitted.length < 3){
-				throw new Error("Invalid Incomplete " + transitionString);
+				throw new Error("Incomplete Transition " + transitionString);
 			}
 
 			// destruct values from transition string
@@ -120,15 +120,6 @@ public class DFA {
 
 		// Inputs
 		this.inputs = inputs;
-		for (int i = 0; i < this.inputs.length; i++) {
-			String [] currInputArray = inputs[i].split(NORMAL_SEPERATOR_STRING);
-			for (int j = 0; j < currInputArray.length; j++) {
-				String alphabetKey = currInputArray[j];
-				if(!this.alphabet.contains(alphabetKey)){
-					throw new Error("Invalid input string at " + alphabetKey);
-				}
-			}
-		}
 	}
 
 	private boolean isAcceptedState(String state){
