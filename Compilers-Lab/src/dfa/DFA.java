@@ -1,6 +1,11 @@
 package dfa;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import utils.Utils;
+import utils.FAConsts;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 
 
@@ -12,13 +17,7 @@ public class DFA {
 	private TreeMap<String, StateTransitions> transitions;
 	private String[] inputs;
 	private boolean invalid = false;
-	
-	private static String NORMAL_SEPERATOR_STRING = ",";
-//	private static String SECONDARY_SEPERATOR_STRING = "#";
-	
-	private static String ACCEPTED = "Accepted";
-	private static String REJECTED = "Rejected";
-	
+
 	public DFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
 		// States
 		this.states = new TreeSet<String>();
@@ -66,15 +65,15 @@ public class DFA {
 		this.transitions = new TreeMap<String, StateTransitions>();
 		for (int i = 0; i < transitionsInputArray.length; i++) {
 			String transitionString = transitionsInputArray[i];
-			String [] splitted = transitionString.split(NORMAL_SEPERATOR_STRING);
-			
+			String [] splitted = transitionString.split(FAConsts.NORMAL_SEPERATOR_STRING);
+
 			// validate transition string
 			if(splitted.length < 3){
 				throw new Error("Incomplete Transition " + transitionString);
 			}
-			
+
 			// to pass TA's test judge
-			String splittedConcated = splitted[0] + NORMAL_SEPERATOR_STRING + splitted[1] + NORMAL_SEPERATOR_STRING + splitted[2];
+			String splittedConcated = splitted[0] + FAConsts.NORMAL_SEPERATOR_STRING + splitted[1] + FAConsts.NORMAL_SEPERATOR_STRING + splitted[2];
 
 			// destruct values from transition string
 			String currState = splitted[0];
@@ -109,6 +108,8 @@ public class DFA {
 		while(statesIterator.hasNext()) {
 			String currState = statesIterator.next();
 			if(!this.transitions.containsKey(currState)){
+				System.out.println("Missing transition for state " + currState);
+				System.out.println(this.states);
 				throw new Error("Missing transition for state " + currState);
 			}
 			StateTransitions currStateTransition = this.transitions.get(currState);
@@ -138,7 +139,7 @@ public class DFA {
 		String [] toReturn = new String[this.inputs.length];
 		for (int i = 0; i < this.inputs.length; i++) {
 			String currInput = inputs[i];
-			String currResult = runOnInput(currInput.split(NORMAL_SEPERATOR_STRING));
+			String currResult = runOnInput(currInput.split(FAConsts.NORMAL_SEPERATOR_STRING));
 			toReturn[i] = currResult;
 		}
 		return toReturn;
@@ -157,10 +158,76 @@ public class DFA {
 				currState = nextState;
 			}else {
 				currState = null;
-				return REJECTED;
+				return FAConsts.REJECTED;
 			}
 		}
-		return isAcceptedState(currState) ? ACCEPTED : REJECTED;
+		return isAcceptedState(currState) ? FAConsts.ACCEPTED : FAConsts.REJECTED;
+	}
+
+	public static DFA constructDFA (String dfaStr){
+		String[] dfaState = (dfaStr.split(System.lineSeparator()));
+		String [] states = dfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String [] acceptedStates =  dfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String [] alphabet = dfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String acceptState = dfaState[3];
+		String [] transitions = dfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+		String [] inputs = dfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+		return new DFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);
+	}
+
+	private static int extractInputsLengthFromRawDFAStr(String dfaStr){
+		String[] dfaState = (dfaStr.split(System.lineSeparator()));
+		String [] inputs = dfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+		return inputs.length;
+	}
+
+	public static String rawInputDFAToOutputString(String rawInputDFA){
+		StringBuilder sb = new StringBuilder("");
+		String currRawInputDFA = rawInputDFA;
+		try {
+			DFA currDFA = DFA.constructDFA(currRawInputDFA);
+			sb.append(Utils.appendNewLine(FAConsts.DFA_CONSTRUCTED));
+			String [] currDFAResults = currDFA.runOnInputs();
+			for (int j = 0; j < currDFAResults.length; j++) {
+				sb.append(Utils.appendNewLine(currDFAResults[j]));
+			}
+			sb.append(Utils.appendNewLine(""));
+		} catch (Error e) {
+			sb.append(Utils.appendNewLine(e.getMessage()));
+			for (int j = 0; j <extractInputsLengthFromRawDFAStr(currRawInputDFA); j++) {
+				sb.append(Utils.appendNewLine(FAConsts.IGNORED));
+			}
+			sb.append(Utils.appendNewLine(""));
+		}
+		return sb.toString();
+	}
+	
+	public static String constructorInputDFAToOutputString(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
+		StringBuilder sb = new StringBuilder("");
+		try {
+			DFA currDFA = new DFA(states, acceptedStates, alphabet, startState, transitionsInputArray, inputs);
+			sb.append(Utils.appendNewLine(FAConsts.DFA_CONSTRUCTED));
+			String [] currDFAResults = currDFA.runOnInputs();
+			for (int j = 0; j < currDFAResults.length; j++) {
+				sb.append(Utils.appendNewLine(currDFAResults[j]));
+			}
+			sb.append(Utils.appendNewLine(""));
+		} catch (Error e) {
+			sb.append(Utils.appendNewLine(e.getMessage()));
+			for (int j = 0; j < inputs.length; j++) {
+				sb.append(Utils.appendNewLine(FAConsts.IGNORED));
+			}
+			sb.append(Utils.appendNewLine(""));
+		}
+		return sb.toString();
+	}
+
+	public static String rawInputDFAsToOutputString(ArrayList<String> rawInputDFAs){
+		StringBuilder sb = new StringBuilder("");
+		for (int i = 0; i < rawInputDFAs.size(); i++) {
+			sb.append(rawInputDFAToOutputString(rawInputDFAs.get(i)));
+		}
+		return sb.toString();
 	}
 
 	public String[] getInputs() {

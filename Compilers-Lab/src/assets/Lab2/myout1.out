@@ -1,0 +1,42 @@
+NFA constructed
+Equivalent DFA:
+Dead,s1*s2*s3*s4,s1*s4,s2*s3*s4
+s1*s4,s2*s3*s4,s1*s2*s3*s4
+0,1
+s1*s4
+s1*s4,s2*s3*s4,0#s1*s4,Dead,1#s2*s3*s4,s2*s3*s4,0#s2*s3*s4,s1*s2*s3*s4,1#s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s1*s2*s3*s4,1#Dead,Dead,0#Dead,Dead,1
+1,0,0,0,1,0#0,0,1,0,1
+DFA constructed
+Rejected
+Accepted
+
+NFA constructed
+Equivalent DFA:
+s1*s2*s3*s4,s1*s3*s4,s2*s3*s4
+s1*s3*s4,s2*s3*s4,s1*s2*s3*s4
+0,1
+s1*s3*s4
+s1*s3*s4,s2*s3*s4,0#s1*s3*s4,s1*s2*s3*s4,1#s2*s3*s4,s2*s3*s4,0#s2*s3*s4,s1*s2*s3*s4,1#s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s1*s2*s3*s4,1
+1,0,0,0,1,0#0,0,1,0,1
+DFA constructed
+Accepted
+Accepted
+
+NFA constructed
+Equivalent DFA:
+s1*s2*s3*s4,s2*s3*s4
+s1*s2*s3*s4,s2*s3*s4,s1*s2*s3*s4
+0,1
+s1*s2*s3*s4
+s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s1*s2*s3*s4,1#s2*s3*s4,s2*s3*s4,0#s2*s3*s4,s1*s2*s3*s4,1#s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s1*s2*s3*s4,1
+1,0,0,0,1,0#0,0,1,0,1
+DFA constructed
+Accepted
+Accepted
+
+Invalid accept state s44
+Invalid start state
+Incomplete Transition s1,0
+Invalid transition s3,s1,4 input 4 is not in the alphabet
+Invalid transition s3,s14,$ state s14 does not exist
+DFA Construction skipped and inputs are ignored
