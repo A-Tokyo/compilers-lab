@@ -283,10 +283,8 @@ public class NFA {
 				} else {
 					DFA_transitionsInputArray.add(conactStateSetMap(closureStates) + FAConsts.NORMAL_SEPERATOR_STRING + conactStateSetMap(nextStateClosure) + FAConsts.NORMAL_SEPERATOR_STRING + currAlphabetKey );
 					if(!visited.contains(conactStateSetMap(nextStateClosure))){
-						System.out.println("nextStateClosure added to queue " + nextStateClosure);
 						queue.add(nextStateClosure);
 					}
-					System.out.println("nextStateClosure lastL " + nextStateClosure);
 				}
 				if(!visited.contains(conactStateSetMap(nextStateClosure))){
 					visited.add(conactStateSetMap(nextStateClosure));
