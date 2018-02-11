@@ -9,6 +9,6 @@ import lab2.Lab2;
 public class Main {
 	public static void main(String [] args) throws FileNotFoundException, IOException {
 		Lab1.runTask();
-		Lab2.runTask();
+		// Lab2.runTask();
 	}
 }
