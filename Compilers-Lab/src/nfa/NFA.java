@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import dfa.DFA;
 import dfa.StateTransitions;
 import utils.FAConsts;
 
@@ -157,6 +158,18 @@ public class NFA {
 		String [] transitions = dfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 		String [] inputs = dfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 		return new NFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);
+	}
+	
+	private static String strJoinArrayNormalSeperator (String [] array) {
+		return String.join(FAConsts.NORMAL_SEPERATOR_STRING, array);
+	}
+	
+	private static String strJoinArraySecondarySeperator (String [] array) {
+		return String.join(FAConsts.SECONDARY_SEPERATOR_STRING, array);
+	}
+	
+	public static DFA nfaToDFA (DFA dfa, NFA nfa){
+		return null;
 	}
 
 	public static String rawInputNFAsToOutputString(ArrayList<String> rawInputNFAs){
