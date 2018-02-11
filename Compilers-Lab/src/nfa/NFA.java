@@ -2,11 +2,12 @@ package nfa;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
 import dfa.DFA;
-import dfa.StateTransitions;
 import utils.FAConsts;
 import utils.Utils;
 
@@ -93,7 +94,7 @@ public class NFA {
 			if(!this.states.contains(nextState)){
 				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "state " + nextState +" does not exist"));
 			}
-			if(!this.alphabet.contains(alphabetKey) || splitted.length > 3){
+			if(!isValidAlphabetKeyOrEpsilon(alphabetKey) || splitted.length > 3){
 				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "input " + alphabetKey +" is not in the alphabet"));
 			}
 
@@ -147,6 +148,28 @@ public class NFA {
 
 	private boolean isValidAlphabetKeyOrEpsilon(String alphabetKey){
 		return alphabetKey == FAConsts.EPSILON || this.alphabet.contains(alphabetKey);
+	}
+	
+	public TreeSet<String> getReachableStates(String state){
+		TreeSet<String> visited = new TreeSet<String>();		
+		Queue <String> searchQueue = new LinkedList<String>();
+		searchQueue.add(state);
+		visited.add(state);
+		while(!searchQueue.isEmpty()){
+			String currState = searchQueue.poll();
+			if(this.transitions.containsKey(currState)){
+				StateTransitions currStateTransitions = this.transitions.get(currState);
+				String [] newReachableStates = currStateTransitions.getTransitionStateSetFor(FAConsts.EPSILON).toArray(new String [0]);getClass();
+				for (String currReachableState: newReachableStates) {
+					if(!visited.contains(currReachableState)){
+						searchQueue.add(currReachableState);
+						visited.add(currReachableState);
+					}
+				}
+			}
+		}
+
+		return visited;
 	}
 
 	private static String concactStatesLabel(String state1, String state2){
