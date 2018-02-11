@@ -60,6 +60,7 @@ public class NFA {
 			}
 			this.alphabet.add(item);
 		}
+		this.alphabet.add(FAConsts.EPSILON);
 
 		// Start State
 		if(!this.states.contains(startState)){
@@ -94,7 +95,7 @@ public class NFA {
 			if(!this.states.contains(nextState)){
 				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "state " + nextState +" does not exist"));
 			}
-			if(!isValidAlphabetKeyOrEpsilon(alphabetKey) || splitted.length > 3){
+			if(!this.alphabet.contains(alphabetKey) || splitted.length > 3){
 				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "input " + alphabetKey +" is not in the alphabet"));
 			}
 
@@ -147,9 +148,9 @@ public class NFA {
 	}
 
 	private boolean isValidAlphabetKeyOrEpsilon(String alphabetKey){
-		return alphabetKey == FAConsts.EPSILON || this.alphabet.contains(alphabetKey);
+		return alphabetKey.equals(FAConsts.EPSILON) || alphabetKey == FAConsts.EPSILON || this.alphabet.contains(alphabetKey);
 	}
-	
+
 	public TreeSet<String> getReachableStates(String state){
 		TreeSet<String> visited = new TreeSet<String>();		
 		Queue <String> searchQueue = new LinkedList<String>();
@@ -159,11 +160,14 @@ public class NFA {
 			String currState = searchQueue.poll();
 			if(this.transitions.containsKey(currState)){
 				StateTransitions currStateTransitions = this.transitions.get(currState);
-				String [] newReachableStates = currStateTransitions.getTransitionStateSetFor(FAConsts.EPSILON).toArray(new String [0]);getClass();
-				for (String currReachableState: newReachableStates) {
-					if(!visited.contains(currReachableState)){
-						searchQueue.add(currReachableState);
-						visited.add(currReachableState);
+				TreeSet<String> newReachableStatesSet = currStateTransitions.getTransitionStateSetFor(FAConsts.EPSILON);
+				if(newReachableStatesSet != null){
+					String [] newReachableStates = newReachableStatesSet.toArray(new String [0]);
+					for (String currReachableState: newReachableStates) {
+						if(!visited.contains(currReachableState)){
+							searchQueue.add(currReachableState);
+							visited.add(currReachableState);
+						}
 					}
 				}
 			}
@@ -203,33 +207,132 @@ public class NFA {
 		return String.join(FAConsts.SECONDARY_SEPERATOR_STRING, array);
 	}
 
-	public static String rawInputNFAToRawInputDFA(String rawInputNFA) {
-//		String [] nfaState = (rawInputNFA.split(System.lineSeparator()));
-//		String [] states = nfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
-//		String [] acceptedStates =  nfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING);
-//		String [] alphabet = nfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
-//		String acceptState = nfaState[3];
-//		String [] transitions = nfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
-//		String [] inputs = nfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
-		// @TODO NFA TO DFA
-		return rawInputNFA;
+	public static String conactStateSetMap(TreeSet<String> states){
+		String toReturn = "";
+		String [] statesArray = states.toArray(new String [0]);
+		for (int i = 0; i < statesArray.length; i++) {
+			toReturn += statesArray[i];
+			if(i != statesArray.length-1){
+				toReturn += FAConsts.STAR;	
+			}
+		}
+		return toReturn;
+	}
+
+	public String toDfaOutput() {
+		TreeSet<String> visited = new TreeSet<String>();		
+		Queue <TreeSet<String>> queue = new LinkedList<TreeSet<String>>();
+
+		TreeSet<String> DFA_states = new TreeSet<String>();
+		ArrayList<String> DFA_acceptedStates = new ArrayList<String>();
+		// get dfa alphabet
+		String [] DFA_alphabet = this.alphabet.toArray(new String[0]);
+		String DFA_startState = null;
+		ArrayList<String> DFA_transitionsInputArray = new ArrayList<String>();
+
+		Boolean deadStateShowed = false;
+
+		String currState = this.startState;		
+		TreeSet<String> closureStates = getReachableStates(currState);
+		currState = conactStateSetMap(closureStates);	
+		// get dfa start state
+		DFA_startState = currState;
+
+		visited.add(currState);
+		queue.add(closureStates);
+
+		while(!queue.isEmpty()){
+			closureStates = queue.poll();
+			DFA_states.add(conactStateSetMap(closureStates));
+			if(isAcceptedState(closureStates)){
+				DFA_acceptedStates.add(conactStateSetMap(closureStates));
+			}
+			for (String currAlphabetKey: this.alphabet) {
+				if(currAlphabetKey == FAConsts.EPSILON){
+					continue;
+				}
+				TreeSet<String> nextStateClosure = new TreeSet<String>();
+				// get all posible transitions
+				for (String singleCurrState: closureStates) {
+					if(this.transitions.containsKey(singleCurrState)){
+						StateTransitions currStateTransitions = this.transitions.get(singleCurrState);
+						TreeSet<String> newReachableStatesSet = currStateTransitions.getTransitionStateSetFor(FAConsts.EPSILON);						
+						System.out.println(singleCurrState + " ;;; " + newReachableStatesSet.toString() + " ;;; " + currAlphabetKey);
+						if(newReachableStatesSet != null){
+							String [] newReachableStates = newReachableStatesSet.toArray(new String [0]);
+							for (String currReachableState: newReachableStates) {
+								nextStateClosure.addAll(getReachableStates(currReachableState));
+							}
+						}	
+					}
+				}
+				if (nextStateClosure.isEmpty()){
+					// go to dead
+					System.out.println("go to dead " + conactStateSetMap(closureStates) + "%%% " + currAlphabetKey + "   " + conactStateSetMap(nextStateClosure)  );
+					DFA_transitionsInputArray.add(conactStateSetMap(closureStates) + FAConsts.NORMAL_SEPERATOR_STRING + FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + currAlphabetKey );
+					deadStateShowed = true;
+				} else {
+					System.out.println(" add new state " + conactStateSetMap(closureStates) + "%%% " + currAlphabetKey + "   " + conactStateSetMap(nextStateClosure) );
+					// add new state
+//					DFA_states.add(conactStateSetMap(nextStateClosure));
+					DFA_transitionsInputArray.add(conactStateSetMap(closureStates) + FAConsts.NORMAL_SEPERATOR_STRING + conactStateSetMap(nextStateClosure) + FAConsts.NORMAL_SEPERATOR_STRING + currAlphabetKey );
+					if(!visited.contains(conactStateSetMap(closureStates))){
+						queue.add(nextStateClosure);
+						visited.add(conactStateSetMap(closureStates));
+					}
+				}
+			}
+		}
+
+		if(deadStateShowed){
+			DFA_states.add(FAConsts.DEAD);
+			// add transitions
+			for (String currAlphabetKey: this.alphabet) {
+				if(currAlphabetKey == FAConsts.EPSILON){
+					continue;
+				}
+				DFA_transitionsInputArray.add(FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + currAlphabetKey );
+			}
+		}
+		
+		return DFA.constructorInputDFAToOutputString(DFA_states.toArray(new String[0]), DFA_acceptedStates.toArray(new String[0]),
+				DFA_alphabet,
+				DFA_startState,
+				DFA_transitionsInputArray.toArray(new String[0]), this.inputs);
+	}
+
+	public boolean isAcceptedState (TreeSet<String> states){
+		for(String currState: states){
+			if(this.acceptedStates.contains(currState)){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public static String rawInputNFAsToOutputString(ArrayList<String> rawInputNFAs){
 		StringBuilder sb = new StringBuilder("");
 		for (int i = 0; i < rawInputNFAs.size(); i++) {
 			String currRawInputNFA = rawInputNFAs.get(i);
+			NFA myNfa = null;
 			try{
-				// @TODO new NFA();
+				String [] nfaState = (currRawInputNFA.split(System.lineSeparator()));
+				String [] states = nfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
+				String [] acceptedStates =  nfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING);
+				String [] alphabet = nfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
+				String acceptState = nfaState[3];
+				String [] transitions = nfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+				String [] inputs = nfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+				myNfa = new NFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);
+				
+				sb.append(Utils.appendNewLine(FAConsts.NFA_CONSTRUCTED));
+				sb.append(Utils.appendNewLine(FAConsts.EQUIVALENT_DFA));
+				
+				sb.append(myNfa.toDfaOutput());
+				
 			} catch (Error e) {
 				sb.append(Utils.appendNewLine(e.getMessage()));
 			}
-			sb.append(Utils.appendNewLine(FAConsts.NFA_CONSTRUCTED));
-			sb.append(Utils.appendNewLine(FAConsts.EQUIVALENT_DFA));
-			String currRawInputDFA = NFA.rawInputNFAToRawInputDFA(currRawInputNFA);
-			sb.append(Utils.appendNewLine(currRawInputDFA));	
-			String currDFAResultString = DFA.rawInputDFAToOutputString(currRawInputDFA);
-			sb.append(Utils.appendNewLine(currDFAResultString));
 		}
 		return Utils.trimLastChar(sb.toString());
 	}

@@ -199,6 +199,26 @@ public class DFA {
 		}
 		return sb.toString();
 	}
+	
+	public static String constructorInputDFAToOutputString(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
+		StringBuilder sb = new StringBuilder("");
+		try {
+			DFA currDFA = new DFA(states, acceptedStates, alphabet, startState, transitionsInputArray, inputs);
+			sb.append(Utils.appendNewLine(FAConsts.DFA_CONSTRUCTED));
+			String [] currDFAResults = currDFA.runOnInputs();
+			for (int j = 0; j < currDFAResults.length; j++) {
+				sb.append(Utils.appendNewLine(currDFAResults[j]));
+			}
+			sb.append(Utils.appendNewLine(""));
+		} catch (Error e) {
+			sb.append(Utils.appendNewLine(e.getMessage()));
+			for (int j = 0; j < inputs.length; j++) {
+				sb.append(Utils.appendNewLine(FAConsts.IGNORED));
+			}
+			sb.append(Utils.appendNewLine(""));
+		}
+		return sb.toString();
+	}
 
 	public static String rawInputDFAsToOutputString(ArrayList<String> rawInputDFAs){
 		StringBuilder sb = new StringBuilder("");

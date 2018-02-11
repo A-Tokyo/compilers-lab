@@ -9,8 +9,8 @@ import nfa.NFA;
 import utils.Utils;
 
 public class Lab2 {
-	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab1/in1.in";
-	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab1/out1.out";
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab2/test1.in";
+	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab2/test_out1.out";
 	
 	public static ArrayList<String> parseFileToNFAs(String inFilePath) throws FileNotFoundException, IOException{
 		BufferedReader br;
@@ -49,7 +49,6 @@ public class Lab2 {
 	public static void runTask() throws FileNotFoundException, IOException{
 		ArrayList<String> rawInputNFAs = parseFileToNFAs(DEFAULT_IN_FILEPATH);
 		String resultFileText = NFA.rawInputNFAsToOutputString(rawInputNFAs);
-		System.out.println(resultFileText);
-//		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
+		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
 	}
 }

@@ -1,0 +1,17 @@
+NFA constructed
+Equivalent DFA:
+Invalid transition s1*s4,s4,0 state s4 does not exist
+Ignored
+Ignored
+
+NFA constructed
+Equivalent DFA:
+Invalid transition s1*s3*s4,s3*s4,0 state s3*s4 does not exist
+Ignored
+Ignored
+
+NFA constructed
+Equivalent DFA:
+Invalid transition s1*s2*s3*s4,s2*s3*s4,0 state s2*s3*s4 does not exist
+Ignored
+Ignored
