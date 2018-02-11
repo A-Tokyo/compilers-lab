@@ -9,12 +9,12 @@ import nfa.NFA;
 import utils.Utils;
 
 public class Lab2 {
-	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab2/test1.in";
-	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab2/test_out1.out";
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab2/in1.in";
+	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab2/myout1.out";
 	
-	public static ArrayList<String> parseFileToNFAs(String inFilePath) throws FileNotFoundException, IOException{
+	public static ArrayList<String> parseFileToDFAs(String inFilePath) throws FileNotFoundException, IOException{
 		BufferedReader br;
-		String currentNFA = "";
+		String currentDFA = "";
 		ArrayList<String> dfasToReturn = new ArrayList<String>();		
 		int currLineIndex = 0;
 		try {
@@ -24,10 +24,10 @@ public class Lab2 {
 				while ( (currLine = br.readLine()) != null ) {
 					currLineIndex ++;
 					if(currLineIndex%7 == 0 && currLine.isEmpty() ){
-						dfasToReturn.add(currentNFA.trim());
-						currentNFA = "";
+						dfasToReturn.add(currentDFA.trim());
+						currentDFA = "";
 					} else {
-						currentNFA += (currLine + System.lineSeparator());
+						currentDFA += (currLine + System.lineSeparator());
 					}
 				}
 				return dfasToReturn;
@@ -47,7 +47,7 @@ public class Lab2 {
 	}
 	
 	public static void runTask() throws FileNotFoundException, IOException{
-		ArrayList<String> rawInputNFAs = parseFileToNFAs(DEFAULT_IN_FILEPATH);
+		ArrayList<String> rawInputNFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
 		String resultFileText = NFA.rawInputNFAsToOutputString(rawInputNFAs);
 		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
 	}

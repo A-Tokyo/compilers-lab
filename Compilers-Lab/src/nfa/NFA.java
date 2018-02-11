@@ -24,6 +24,8 @@ public class NFA {
 	//	throw new Error("DFA Construction skipped and inputs are ignored");
 
 	public NFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
+
+		System.out.println("NEEEWW");
 		StringBuilder errorSB = new StringBuilder("");
 
 		// States
@@ -81,33 +83,35 @@ public class NFA {
 			}
 
 			// to pass TA's test judge
-			String splittedConcated = splitted[0] + FAConsts.NORMAL_SEPERATOR_STRING + splitted[1] + FAConsts.NORMAL_SEPERATOR_STRING + splitted[2];
+			String splittedConcated = transitionString;
+			if(splitted.length >= 3){
+				splittedConcated = splitted[0] + FAConsts.NORMAL_SEPERATOR_STRING + splitted[1] + FAConsts.NORMAL_SEPERATOR_STRING + splitted[2];	
+				// destruct values from transition string
+				String currState = splitted[0];
+				String nextState = splitted[1];
+				String alphabetKey = splitted[2];
+				StateTransitions currStateTransition = null;
 
-			// destruct values from transition string
-			String currState = splitted[0];
-			String nextState = splitted[1];
-			String alphabetKey = splitted[2];
-			StateTransitions currStateTransition = null;
+				// validate transition string values
+				if(!this.states.contains(currState)){
+					errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "state " + currState +" does not exist"));
+				}
+				if(!this.states.contains(nextState)){
+					errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "state " + nextState +" does not exist"));
+				}
+				if(!this.alphabet.contains(alphabetKey) || splitted.length > 3){
+					errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "input " + alphabetKey +" is not in the alphabet"));
+				}
 
-			// validate transition string values
-			if(!this.states.contains(currState)){
-				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "state " + currState +" does not exist"));
-			}
-			if(!this.states.contains(nextState)){
-				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "state " + nextState +" does not exist"));
-			}
-			if(!this.alphabet.contains(alphabetKey) || splitted.length > 3){
-				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "input " + alphabetKey +" is not in the alphabet"));
-			}
-
-			// add current transition to transitions
-			if (this.transitions.containsKey(currState)){
-				currStateTransition = this.transitions.get(currState);
-				currStateTransition.addTransition(alphabetKey, nextState);
-			} else {
-				currStateTransition = new StateTransitions(currState);
-				currStateTransition.addTransition(alphabetKey, nextState);
-				this.transitions.put(currState, currStateTransition);
+				// add current transition to transitions
+				if (this.transitions.containsKey(currState)){
+					currStateTransition = this.transitions.get(currState);
+					currStateTransition.addTransition(alphabetKey, nextState);
+				} else {
+					currStateTransition = new StateTransitions(currState);
+					currStateTransition.addTransition(alphabetKey, nextState);
+					this.transitions.put(currState, currStateTransition);
+				}
 			}
 		}
 
@@ -240,7 +244,7 @@ public class NFA {
 		// get dfa start state
 		DFA_startState = currState;
 
-//		visited.add(currState);
+		//		visited.add(currState);
 		queue.add(closureStates);
 
 		while(!queue.isEmpty()){
@@ -270,13 +274,13 @@ public class NFA {
 				}
 				if (nextStateClosure.isEmpty()){
 					// go to dead
-//					System.out.println("go to dead " + conactStateSetMap(closureStates) + "%%% " + currAlphabetKey + "   " + conactStateSetMap(nextStateClosure)  );
+					//					System.out.println("go to dead " + conactStateSetMap(closureStates) + "%%% " + currAlphabetKey + "   " + conactStateSetMap(nextStateClosure)  );
 					deadStateShowed = true;
 					DFA_transitionsInputArray.add(conactStateSetMap(closureStates) + FAConsts.NORMAL_SEPERATOR_STRING + FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + currAlphabetKey );
 				} else {
-//					System.out.println(" add new state " + conactStateSetMap(closureStates) + "%%% " + currAlphabetKey + "   " + conactStateSetMap(nextStateClosure) );
+					//					System.out.println(" add new state " + conactStateSetMap(closureStates) + "%%% " + currAlphabetKey + "   " + conactStateSetMap(nextStateClosure) );
 					// add new state
-//					DFA_states.add(conactStateSetMap(nextStateClosure));
+					//					DFA_states.add(conactStateSetMap(nextStateClosure));
 					DFA_transitionsInputArray.add(conactStateSetMap(closureStates) + FAConsts.NORMAL_SEPERATOR_STRING + conactStateSetMap(nextStateClosure) + FAConsts.NORMAL_SEPERATOR_STRING + currAlphabetKey );
 					if(!visited.contains(conactStateSetMap(closureStates))){
 						queue.add(nextStateClosure);
@@ -293,7 +297,7 @@ public class NFA {
 				DFA_transitionsInputArray.add(FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + alphabetKey );				
 			}
 		}
-		
+
 		StringBuilder resultSB = new StringBuilder("");
 		resultSB.append(Utils.appendNewLine(String.join(FAConsts.NORMAL_SEPERATOR_STRING, DFA_states.toArray(new String[0]))));
 		resultSB.append(Utils.appendNewLine(String.join(FAConsts.NORMAL_SEPERATOR_STRING, DFA_acceptedStates.toArray(new String[0]))));
@@ -301,14 +305,14 @@ public class NFA {
 		resultSB.append(Utils.appendNewLine(DFA_startState));
 		resultSB.append(Utils.appendNewLine(String.join(FAConsts.SECONDARY_SEPERATOR_STRING, DFA_transitionsInputArray.toArray(new String[0]))));
 		resultSB.append(Utils.appendNewLine(String.join(FAConsts.SECONDARY_SEPERATOR_STRING, this.inputs)));
-		
+
 		resultSB.append(DFA.constructorInputDFAToOutputString(DFA_states.toArray(new String[0]), DFA_acceptedStates.toArray(new String[0]),
 				DFA_alphabet,
 				DFA_startState,
 				DFA_transitionsInputArray.toArray(new String[0]), this.inputs));
 		return resultSB.toString();
 	}
-	
+
 	public TreeSet<String> alphabetToDFAAlphabet(){
 		TreeSet<String> newTreeSet = (TreeSet<String>) this.alphabet.clone();
 		newTreeSet.remove(FAConsts.EPSILON);
@@ -326,6 +330,7 @@ public class NFA {
 
 	public static String rawInputNFAsToOutputString(ArrayList<String> rawInputNFAs){
 		StringBuilder sb = new StringBuilder("");
+		System.out.println(rawInputNFAs.size());
 		for (int i = 0; i < rawInputNFAs.size(); i++) {
 			String currRawInputNFA = rawInputNFAs.get(i);
 			NFA myNfa = null;
@@ -338,12 +343,9 @@ public class NFA {
 				String [] transitions = nfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 				String [] inputs = nfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 				myNfa = new NFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);
-				
 				sb.append(Utils.appendNewLine(FAConsts.NFA_CONSTRUCTED));
 				sb.append(Utils.appendNewLine(FAConsts.EQUIVALENT_DFA));
-				
 				sb.append(myNfa.toDfaOutput());
-				
 			} catch (Error e) {
 				sb.append(Utils.appendNewLine(e.getMessage()));
 			}
