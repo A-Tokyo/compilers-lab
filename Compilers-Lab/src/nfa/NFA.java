@@ -18,12 +18,12 @@ public class NFA {
 	private String startState;
 	private TreeMap<String, StateTransitions> transitions;
 	private String[] inputs;
-	
-//	throw new Error("DFA Construction skipped and inputs are ignored");
+
+	//	throw new Error("DFA Construction skipped and inputs are ignored");
 
 	public NFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
 		StringBuilder errorSB = new StringBuilder("");
-		
+
 		// States
 		this.states = new TreeSet<String>();
 		for (int i = 0; i < states.length; i++) {
@@ -119,12 +119,12 @@ public class NFA {
 
 		// Inputs
 		this.inputs = inputs;
-		
+
 		String errorStr = errorSB.toString();
-		
+
 		if(!errorStr.isEmpty()){
 			String defaultErrorMessage = "DFA Construction skipped and inputs are ignored";
-			throw new Error(errorStr.concat(defaultErrorMessage));
+			throw new Error(errorStr.concat(Utils.appendNewLine(defaultErrorMessage)));
 		}
 	}
 
@@ -148,11 +148,11 @@ public class NFA {
 	private boolean isValidAlphabetKeyOrEpsilon(String alphabetKey){
 		return alphabetKey == FAConsts.EPSILON || this.alphabet.contains(alphabetKey);
 	}
-	
+
 	private static String concactStatesLabel(String state1, String state2){
 		return state1.concat(FAConsts.STAR).concat(state2);
 	}
-	
+
 	private static String concactStatesLabel(String [] states){
 		String state = "";
 		for (int i = 0; i < states.length; i++) {
@@ -160,7 +160,7 @@ public class NFA {
 		}
 		return state;
 	}
-	
+
 	public static NFA constructNFA (String nfaStr){
 		String[] dfaState = (nfaStr.split(System.lineSeparator()));
 		String [] states = dfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
@@ -171,36 +171,37 @@ public class NFA {
 		String [] inputs = dfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 		return new NFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);
 	}
-	
+
 	private static String strJoinArrayNormalSeperator (String [] array) {
 		return String.join(FAConsts.NORMAL_SEPERATOR_STRING, array);
 	}
-	
+
 	private static String strJoinArraySecondarySeperator (String [] array) {
 		return String.join(FAConsts.SECONDARY_SEPERATOR_STRING, array);
 	}
 
 	public static String rawInputNFAToRawInputDFA(String rawInputNFA) {
-		return "";
+		// @TODO NFA TO DFA
+		return rawInputNFA;
 	}
-	
+
 	public static String rawInputNFAsToOutputString(ArrayList<String> rawInputNFAs){
 		StringBuilder sb = new StringBuilder("");
-		
 		for (int i = 0; i < rawInputNFAs.size(); i++) {
 			String currRawInputNFA = rawInputNFAs.get(i);
 			try{
-				
+				// @TODO new NFA();
 			} catch (Error e) {
 				sb.append(Utils.appendNewLine(e.getMessage()));
 			}
 			sb.append(Utils.appendNewLine(FAConsts.NFA_CONSTRUCTED));
 			sb.append(Utils.appendNewLine(FAConsts.EQUIVALENT_DFA));
-			String rawInputDFA = NFA.rawInputNFAToRawInputDFA(currRawInputNFA);
-			String dfaResultString = DFA.rawInputDFAToOutputString(rawInputDFA);
-			sb.append(Utils.appendNewLine(dfaResultString));	
+			String currRawInputDFA = NFA.rawInputNFAToRawInputDFA(currRawInputNFA);
+			sb.append(Utils.appendNewLine(currRawInputDFA));	
+			String currDFAResultString = DFA.rawInputDFAToOutputString(currRawInputDFA);
+			sb.append(Utils.appendNewLine(currDFAResultString));
 		}
-		return sb.toString();
+		return Utils.trimLastChar(sb.toString());
 	}
-	
+
 }

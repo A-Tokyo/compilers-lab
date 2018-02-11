@@ -16,4 +16,8 @@ public class Utils {
 		writer.write(fileText);
 		writer.close();
 	}
+	
+	public static String trimLastChar(String str){
+		return str.substring(0, str.length()-1);
+	}
 }
