@@ -162,13 +162,13 @@ public class NFA {
 	}
 
 	public static NFA constructNFA (String nfaStr){
-		String[] dfaState = (nfaStr.split(System.lineSeparator()));
-		String [] states = dfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
-		String [] acceptedStates =  dfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING);
-		String [] alphabet = dfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
-		String acceptState = dfaState[3];
-		String [] transitions = dfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
-		String [] inputs = dfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+		String[] nfaState = (nfaStr.split(System.lineSeparator()));
+		String [] states = nfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String [] acceptedStates =  nfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String [] alphabet = nfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String acceptState = nfaState[3];
+		String [] transitions = nfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+		String [] inputs = nfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 		return new NFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);
 	}
 
@@ -181,6 +181,13 @@ public class NFA {
 	}
 
 	public static String rawInputNFAToRawInputDFA(String rawInputNFA) {
+//		String [] nfaState = (rawInputNFA.split(System.lineSeparator()));
+//		String [] states = nfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
+//		String [] acceptedStates =  nfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING);
+//		String [] alphabet = nfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
+//		String acceptState = nfaState[3];
+//		String [] transitions = nfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+//		String [] inputs = nfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 		// @TODO NFA TO DFA
 		return rawInputNFA;
 	}
