@@ -162,11 +162,15 @@ public class DFA {
 		return isAcceptedState(currState) ? FAConsts.ACCEPTED : FAConsts.REJECTED;
 	}
 	
-	public static DFA constructDFA (String dfaStr){		
+	public static DFA constructDFA (String dfaStr){
 		String[] dfaState = (dfaStr.split(System.lineSeparator()));
+		String [] states = dfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String [] acceptedStates =  dfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String [] alphabet = dfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String acceptState = dfaState[3];
 		String [] transitions = dfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 		String [] inputs = dfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
-		return new DFA(dfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING), dfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING), dfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING), dfaState[3], transitions, inputs);
+		return new DFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);
 	}
 	
 	private static int extractInputsLengthFromRawDFAStr(String dfaStr){
