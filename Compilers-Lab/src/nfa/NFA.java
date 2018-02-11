@@ -8,6 +8,7 @@ import java.util.TreeSet;
 import dfa.DFA;
 import dfa.StateTransitions;
 import utils.FAConsts;
+import utils.Utils;
 
 public class NFA {
 
@@ -17,8 +18,12 @@ public class NFA {
 	private String startState;
 	private TreeMap<String, StateTransitions> transitions;
 	private String[] inputs;
+	
+//	throw new Error("DFA Construction skipped and inputs are ignored");
 
 	public NFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
+		StringBuilder errorSB = new StringBuilder("");
+		
 		// States
 		this.states = new TreeSet<String>();
 		for (int i = 0; i < states.length; i++) {
@@ -29,7 +34,7 @@ public class NFA {
 			this.states.add(item);
 		}
 		if(this.states.isEmpty()){
-			throw new Error("Invalid states empty states set");
+			errorSB.append(Utils.appendNewLine("Invalid states empty states set"));
 		}
 
 		// Accepted State
@@ -40,7 +45,7 @@ public class NFA {
 				continue;
 			}
 			if(!this.states.contains(item)){
-				throw new Error("Invalid accept state " + item);
+				errorSB.append(Utils.appendNewLine("Invalid accept state " + item));
 			}
 			this.acceptedStates.add(item);
 		}
@@ -57,7 +62,7 @@ public class NFA {
 
 		// Start State
 		if(!this.states.contains(startState)){
-			throw new Error("Invalid start state");
+			errorSB.append(Utils.appendNewLine("Invalid start state"));
 		}
 		this.startState = startState;
 
@@ -69,7 +74,7 @@ public class NFA {
 
 			// validate transition string
 			if(splitted.length < 3){
-				throw new Error("Incomplete Transition " + transitionString);
+				errorSB.append(Utils.appendNewLine("Incomplete Transition " + transitionString));
 			}
 
 			// to pass TA's test judge
@@ -83,13 +88,13 @@ public class NFA {
 
 			// validate transition string values
 			if(!this.states.contains(currState)){
-				throw new Error("Invalid transition " + splittedConcated + " " + "state " + currState +" does not exist");
+				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "state " + currState +" does not exist"));
 			}
 			if(!this.states.contains(nextState)){
-				throw new Error("Invalid transition " + splittedConcated + " " + "state " + nextState +" does not exist");
+				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "state " + nextState +" does not exist"));
 			}
 			if(!this.alphabet.contains(alphabetKey) || splitted.length > 3){
-				throw new Error("Invalid transition " + splittedConcated + " " + "input " + alphabetKey +" is not in the alphabet");
+				errorSB.append(Utils.appendNewLine("Invalid transition " + splittedConcated + " " + "input " + alphabetKey +" is not in the alphabet"));
 			}
 
 			// add current transition to transitions
@@ -114,6 +119,13 @@ public class NFA {
 
 		// Inputs
 		this.inputs = inputs;
+		
+		String errorStr = errorSB.toString();
+		
+		if(!errorStr.isEmpty()){
+			String defaultErrorMessage = "DFA Construction skipped and inputs are ignored";
+			throw new Error(errorStr.concat(defaultErrorMessage));
+		}
 	}
 
 	public StateTransitions addTransition(String from, String to, String character){
@@ -167,13 +179,28 @@ public class NFA {
 	private static String strJoinArraySecondarySeperator (String [] array) {
 		return String.join(FAConsts.SECONDARY_SEPERATOR_STRING, array);
 	}
-	
-	public static DFA nfaToDFA (DFA dfa, NFA nfa){
-		return null;
-	}
 
+	public static String rawInputNFAToRawInputDFA(String rawInputNFA) {
+		return "";
+	}
+	
 	public static String rawInputNFAsToOutputString(ArrayList<String> rawInputNFAs){
-		return null;
+		StringBuilder sb = new StringBuilder("");
+		
+		for (int i = 0; i < rawInputNFAs.size(); i++) {
+			String currRawInputNFA = rawInputNFAs.get(i);
+			try{
+				
+			} catch (Error e) {
+				sb.append(Utils.appendNewLine(e.getMessage()));
+			}
+			sb.append(Utils.appendNewLine(FAConsts.NFA_CONSTRUCTED));
+			sb.append(Utils.appendNewLine(FAConsts.EQUIVALENT_DFA));
+			String rawInputDFA = NFA.rawInputNFAToRawInputDFA(currRawInputNFA);
+			String dfaResultString = DFA.rawInputDFAToOutputString(rawInputDFA);
+			sb.append(Utils.appendNewLine(dfaResultString));	
+		}
+		return sb.toString();
 	}
 	
 }

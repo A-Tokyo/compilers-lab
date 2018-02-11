@@ -50,8 +50,8 @@ public class Lab2 {
 	
 	public static void runTask() throws FileNotFoundException, IOException{
 		ArrayList<String> rawInputNFAs = parseFileToNFAs(DEFAULT_IN_FILEPATH);
-		System.out.println(rawInputNFAs.get(0));
-//		String resultFileText = NFA.rawInputNFAsToOutputString(rawInputNFAs);
+		String resultFileText = NFA.rawInputNFAsToOutputString(rawInputNFAs);
+		System.out.println(resultFileText);
 //		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
 	}
 }
