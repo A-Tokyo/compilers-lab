@@ -108,6 +108,8 @@ public class DFA {
 		while(statesIterator.hasNext()) {
 			String currState = statesIterator.next();
 			if(!this.transitions.containsKey(currState)){
+				System.out.println("Missing transition for state " + currState);
+				System.out.println(this.states);
 				throw new Error("Missing transition for state " + currState);
 			}
 			StateTransitions currStateTransition = this.transitions.get(currState);

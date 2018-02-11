@@ -22,6 +22,7 @@ public class StateTransitions {
 			newStatesSet.add(state);
 			transitions.put(alphabetKey, newStatesSet);
 		}
+//		System.out.println(this.state + " ->" + alphabetKey + " ->> " + this.transitions.get(alphabetKey));
 	}
 	
 	public boolean containsTransitionFor(String alphabetKey){
