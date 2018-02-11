@@ -9,14 +9,14 @@ import dfa.StateTransitions;
 import utils.FAConsts;
 
 public class NFA {
-	
+
 	private TreeSet<String> states;
 	private TreeSet<String> acceptedStates;
 	private TreeSet<String> alphabet;
 	private String startState;
 	private TreeMap<String, StateTransitions> transitions;
 	private String[] inputs;
-	
+
 	public NFA(String[] states, String[] acceptedStates, String[]  alphabet, String startState, String[] transitionsInputArray, String[] inputs){
 		// States
 		this.states = new TreeSet<String>();
@@ -53,24 +53,24 @@ public class NFA {
 			}
 			this.alphabet.add(item);
 		}
-		
+
 		// Start State
 		if(!this.states.contains(startState)){
 			throw new Error("Invalid start state");
 		}
 		this.startState = startState;
-		
+
 		// Transitions
 		this.transitions = new TreeMap<String, StateTransitions>();
 		for (int i = 0; i < transitionsInputArray.length; i++) {
 			String transitionString = transitionsInputArray[i];
 			String [] splitted = transitionString.split(FAConsts.NORMAL_SEPERATOR_STRING);
-			
+
 			// validate transition string
 			if(splitted.length < 3){
 				throw new Error("Incomplete Transition " + transitionString);
 			}
-			
+
 			// to pass TA's test judge
 			String splittedConcated = splitted[0] + FAConsts.NORMAL_SEPERATOR_STRING + splitted[1] + FAConsts.NORMAL_SEPERATOR_STRING + splitted[2];
 
@@ -110,28 +110,54 @@ public class NFA {
 				this.transitions.put(currState, new StateTransitions(currState));
 			}
 		}
-		
+
 		// Inputs
 		this.inputs = inputs;
+	}
+
+	public StateTransitions addTransition(String from, String to, String character){
+		StateTransitions currStateTransition = null;
+		if (this.transitions.containsKey(from)){
+			currStateTransition = this.transitions.get(from);
+			currStateTransition.addTransition(character, to);
+		} else {
+			currStateTransition = new StateTransitions(from);
+			currStateTransition.addTransition(character, to);
+			this.transitions.put(from, currStateTransition);
+		}
+		return currStateTransition;
+	}
+
+	public StateTransitions addEpsilonTransition(String from, String to){
+		return this.addTransition(from, to, FAConsts.EPSILON);
 	}
 
 	private boolean isValidAlphabetKeyOrEpsilon(String alphabetKey){
 		return alphabetKey == FAConsts.EPSILON || this.alphabet.contains(alphabetKey);
 	}
 	
-	private boolean isValidAlphabetKeyOrExtras(String alphabetKey){
-		return alphabetKey == FAConsts.EPSILON || alphabetKey == FAConsts.STAR || this.alphabet.contains(alphabetKey);
+	private static String concactStatesLabel(String state1, String state2){
+		return state1.concat(FAConsts.STAR).concat(state2);
 	}
 	
+	private static String concactStatesLabel(String [] states){
+		String state = "";
+		for (int i = 0; i < states.length; i++) {
+			state = concactStatesLabel(state, states[i]);
+		}
+		return state;
+	}
+
 	public static NFA constructNFA (String nfaStr){		
 		String[] nfaState = (nfaStr.split(System.lineSeparator()));
 		String [] transitions = nfaState[4].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 		String [] inputs = nfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
-//		return new NFA(nfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING), nfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING), nfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING), nfaState[3], transitions, inputs);
+		//		return new NFA(nfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING), nfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING), nfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING), nfaState[3], transitions, inputs);
 		return null;
 	}
-	
+
 	public static String rawInputNFAsToOutputString(ArrayList<String> rawInputNFAs){
 		return null;
 	}
+	
 }
