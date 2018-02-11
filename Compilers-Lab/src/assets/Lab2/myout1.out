@@ -1,22 +1,22 @@
 NFA constructed
 Equivalent DFA:
-Dead,s1*s4,s4
-s1*s4,s4
+Dead,s1*s2*s3*s4,s1*s4,s2*s3*s4
+s1*s4,s2*s3*s4,s1*s2*s3*s4
 0,1
 s1*s4
-s1*s4,s4,0#s1*s4,s4,1#s4,Dead,0#s4,Dead,1#Dead,Dead,0#Dead,Dead,1
+s1*s4,s2*s3*s4,0#s1*s4,Dead,1#s2*s3*s4,s2*s3*s4,0#s2*s3*s4,s1*s2*s3*s4,1#s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s1*s2*s3*s4,1#Dead,Dead,0#Dead,Dead,1
 1,0,0,0,1,0#0,0,1,0,1
 DFA constructed
 Rejected
-Rejected
+Accepted
 
 NFA constructed
 Equivalent DFA:
-s1*s3*s4,s3*s4
-s1*s3*s4,s3*s4,s3*s4
+s1*s2*s3*s4,s1*s3*s4,s2*s3*s4
+s1*s3*s4,s2*s3*s4,s1*s2*s3*s4
 0,1
 s1*s3*s4
-s1*s3*s4,s3*s4,0#s1*s3*s4,s3*s4,1#s3*s4,s3*s4,0#s3*s4,s3*s4,1#s3*s4,s3*s4,0#s3*s4,s3*s4,1
+s1*s3*s4,s2*s3*s4,0#s1*s3*s4,s1*s2*s3*s4,1#s2*s3*s4,s2*s3*s4,0#s2*s3*s4,s1*s2*s3*s4,1#s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s1*s2*s3*s4,1
 1,0,0,0,1,0#0,0,1,0,1
 DFA constructed
 Accepted
@@ -25,10 +25,10 @@ Accepted
 NFA constructed
 Equivalent DFA:
 s1*s2*s3*s4,s2*s3*s4
-s1*s2*s3*s4,s2*s3*s4,s2*s3*s4
+s1*s2*s3*s4,s2*s3*s4,s1*s2*s3*s4
 0,1
 s1*s2*s3*s4
-s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s2*s3*s4,1#s2*s3*s4,s2*s3*s4,0#s2*s3*s4,s2*s3*s4,1#s2*s3*s4,s2*s3*s4,0#s2*s3*s4,s2*s3*s4,1
+s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s1*s2*s3*s4,1#s2*s3*s4,s2*s3*s4,0#s2*s3*s4,s1*s2*s3*s4,1#s1*s2*s3*s4,s2*s3*s4,0#s1*s2*s3*s4,s1*s2*s3*s4,1
 1,0,0,0,1,0#0,0,1,0,1
 DFA constructed
 Accepted

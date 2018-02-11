@@ -249,7 +249,7 @@ public class NFA {
 
 		while(!queue.isEmpty()){
 			closureStates = queue.poll();
-			System.out.println("closureStates " + closureStates);
+			System.out.println("closureStates Polled " + closureStates);
 			DFA_states.add(conactStateSetMap(closureStates));
 			if(isAcceptedState(closureStates)){
 				DFA_acceptedStates.add(conactStateSetMap(closureStates));
@@ -261,38 +261,41 @@ public class NFA {
 				TreeSet<String> nextStateClosure = new TreeSet<String>();
 				// get all posible transitions
 				for (String singleCurrState: closureStates) {
-					if(this.transitions.containsKey(singleCurrState)){
-						StateTransitions currStateTransitions = this.transitions.get(singleCurrState);
-						TreeSet<String> newReachableStatesSet = currStateTransitions.getTransitionStateSetFor(FAConsts.EPSILON);						
-						if(newReachableStatesSet != null){
-							String [] newReachableStates = newReachableStatesSet.toArray(new String [0]);
-							for (String currReachableState: newReachableStates) {
-								nextStateClosure.addAll(getReachableStates(currReachableState));
-							}
-						}	
+					StateTransitions currStateTransitions = this.transitions.get(singleCurrState);
+					TreeSet<String> newReachableStatesSet = new TreeSet<String>();
+					TreeSet<String> directReachableStatesByAlpha = currStateTransitions.getTransitionStateSetFor(currAlphabetKey);
+					if(directReachableStatesByAlpha != null){
+						// get colosures for these and add
+						for (String directReachableStateByAlpha: directReachableStatesByAlpha) {
+							newReachableStatesSet.addAll(getReachableStates(directReachableStateByAlpha));
+						}
+					}
+					if(!newReachableStatesSet.isEmpty()){
+						String [] newReachableStates = newReachableStatesSet.toArray(new String [0]);
+						for (String currReachableState: newReachableStates) {
+							nextStateClosure.addAll(getReachableStates(currReachableState));
+						}
 					}
 				}
 				if (nextStateClosure.isEmpty()){
-					// go to dead
-					//					System.out.println("go to dead " + conactStateSetMap(closureStates) + "%%% " + currAlphabetKey + "   " + conactStateSetMap(nextStateClosure)  );
 					deadStateShowed = true;
 					DFA_transitionsInputArray.add(conactStateSetMap(closureStates) + FAConsts.NORMAL_SEPERATOR_STRING + FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + currAlphabetKey );
 				} else {
-					//					System.out.println(" add new state " + conactStateSetMap(closureStates) + "%%% " + currAlphabetKey + "   " + conactStateSetMap(nextStateClosure) );
-					// add new state
-					//					DFA_states.add(conactStateSetMap(nextStateClosure));
 					DFA_transitionsInputArray.add(conactStateSetMap(closureStates) + FAConsts.NORMAL_SEPERATOR_STRING + conactStateSetMap(nextStateClosure) + FAConsts.NORMAL_SEPERATOR_STRING + currAlphabetKey );
-					if(!visited.contains(conactStateSetMap(closureStates))){
+					if(!visited.contains(conactStateSetMap(nextStateClosure))){
+						System.out.println("nextStateClosure added to queue " + nextStateClosure);
 						queue.add(nextStateClosure);
-						visited.add(conactStateSetMap(closureStates));
 					}
+					System.out.println("nextStateClosure lastL " + nextStateClosure);
+				}
+				if(!visited.contains(conactStateSetMap(nextStateClosure))){
+					visited.add(conactStateSetMap(nextStateClosure));
 				}
 			}
 		}
 
 		if(deadStateShowed){
 			DFA_states.add(FAConsts.DEAD);
-			// add transitions
 			for (String alphabetKey: DFA_alphabet) {
 				DFA_transitionsInputArray.add(FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + FAConsts.DEAD + FAConsts.NORMAL_SEPERATOR_STRING + alphabetKey );				
 			}
