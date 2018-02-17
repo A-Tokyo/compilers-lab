@@ -1,0 +1,80 @@
+DFA constructed
+Accepted
+Rejected
+Rejected
+Rejected
+Rejected
+Accepted
+
+DFA constructed
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+
+DFA constructed
+Accepted
+Rejected
+Accepted
+Accepted
+Rejected
+Accepted
+
+Invalid start state
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+
+Invalid accept state m
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+
+Missing transition for state s
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+
+Incomplete Transition s,1
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+
+Invalid transition s,q1,10 input 10 is not in the alphabet
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+
+DFA constructed
+Invalid input string at 11
+Rejected
+Rejected
+Rejected
+Rejected
+Accepted
+
+Missing transition for state q2
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+Ignored
+

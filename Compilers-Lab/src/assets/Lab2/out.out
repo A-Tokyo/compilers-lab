@@ -1,0 +1,449 @@
+NFA constructed
+Equivalent DFA:
+ipt6,ep*ipt6,Dead
+ipt6,ep*ipt6
+66,7,2,86,92,09
+ipt6
+ipt6,Dead,66#ipt6,ep*ipt6,7#ipt6,ipt6,2#ipt6,Dead,86#ipt6,ipt6,92#ipt6,ep*ipt6,09#ep*ipt6,Dead,66#ep*ipt6,ep*ipt6,7#ep*ipt6,ipt6,2#ep*ipt6,Dead,86#ep*ipt6,ipt6,92#ep*ipt6,ep*ipt6,09#Dead,Dead,66#Dead,Dead,7#Dead,Dead,2#Dead,Dead,86#Dead,Dead,92#Dead,Dead,09
+92,92,09,09,92#92#2,09,2#09,2,92#92#09#92,7,92,92,7,7#7,2,2,7,92,7#7,92,2,7,92,92#92,2,2,86,7#7#2,09,2#7,2,2,7,92,7#86,86,7,09#92#7,92,2,7,92,92#92,92,09,09,92
+DFA constructed
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Rejected
+Accepted
+Accepted
+Accepted
+Rejected
+Accepted
+Accepted
+Accepted
+
+
+NFA constructed
+Equivalent DFA:
+vb722,ec,tut*vb722,qdx,Dead
+vb722,tut*vb722
+7,20,80
+vb722
+vb722,Dead,7#vb722,ec,20#vb722,Dead,80#ec,Dead,7#ec,ec,20#ec,tut*vb722,80#tut*vb722,Dead,7#tut*vb722,ec,20#tut*vb722,qdx,80#qdx,Dead,7#qdx,vb722,20#qdx,ec,80#Dead,Dead,7#Dead,Dead,20#Dead,Dead,80
+20,80,20,80#80#80,80,20,20,20,20,80,80,20,80#80#20,20,80#80,80,20,20,20,20,80,80,20,80#20,20,20,80,80,20,20,80,20,20,80,20#80#20,80,20,80#80,20,20,20,20,80,80,80,20,80,20#20,80,20,80,80,20,20,20
+DFA constructed
+Accepted
+Rejected
+Rejected
+Rejected
+Accepted
+Rejected
+Rejected
+Rejected
+Accepted
+Rejected
+Rejected
+
+
+Invalid transition cu,ew9,$ state cu does not exist
+Invalid transition vcu,ew9,2mte4 input 2mte4 is not in the alphabet
+Invalid transition nef,sx,2 state sx does not exist
+Invalid transition nef,sax,46sax input 46sax is not in the alphabet
+Invalid transition sax,ax,52ew9 state ax does not exist input 52ew9 is not in the alphabet
+DFA Construction skipped and inputs are ignored
+
+Invalid transition ct,cr534,56cr534 input 56cr534 is not in the alphabet
+DFA Construction skipped and inputs are ignored
+
+NFA constructed
+Equivalent DFA:
+rv26*snw,qd*snw,Dead
+
+rb,hp
+rv26*snw
+rv26*snw,Dead,rb#rv26*snw,qd*snw,hp#qd*snw,Dead,rb#qd*snw,qd*snw,hp#Dead,Dead,rb#Dead,Dead,hp
+hp#hp,hp,hp,hp,hp#hp,hp,hp,hp#hp,hp,hp,hp#hp,hp,hp,hp#hp,hp,hp,hp,hp,hp,hp,hp#hp,hp,hp,hp,hp#hp
+DFA constructed
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+
+
+NFA constructed
+Equivalent DFA:
+sfy51,jt5*rg4,Dead
+jt5*rg4
+23,02
+sfy51
+sfy51,Dead,23#sfy51,jt5*rg4,02#jt5*rg4,Dead,23#jt5*rg4,jt5*rg4,02#Dead,Dead,23#Dead,Dead,02
+02,02,02,02,02,02#02,02,02,02,02,02,02#02,02,02,02,02,02,02,02,02#02,02,02,02,02,02,02,02,02#02,02,02,02,02,02,02#02,02,02,02#02,02,02,02,02,02,02,02,02#02,02,02,02,02,02#02,02,02,02,02,02,02#02,02,02,02,02,02,02#02,02,02,02,02,02,02,02,02#02,02,02,02,02,02,02#02,02#02,02,02,02,02,02#02,02#02,02,02,02,02,02,02,02,02#02,02,02,02,02,02,02#02,02,02,02#02#02,02,02,02
+DFA constructed
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+
+
+NFA constructed
+Equivalent DFA:
+amk,ipa*lm93,amk*ipa,Dead
+amk,amk*ipa
+t,ac
+amk
+amk,Dead,t#amk,ipa*lm93,ac#ipa*lm93,Dead,t#ipa*lm93,amk*ipa,ac#amk*ipa,Dead,t#amk*ipa,ipa*lm93,ac#Dead,Dead,t#Dead,Dead,ac
+ac,ac,ac,ac,ac,ac,ac,ac#ac,ac#ac,ac,ac,ac,ac,ac#ac,ac,ac,ac#ac,ac,ac,ac,ac#ac#ac,c#ac,ac,ac,ac,ac,ac,ac,ac#ac,ac,ac,ac,ac#ac,ac,ac,ac,ac,ac,ac#ac,ac,ac,ac,ac,ac#a,ac,ac,ac#ac,ac,ac,ac,ac,ac,ac,ac#ac,a#ac,acac,ac,ac#ac,ac,ac,ac,ac,cac,ac#ac,ac,ac,ac,c,ac#ac,acac,ac,ac,ac,ac,ac#ac,ac,ac,ac,ac
+DFA constructed
+Accepted
+Accepted
+Accepted
+Accepted
+Rejected
+Rejected
+Invalid input string at c
+Accepted
+Rejected
+Rejected
+Accepted
+Invalid input string at a
+Accepted
+Invalid input string at a
+Invalid input string at acac
+Invalid input string at cac
+Invalid input string at c
+Invalid input string at acac
+Rejected
+
+
+NFA constructed
+Equivalent DFA:
+zxe32,kcp,Dead
+
+45,0,5
+zxe32
+zxe32,Dead,45#zxe32,kcp,0#zxe32,Dead,5#kcp,Dead,45#kcp,kcp,0#kcp,Dead,5#Dead,Dead,45#Dead,Dead,0#Dead,Dead,5
+0,0,5,0,0#5,0,5,0,0,5,0,5,0,5,0,0#0,5,5,0,0,5,0,5,0,5,5,5#0,0,0,5,0,5,5,0,5#5,5,0,5,0,5,5,0,0#0,0,0,5,0#0,0,0,5,0#0,5,0,0,5#0,5,5,5,5#5,0,5,0,0,5,0,5,0,5,0,0#5,5,5,5,0,0#0,5,5,5,5#5,0,0,0,5,0,0,5,5,0,0#5,5,0,0,5,5,0#0#0,0,5,0,0#5,0,5,0,0,5,0,5,0,5,0,0#5,5#5,0,0#0,0,0,5,0
+DFA constructed
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+
+
+NFA constructed
+Equivalent DFA:
+ras,Dead
+
+24,3
+ras
+ras,Dead,24#ras,ras,3#Dead,Dead,24#Dead,Dead,3
+3,3,3,3,3,3,3,3#3,3,3#3,3,3#3#3,3,3,3,3,3,3
+DFA constructed
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+
+
+Invalid transition yd0,si,52 input 52 is not in the alphabet
+Invalid transition wzo,si,36 input 36 is not in the alphabet
+Invalid transition si,si,36 input 36 is not in the alphabet
+DFA Construction skipped and inputs are ignored
+
+NFA constructed
+Equivalent DFA:
+ysz03*ysz03,Dead
+
+m,c,ro,ua,b,cf
+ysz03*ysz03
+ysz03*ysz03,Dead,m#ysz03*ysz03,Dead,c#ysz03*ysz03,Dead,ro#ysz03*ysz03,Dead,ua#ysz03*ysz03,Dead,b#ysz03*ysz03,Dead,cf#Dead,Dead,m#Dead,Dead,c#Dead,Dead,ro#Dead,Dead,ua#Dead,Dead,b#Dead,Dead,cf
+ro,b,cf,ro,cf,c,c#ro,b,cf,ro,cf,c,c#ro,b,cf,cf#c,ua,ro,ua,ua,c#ro,b,ro,ua#cf,ua,b,b,ua,cf,ua#c,ua,ro,ua,ua,c#b,ua,c,ro,b,c,c#ua,ro,b#cf,ua,ua#c,cf,cf,c,ro#cf,ua#ro,c,b,b,cf#ua,cf,ua,ua,c,ro,c#ro,b,cf,ro,cf,c,c#ro,b,cf,cf#ua,ro,b#ua,c,c,c,cf,b,ua,ua#cf,b,ua,ro,cf,b#cf,ua,b,b,ro,cf#b,ua,c,ro,b,c,c#ro,b,cf,ro,cf,c,c
+DFA constructed
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+
+
+NFA constructed
+Equivalent DFA:
+uw0,cqc*jbc*ktx51,cqc*jbc*ktx51*uw0,Dead
+cqc*jbc*ktx51,cqc*jbc*ktx51*uw0
+09,00,7,1,47,15
+uw0
+uw0,Dead,09#uw0,Dead,00#uw0,cqc*jbc*ktx51,7#uw0,Dead,1#uw0,Dead,47#uw0,Dead,15#cqc*jbc*ktx51,Dead,09#cqc*jbc*ktx51,cqc*jbc*ktx51*uw0,00#cqc*jbc*ktx51,Dead,7#cqc*jbc*ktx51,cqc*jbc*ktx51*uw0,1#cqc*jbc*ktx51,cqc*jbc*ktx51,47#cqc*jbc*ktx51,Dead,15#cqc*jbc*ktx51*uw0,Dead,09#cqc*jbc*ktx51*uw0,cqc*jbc*ktx51*uw0,00#cqc*jbc*ktx51*uw0,cqc*jbc*ktx51,7#cqc*jbc*ktx51*uw0,cqc*jbc*ktx51*uw0,1#cqc*jbc*ktx51*uw0,cqc*jbc*ktx51,47#cqc*jbc*ktx51*uw0,Dead,15#Dead,Dead,09#Dead,Dead,00#Dead,Dead,7#Dead,Dead,1#Dead,Dead,47#Dead,Dead,15
+15,1,1,1,1,7,47,1,00,47#7,1#7,1#7,00,00#15,1,1,1,1,7,47,1,00,47#1,15,15,7,15,7,47,1#15,00,15#1,15,15,7,15,7,47,1#7#1,7,15,15#7,00,00#7#00,1,47,47,00,15,47,47#7,1#1,47,7,15,00,15,1,47
+DFA constructed
+Rejected
+Accepted
+Accepted
+Accepted
+Rejected
+Rejected
+Rejected
+Rejected
+Accepted
+Rejected
+Accepted
+Accepted
+Rejected
+Accepted
+Rejected
+
+
+Invalid transition kw71,hske7,2 state kw71 does not exist
+Invalid transition laa,hske7,$laa input $laa is not in the alphabet
+Incomplete Transition hske7,laa$
+DFA Construction skipped and inputs are ignored
+
+NFA constructed
+Equivalent DFA:
+jeg51,cf55*sc,hzp*jeg51,cf55*jeg51*sc,cf55*hzp*jeg51*sc,Dead
+cf55*sc,cf55*jeg51*sc,cf55*hzp*jeg51*sc
+ij,s
+jeg51
+jeg51,Dead,ij#jeg51,cf55*sc,s#cf55*sc,Dead,ij#cf55*sc,hzp*jeg51,s#hzp*jeg51,Dead,ij#hzp*jeg51,cf55*jeg51*sc,s#cf55*jeg51*sc,Dead,ij#cf55*jeg51*sc,cf55*hzp*jeg51*sc,s#cf55*hzp*jeg51*sc,Dead,ij#cf55*hzp*jeg51*sc,cf55*hzp*jeg51*sc,s#Dead,Dead,ij#Dead,Dead,s
+s,s,s,s,s,s,s#s#s,s,s,s,s#s,s,s#s#s,s,s,s#s,s,s,s#s,s,s,s#s,s,s,s,s,s,s,s,s,s#s,s,s,s,s,s#s,s,s,s,s#s#s,s,s,s,s,s#s,s,s,s#s,s,s,s,s,s,s,s,s#s,s,s,s#s,s,s,s#s,s,s#s,s,s,s,s#s,s
+DFA constructed
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Rejected
+
+
+Incomplete Transition qt,qt$
+Invalid transition u93,qt,44 state u93 does not exist
+DFA Construction skipped and inputs are ignored
+
+NFA constructed
+Equivalent DFA:
+kay*zq7*zq7,bo9,bo9*kay*zq7,bo9*vp,kay*zq7,Dead
+kay*zq7*zq7,bo9*kay*zq7,bo9*vp,kay*zq7
+fv,tr,ab,bk,ys
+kay*zq7*zq7
+kay*zq7*zq7,Dead,fv#kay*zq7*zq7,bo9,tr#kay*zq7*zq7,Dead,ab#kay*zq7*zq7,Dead,bk#kay*zq7*zq7,bo9*kay*zq7,ys#bo9,Dead,fv#bo9,bo9*vp,tr#bo9,Dead,ab#bo9,Dead,bk#bo9,Dead,ys#bo9*kay*zq7,Dead,fv#bo9*kay*zq7,bo9*vp,tr#bo9*kay*zq7,Dead,ab#bo9*kay*zq7,Dead,bk#bo9*kay*zq7,bo9*kay*zq7,ys#bo9*vp,Dead,fv#bo9*vp,bo9*vp,tr#bo9*vp,Dead,ab#bo9*vp,kay*zq7,bk#bo9*vp,Dead,ys#kay*zq7,Dead,fv#kay*zq7,bo9,tr#kay*zq7,Dead,ab#kay*zq7,Dead,bk#kay*zq7,bo9*kay*zq7,ys#Dead,Dead,fv#Dead,Dead,tr#Dead,Dead,ab#Dead,Dead,bk#Dead,Dead,ys
+ys,ab,tr,bk,tr,bk,bk,ys,bk,bk#ab,ys#tr,ys,tr,ab,tr,ab,tr
+DFA constructed
+Rejected
+Rejected
+Rejected
+
+
+NFA constructed
+Equivalent DFA:
+lk,fyv*qd4*wm8,fyv*lk,fyv*qd4,fyv*lk*qd4,fyv,Dead
+fyv*qd4*wm8
+re,to,u,sy
+lk
+lk,Dead,re#lk,fyv*qd4*wm8,to#lk,lk,u#lk,Dead,sy#fyv*qd4*wm8,Dead,re#fyv*qd4*wm8,fyv*lk,to#fyv*qd4*wm8,fyv*qd4,u#fyv*qd4*wm8,fyv*qd4*wm8,sy#fyv*lk,Dead,re#fyv*lk,fyv*qd4*wm8,to#fyv*lk,fyv*lk*qd4,u#fyv*lk,Dead,sy#fyv*qd4,Dead,re#fyv*qd4,fyv,to#fyv*qd4,fyv*qd4,u#fyv*qd4,fyv*qd4*wm8,sy#fyv*lk*qd4,Dead,re#fyv*lk*qd4,fyv*qd4*wm8,to#fyv*lk*qd4,fyv*lk*qd4,u#fyv*lk*qd4,fyv*qd4*wm8,sy#fyv,Dead,re#fyv,Dead,to#fyv,fyv*qd4,u#fyv,Dead,sy#Dead,Dead,re#Dead,Dead,to#Dead,Dead,u#Dead,Dead,sy
+to,u,to,to,u,to#to,u,sy#sy,to,sy,to,to,u,sy,to,sy,to,to#u,to#to,sy#to,to,to#to,sy#to,sy#u,u,to#to,to,to#to,u,to,u,sy,to,to,to,sy#to,u,to,u,sy,to,to,to,sy#to,sy,u,sy,to,sy,to,to
+DFA constructed
+Rejected
+Accepted
+Rejected
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Rejected
+Rejected
+Rejected
+
+
+Invalid transition you,x97,50 state x97 does not exist
+DFA Construction skipped and inputs are ignored
+
+NFA constructed
+Equivalent DFA:
+ks9,rf44*tp779,Dead
+rf44*tp779
+16,87,44
+ks9
+ks9,Dead,16#ks9,rf44*tp779,87#ks9,Dead,44#rf44*tp779,Dead,16#rf44*tp779,Dead,87#rf44*tp779,Dead,44#Dead,Dead,16#Dead,Dead,87#Dead,Dead,44
+87,87,44,87,44,44,44,44,87,87,44,87,44,44#44,87,44,87,87#87,44,87,87,7,87,87#44,87,87,44,87,87,87,87,87,44,87,87,87,44#87,44,44,87,44,44,4,44,44,87#87,87,44,87,44,44,44,44,87,87,44,87,44,44#87,44,87,44,44,44,44#44,44,87,44,87,87#8744,87,8,87,87,87#44,87,44,87,87#44,44,87,44,87,87,44,44,44,44#44#87,44,87,44,44,44,4#44,44,87,44,87,87,44,44,44,44#87,7,87,7,87,44,87,87,87,87,44,87,44#44,87,44,87,87#87,44,87,87,87,87,87#44,87,44,87,87#87,44,87,87,87,87,87#44,44,87,4,87,87#87,87,44,44,44,87,44,44,44,44#87,44,87,87,87,87,7#44#87,44,44,87,87,87,87,44,44,87,87,87
+DFA constructed
+Rejected
+Rejected
+Invalid input string at 7
+Rejected
+Invalid input string at 4
+Rejected
+Rejected
+Rejected
+Invalid input string at 8744
+Rejected
+Rejected
+Rejected
+Invalid input string at 4
+Rejected
+Invalid input string at 7
+Rejected
+Rejected
+Rejected
+Rejected
+Invalid input string at 4
+Rejected
+Invalid input string at 7
+Rejected
+Rejected
+
+
+Invalid transition o,dh,$ state o does not exist
+Invalid transition hu,dh,$ state hu does not exist
+Invalid transition tt,hu3,$ state tt does not exist
+DFA Construction skipped and inputs are ignored
+
+Invalid transition ypd,nh713,$ state ypd does not exist
+DFA Construction skipped and inputs are ignored
+
+Invalid transition lixv,er,6lixvl state lixv does not exist input 6lixvl is not in the alphabet
+Invalid transition lixvl,pv,67 state lixvl does not exist
+Invalid transition lixvl,nt3,25 state lixvl does not exist state nt3 does not exist
+Invalid transition pv,nt3,$ state nt3 does not exist
+Invalid transition vx8,nt3,67 state nt3 does not exist
+Invalid transition vx8,nt3,6 state nt3 does not exist
+Invalid transition nt3,er,6 state nt3 does not exist
+Invalid transition nt3,nt3,$ state nt3 does not exist state nt3 does not exist
+Invalid transition nt3,ug7,$ state nt3 does not exist
+Invalid transition nt3,pv,8 state nt3 does not exist
+Invalid transition er,nt3,67 state nt3 does not exist
+DFA Construction skipped and inputs are ignored
+
+NFA constructed
+Equivalent DFA:
+ts841,fr880,Dead
+
+tr,rl,i
+ts841
+ts841,Dead,tr#ts841,Dead,rl#ts841,fr880,i#fr880,Dead,tr#fr880,Dead,rl#fr880,fr880,i#Dead,Dead,tr#Dead,Dead,rl#Dead,Dead,i
+i,i,i#rl#i,i,i,i,i,rl
+DFA constructed
+Rejected
+Rejected
+Rejected
+
+
+NFA constructed
+Equivalent DFA:
+gli24*gli24,fx*pmd,gli24,fx,Dead
+fx*pmd,fx
+j,y,v,re,f
+gli24*gli24
+gli24*gli24,Dead,j#gli24*gli24,Dead,y#gli24*gli24,Dead,v#gli24*gli24,Dead,re#gli24*gli24,fx*pmd,f#fx*pmd,Dead,j#fx*pmd,gli24,y#fx*pmd,fx*pmd,v#fx*pmd,Dead,re#fx*pmd,fx,f#gli24,Dead,j#gli24,Dead,y#gli24,Dead,v#gli24,Dead,re#gli24,fx*pmd,f#fx,Dead,j#fx,gli24,y#fx,Dead,v#fx,Dead,re#fx,Dead,f#Dead,Dead,j#Dead,Dead,y#Dead,Dead,v#Dead,Dead,re#Dead,Dead,f
+v,f,v,v,re,re,re#f,y,f#f,f#f,f#v#v#y,f,v,v,v,re,y#f,v,v,v#f,re,f,v,y,y,f#f,v,f,y,v,f#f,v#y,v,re,f#f,f#f,re,f,v,y,y,f#v,y,f,v,y,y,v,f#f,v,re,re,re,v#y,re#re
+DFA constructed
+Rejected
+Accepted
+Accepted
+Accepted
+Rejected
+Rejected
+Rejected
+Accepted
+Rejected
+Rejected
+Accepted
+Rejected
+Accepted
+Rejected
+Rejected
+Rejected
+Rejected
+Rejected
+
+
+NFA constructed
+Equivalent DFA:
+php0,fr*oy571*php0,hlw6*php0,ky597,fr*hlw6*ky597*oy571*php0,hlw6*oy571*php0,ky597*oy571*php0,fr*ky597*oy571*php0,fr*hlw6*oy571*php0,Dead
+hlw6*php0,fr*hlw6*ky597*oy571*php0,hlw6*oy571*php0,fr*hlw6*oy571*php0
+j,qp,ga,yf,am
+php0
+php0,Dead,j#php0,fr*oy571*php0,qp#php0,hlw6*php0,ga#php0,php0,yf#php0,ky597,am#fr*oy571*php0,Dead,j#fr*oy571*php0,fr*oy571*php0,qp#fr*oy571*php0,hlw6*php0,ga#fr*oy571*php0,php0,yf#fr*oy571*php0,fr*hlw6*ky597*oy571*php0,am#hlw6*php0,Dead,j#hlw6*php0,fr*oy571*php0,qp#hlw6*php0,hlw6*oy571*php0,ga#hlw6*php0,fr*oy571*php0,yf#hlw6*php0,ky597*oy571*php0,am#ky597,Dead,j#ky597,ky597,qp#ky597,Dead,ga#ky597,hlw6*php0,yf#ky597,Dead,am#fr*hlw6*ky597*oy571*php0,Dead,j#fr*hlw6*ky597*oy571*php0,fr*ky597*oy571*php0,qp#fr*hlw6*ky597*oy571*php0,hlw6*oy571*php0,ga#fr*hlw6*ky597*oy571*php0,fr*hlw6*oy571*php0,yf#fr*hlw6*ky597*oy571*php0,fr*hlw6*ky597*oy571*php0,am#hlw6*oy571*php0,Dead,j#hlw6*oy571*php0,fr*oy571*php0,qp#hlw6*oy571*php0,hlw6*oy571*php0,ga#hlw6*oy571*php0,fr*oy571*php0,yf#hlw6*oy571*php0,ky597*oy571*php0,am#ky597*oy571*php0,Dead,j#ky597*oy571*php0,fr*ky597*oy571*php0,qp#ky597*oy571*php0,hlw6*php0,ga#ky597*oy571*php0,hlw6*php0,yf#ky597*oy571*php0,ky597,am#fr*ky597*oy571*php0,Dead,j#fr*ky597*oy571*php0,fr*ky597*oy571*php0,qp#fr*ky597*oy571*php0,hlw6*php0,ga#fr*ky597*oy571*php0,hlw6*php0,yf#fr*ky597*oy571*php0,fr*hlw6*ky597*oy571*php0,am#fr*hlw6*oy571*php0,Dead,j#fr*hlw6*oy571*php0,fr*oy571*php0,qp#fr*hlw6*oy571*php0,hlw6*oy571*php0,ga#fr*hlw6*oy571*php0,fr*oy571*php0,yf#fr*hlw6*oy571*php0,fr*hlw6*ky597*oy571*php0,am#Dead,Dead,j#Dead,Dead,qp#Dead,Dead,ga#Dead,Dead,yf#Dead,Dead,am
+qp,qp,qp,ga,am,qp,ga,qp#ga,qp,am,am,ga#ga,qp,am,am,ga#yf,ga#ga,ga#qp,ga#am,am,am
+DFA constructed
+Rejected
+Accepted
+Accepted
+Accepted
+Accepted
+Accepted
+Rejected
+
+
