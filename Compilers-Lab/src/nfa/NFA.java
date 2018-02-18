@@ -8,17 +8,49 @@ import java.util.Queue;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import dfa.DFA;
-import utils.FAConsts;
-import utils.Utils;
+class StateTransitionsNFA {
+	private String state;
+	// <AlphabetCharacter, State>
+	private TreeMap<String, TreeSet<String>> transitions;
+	
+	public StateTransitionsNFA(String state){
+		this.state = state;
+		transitions = new TreeMap<String, TreeSet<String>>();
+	}
+	
+	public void addTransition(String alphabetKey, String state) {
+		if(transitions.containsKey(alphabetKey)){
+			TreeSet<String> newStatesSet = transitions.get(alphabetKey);
+			newStatesSet.add(state);
+			transitions.put(alphabetKey, newStatesSet);
+		} else {
+			TreeSet<String> newStatesSet = new TreeSet<String>();
+			newStatesSet.add(state);
+			transitions.put(alphabetKey, newStatesSet);
+		}
+//		System.out.println(this.state + " ->" + alphabetKey + " ->> " + this.transitions.get(alphabetKey));
+	}
+	
+	public boolean containsTransitionFor(String alphabetKey){
+		return transitions.containsKey(alphabetKey);
+	}
+	
+	public TreeSet<String> getTransitionStateSetFor(String alphabetKey){
+		return transitions.get(alphabetKey);
+	}
+	
+	public String toString(){
+		return "<Name:(" + this.state + ")##" + "Transitions: (" + this.transitions.toString()+")>";
+	}
+}
 
-public class NFA {
+class NFA {
 
 	private TreeSet<String> states;
 	private TreeSet<String> acceptedStates;
 	private TreeSet<String> alphabet;
 	private String startState;
-	private TreeMap<String, StateTransitions> transitions;
+	private TreeMap<String, StateTransitionsNFA> transitions;
 	private String[] inputs;
 
 	//	throw new Error("DFA Construction skipped and inputs are ignored");
@@ -72,7 +104,7 @@ public class NFA {
 		this.startState = startState;
 
 		// Transitions
-		this.transitions = new TreeMap<String, StateTransitions>();
+		this.transitions = new TreeMap<String, StateTransitionsNFA>();
 		for (int i = 0; i < transitionsInputArray.length; i++) {
 			String transitionString = transitionsInputArray[i];
 			String [] splitted = transitionString.split(FAConsts.NORMAL_SEPERATOR_STRING);
@@ -90,7 +122,7 @@ public class NFA {
 				String currState = splitted[0];
 				String nextState = splitted[1];
 				String alphabetKey = splitted[2];
-				StateTransitions currStateTransition = null;
+				StateTransitionsNFA currStateTransition = null;
 
 				// validate transition string values
 				if(!this.states.contains(currState)){
@@ -108,7 +140,7 @@ public class NFA {
 					currStateTransition = this.transitions.get(currState);
 					currStateTransition.addTransition(alphabetKey, nextState);
 				} else {
-					currStateTransition = new StateTransitions(currState);
+					currStateTransition = new StateTransitionsNFA(currState);
 					currStateTransition.addTransition(alphabetKey, nextState);
 					this.transitions.put(currState, currStateTransition);
 				}
@@ -120,7 +152,7 @@ public class NFA {
 		while(statesIterator.hasNext()) {
 			String currState = statesIterator.next();
 			if(!this.transitions.containsKey(currState)){
-				this.transitions.put(currState, new StateTransitions(currState));
+				this.transitions.put(currState, new StateTransitionsNFA(currState));
 			}
 		}
 
@@ -135,20 +167,20 @@ public class NFA {
 		}
 	}
 
-	public StateTransitions addTransition(String from, String to, String character){
-		StateTransitions currStateTransition = null;
+	public StateTransitionsNFA addTransition(String from, String to, String character){
+		StateTransitionsNFA currStateTransition = null;
 		if (this.transitions.containsKey(from)){
 			currStateTransition = this.transitions.get(from);
 			currStateTransition.addTransition(character, to);
 		} else {
-			currStateTransition = new StateTransitions(from);
+			currStateTransition = new StateTransitionsNFA(from);
 			currStateTransition.addTransition(character, to);
 			this.transitions.put(from, currStateTransition);
 		}
 		return currStateTransition;
 	}
 
-	public StateTransitions addEpsilonTransition(String from, String to){
+	public StateTransitionsNFA addEpsilonTransition(String from, String to){
 		return this.addTransition(from, to, FAConsts.EPSILON);
 	}
 
@@ -164,7 +196,7 @@ public class NFA {
 		while(!searchQueue.isEmpty()){
 			String currState = searchQueue.poll();
 			if(this.transitions.containsKey(currState)){
-				StateTransitions currStateTransitions = this.transitions.get(currState);
+				StateTransitionsNFA currStateTransitions = this.transitions.get(currState);
 				TreeSet<String> newReachableStatesSet = currStateTransitions.getTransitionStateSetFor(FAConsts.EPSILON);
 				if(newReachableStatesSet != null){
 					String [] newReachableStates = newReachableStatesSet.toArray(new String [0]);
@@ -261,7 +293,7 @@ public class NFA {
 				TreeSet<String> nextStateClosure = new TreeSet<String>();
 				// get all posible transitions
 				for (String singleCurrState: closureStates) {
-					StateTransitions currStateTransitions = this.transitions.get(singleCurrState);
+					StateTransitionsNFA currStateTransitions = this.transitions.get(singleCurrState);
 					TreeSet<String> newReachableStatesSet = new TreeSet<String>();
 					TreeSet<String> directReachableStatesByAlpha = currStateTransitions.getTransitionStateSetFor(currAlphabetKey);
 					if(directReachableStatesByAlpha != null){

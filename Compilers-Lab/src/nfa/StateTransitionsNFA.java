@@ -2,12 +2,12 @@ package nfa;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class StateTransitions {
+public class StateTransitionsNFA {
 	private String state;
 	// <AlphabetCharacter, State>
 	private TreeMap<String, TreeSet<String>> transitions;
 	
-	public StateTransitions(String state){
+	public StateTransitionsNFA(String state){
 		this.state = state;
 		transitions = new TreeMap<String, TreeSet<String>>();
 	}
