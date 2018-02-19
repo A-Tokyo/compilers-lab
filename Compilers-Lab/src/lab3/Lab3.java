@@ -6,12 +6,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import dfa.DFA;
+import nfa.NFA;
 //import nfa.NFA;
 import utils.Utils;
 
 public class Lab3 {
-	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/DFAin.in";
-	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/myDFAout.out";
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/NFAin.in";
+	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/myNFAout.out";
 	
 	public static ArrayList<String> parseFileToDFAs(String inFilePath) throws FileNotFoundException, IOException{
 		BufferedReader br;
@@ -48,8 +49,13 @@ public class Lab3 {
 	}
 	
 	public static void runTask() throws FileNotFoundException, IOException{
-		ArrayList<String> rawInputFBDFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
-		String resultFileText = DFA.rawInputFBDFAsToOutputString(rawInputFBDFAs);
-		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
+//		ArrayList<String> rawInputFBDFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
+//		String resultFileTextFBDFAs = DFA.rawInputFBDFAsToOutputString(rawInputFBDFAs);
+//		Utils.writeOutputFile(resultFileTextFBDFAs, DEFAULT_OUT_FILEPATH);
+		
+
+		ArrayList<String> rawInputFBNFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
+		String resultFileTextFBNFAs = DFA.rawInputFBDFAsToOutputString(rawInputFBNFAs);
+		Utils.writeOutputFile(resultFileTextFBNFAs, DEFAULT_OUT_FILEPATH);
 	}
 }
