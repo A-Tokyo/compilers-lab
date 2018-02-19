@@ -201,7 +201,7 @@ public class DFA {
 				//				return "Invalid input string at " + currAlphabetKey;
 			}
 			if (hasTransitionFor(currState)) {
-				System.out.println("index: " + i + " item: " + currInput.get(i) + " size: " + currInput.size());
+//				System.out.println("index: " + i + " item: " + currInput.get(i) + " size: " + currInput.size());
 				
 				StateTransitions currStateTransition = this.transitions.get(currState);
 				String nextState = currStateTransition.getTransitionStateFor(currAlphabetKey);
@@ -215,7 +215,6 @@ public class DFA {
 				
 				
 				if (i == currInput.size() - 1) {
-					System.out.println("last index");
 					// rejected
 					if(lastAcceptedState != null){
 						System.out.println("lastAcceptedState != null: " + lastAcceptedState);
@@ -225,12 +224,12 @@ public class DFA {
 						String lexim = generateLeximStr(actions.get(lastAcceptedState), lastAcceptedInput);
 						sb.append(lexim);
 						
-						System.out.println("lastAcceptedInput");
-						
-						System.out.println(lastAcceptedInput);
-						System.out.println(lastAcceptedState);
-						System.out.println(lexim);
-						System.out.println(actions);
+//						System.out.println("lastAcceptedInput");
+//						
+//						System.out.println(lastAcceptedInput);
+//						System.out.println(lastAcceptedState);
+//						System.out.println(lexim);
+//						System.out.println(actions);
 						
 						
 						System.out.println("actions get " + actions.get(lastAcceptedState));
@@ -239,13 +238,12 @@ public class DFA {
 						/* reset loop */
 						// sublist the currInput List
 						currInput.subList(0, lastAcceptedStateTerminationIndex).clear();
-						System.out.println(currInput.size());
-//						break;
+						break;
 						// reset loop counter
-						i = -1;
+//						i = -1;
 						// reset accept state tracking
-						lastAcceptedState = null;
-						lastAcceptedStateTerminationIndex = -1;
+//						lastAcceptedState = null;
+//						lastAcceptedStateTerminationIndex = -1;
 					}
 				}
 			} else {
@@ -255,7 +253,7 @@ public class DFA {
 
 
 		}
-
+		
 		// append error
 		if(currInput.size() != 0){
 			String lexim = generateLeximStr("Error", currInput);
