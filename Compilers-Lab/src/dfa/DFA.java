@@ -173,7 +173,7 @@ public class DFA {
 	public static String generateLeximStr(String action,  Iterable<? extends CharSequence> input) {
 		return "<" + action + ",\"" + String.join(",", input) + "\">";
 	}
-	
+
 	public String[] generateFallBackForInputs(TreeMap<String, String> actions) {
 		String[] toReturn = new String[this.inputs.length];
 		for (int i = 0; i < this.inputs.length; i++) {
@@ -198,7 +198,7 @@ public class DFA {
 			if (!this.alphabet.contains(currAlphabetKey)) {
 				// break due to error and append error lexim
 				break;
-//				return "Invalid input string at " + currAlphabetKey;
+				//				return "Invalid input string at " + currAlphabetKey;
 			}
 			if (hasTransitionFor(currState)) {
 				StateTransitions currStateTransition = this.transitions.get(currState);
@@ -307,6 +307,51 @@ public class DFA {
 		StringBuilder sb = new StringBuilder("");
 		for (int i = 0; i < rawInputDFAs.size(); i++) {
 			sb.append(rawInputDFAToOutputString(rawInputDFAs.get(i)));
+		}
+		return sb.toString();
+	}
+
+	public static String rawInputFBDFAsToOutputString(ArrayList<String> rawInputFBDFAs) {
+		StringBuilder sb = new StringBuilder("");
+		for (int i = 0; i < rawInputFBDFAs.size(); i++) {			
+			sb.append(rawInputFBDFAToOutputString(rawInputFBDFAs.get(i)));
+		}
+		return sb.toString();
+	}
+
+	public static String rawInputFBDFAToOutputString(String rawInputFBDFA) {
+		StringBuilder sb = new StringBuilder("");
+		String currRawInputFBDFA = rawInputFBDFA;
+		// remove actions
+		// construct dfa
+		// run new method on dfa
+		String[] fbdfaState = (currRawInputFBDFA.split(System.lineSeparator()));
+		String[] states = fbdfaState[0].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String[] acceptedStates = fbdfaState[1].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String[] inputActions = fbdfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String[] alphabet = fbdfaState[3].split(FAConsts.NORMAL_SEPERATOR_STRING);
+		String acceptState = fbdfaState[4];
+		String[] transitions = fbdfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+		String[] inputs = fbdfaState[6].split(FAConsts.SECONDARY_SEPERATOR_STRING);
+
+		// populate actionsMap
+		TreeMap<String, String> actionsMap = new TreeMap<String, String>();
+		for (int i = 0; i < inputActions.length; i++) {
+			actionsMap.put(states[i], inputActions[i]);
+		}
+
+		try {
+			DFA currDFA = new DFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);
+			String[] currFBDFAResults = currDFA.generateFallBackForInputs(actionsMap);
+			for (int j = 0; j < currFBDFAResults.length; j++) {
+				sb.append(Utils.appendNewLine(currFBDFAResults[j]));
+			}
+		} catch (Error e) {
+			sb.append(Utils.appendNewLine(e.getMessage()));
+			for (int j = 0; j < extractInputsLengthFromRawDFAStr(currRawInputFBDFA); j++) {
+				sb.append(Utils.appendNewLine(FAConsts.IGNORED));
+			}
+			sb.append(Utils.appendNewLine(""));
 		}
 		return sb.toString();
 	}
