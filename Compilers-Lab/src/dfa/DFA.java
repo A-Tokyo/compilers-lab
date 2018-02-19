@@ -201,38 +201,59 @@ public class DFA {
 				//				return "Invalid input string at " + currAlphabetKey;
 			}
 			if (hasTransitionFor(currState)) {
+				System.out.println("index: " + i + " item: " + currInput.get(i) + " size: " + currInput.size());
+				
 				StateTransitions currStateTransition = this.transitions.get(currState);
 				String nextState = currStateTransition.getTransitionStateFor(currAlphabetKey);
 				currState = nextState;
 				// new code for fallback
 				if (isAcceptedState(currState)) {
+					System.out.println("isAcceptedState(currState) " + currState);
 					lastAcceptedState = currState;
-					lastAcceptedStateTerminationIndex = i;
+					lastAcceptedStateTerminationIndex = i + 1;
+				}
+				
+				
+				if (i == currInput.size() - 1) {
+					System.out.println("last index");
+					// rejected
+					if(lastAcceptedState != null){
+						System.out.println("lastAcceptedState != null: " + lastAcceptedState);
+						// get input array till last accepted state
+						ArrayList<String> lastAcceptedInput = new ArrayList<String>(currInput.subList(0, lastAcceptedStateTerminationIndex));				
+						// generate Lexim with the array above  lastAcceptedInput
+						String lexim = generateLeximStr(actions.get(lastAcceptedState), lastAcceptedInput);
+						sb.append(lexim);
+						
+						System.out.println("lastAcceptedInput");
+						
+						System.out.println(lastAcceptedInput);
+						System.out.println(lastAcceptedState);
+						System.out.println(lexim);
+						System.out.println(actions);
+						
+						
+						System.out.println("actions get " + actions.get(lastAcceptedState));
+
+
+						/* reset loop */
+						// sublist the currInput List
+						currInput.subList(0, lastAcceptedStateTerminationIndex).clear();
+						System.out.println(currInput.size());
+//						break;
+						// reset loop counter
+						i = -1;
+						// reset accept state tracking
+						lastAcceptedState = null;
+						lastAcceptedStateTerminationIndex = -1;
+					}
 				}
 			} else {
 				currState = null;
 				// rejected here
 			}
 
-			if (i == currInput.size() - 1) {
-				// rejected
-				if(lastAcceptedState != null){
-					// get input array till last accepted state
-					ArrayList<String> lastAcceptedInput = (ArrayList<String>) currInput.subList(0, lastAcceptedStateTerminationIndex);				
-					// generate Lexim with the array above  lastAcceptedInput
-					String lexim = generateLeximStr(actions.get(lastAcceptedState), lastAcceptedInput);
-					sb.append(lexim);
 
-					/* reset loop */
-					// sublist the currInput List
-					currInput.subList(0, lastAcceptedStateTerminationIndex).clear();	
-					// reset loop counter
-					i = -1;
-					// reset accept state tracking
-					lastAcceptedState = null;
-					lastAcceptedStateTerminationIndex = -1;
-				}
-			}
 		}
 
 		// append error
@@ -313,8 +334,15 @@ public class DFA {
 
 	public static String rawInputFBDFAsToOutputString(ArrayList<String> rawInputFBDFAs) {
 		StringBuilder sb = new StringBuilder("");
-		for (int i = 0; i < rawInputFBDFAs.size(); i++) {			
-			sb.append(rawInputFBDFAToOutputString(rawInputFBDFAs.get(i)));
+		try {
+			sb.append(Utils.appendNewLine("FBDFA constructed"));
+			for (int i = 0; i < rawInputFBDFAs.size(); i++) {			
+				sb.append(rawInputFBDFAToOutputString(rawInputFBDFAs.get(i)));
+			}
+			sb.append(Utils.appendNewLine(""));
+		} catch (Error e) {
+			sb = new StringBuilder("");
+			sb.append(e.getMessage());
 		}
 		return sb.toString();
 	}
@@ -337,7 +365,7 @@ public class DFA {
 		// populate actionsMap
 		TreeMap<String, String> actionsMap = new TreeMap<String, String>();
 		for (int i = 0; i < inputActions.length; i++) {
-			actionsMap.put(states[i], inputActions[i]);
+			actionsMap.put(acceptedStates[i], inputActions[i]);
 		}
 
 		try {

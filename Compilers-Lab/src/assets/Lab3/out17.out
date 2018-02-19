@@ -1,0 +1,12 @@
+FBNFA constructed
+Equivalent FBDFA:
+ldxj*rbx,nih*xc,ldxj,hv8*ldxj*nih*rbx*xc,hv8*ldxj,Dead
+hv8*ldxj*nih*rbx*xc,hv8*ldxj
+bp,bp
+4,30,9
+ldxj*rbx
+ldxj*rbx,Dead,4#ldxj*rbx,nih*xc,30#ldxj*rbx,ldxj,9#nih*xc,Dead,4#nih*xc,hv8*ldxj*nih*rbx*xc,30#nih*xc,Dead,9#ldxj,Dead,4#ldxj,nih*xc,30#ldxj,ldxj,9#hv8*ldxj*nih*rbx*xc,Dead,4#hv8*ldxj*nih*rbx*xc,hv8*ldxj*nih*rbx*xc,30#hv8*ldxj*nih*rbx*xc,hv8*ldxj,9#hv8*ldxj,Dead,4#hv8*ldxj,nih*xc,30#hv8*ldxj,hv8*ldxj,9#Dead,Dead,4#Dead,Dead,30#Dead,Dead,9
+#########
+FBDFA constructed
+
+

@@ -1,0 +1,14 @@
+FBNFA constructed
+Equivalent FBDFA:
+qwk5,gc729*me343*qwk5,gc729*itvp*me343*qwk5,gc729*jy86*me343*qwk5,itvp,Dead
+gc729*me343*qwk5,gc729*itvp*me343*qwk5,gc729*jy86*me343*qwk5
+dfh662,dfh662,dfh662
+vr,d,ez,bv,rd,y,pd,h,wh,c,xr
+qwk5
+qwk5,Dead,vr#qwk5,Dead,d#qwk5,Dead,ez#qwk5,Dead,bv#qwk5,Dead,rd#qwk5,gc729*me343*qwk5,y#qwk5,Dead,pd#qwk5,Dead,h#qwk5,Dead,wh#qwk5,Dead,c#qwk5,Dead,xr#gc729*me343*qwk5,Dead,vr#gc729*me343*qwk5,Dead,d#gc729*me343*qwk5,Dead,ez#gc729*me343*qwk5,gc729*itvp*me343*qwk5,bv#gc729*me343*qwk5,Dead,rd#gc729*me343*qwk5,gc729*me343*qwk5,y#gc729*me343*qwk5,Dead,pd#gc729*me343*qwk5,gc729*jy86*me343*qwk5,h#gc729*me343*qwk5,itvp,wh#gc729*me343*qwk5,Dead,c#gc729*me343*qwk5,Dead,xr#gc729*itvp*me343*qwk5,Dead,vr#gc729*itvp*me343*qwk5,Dead,d#gc729*itvp*me343*qwk5,Dead,ez#gc729*itvp*me343*qwk5,gc729*itvp*me343*qwk5,bv#gc729*itvp*me343*qwk5,Dead,rd#gc729*itvp*me343*qwk5,gc729*me343*qwk5,y#gc729*itvp*me343*qwk5,qwk5,pd#gc729*itvp*me343*qwk5,gc729*jy86*me343*qwk5,h#gc729*itvp*me343*qwk5,itvp,wh#gc729*itvp*me343*qwk5,qwk5,c#gc729*itvp*me343*qwk5,Dead,xr#gc729*jy86*me343*qwk5,Dead,vr#gc729*jy86*me343*qwk5,Dead,d#gc729*jy86*me343*qwk5,itvp,ez#gc729*jy86*me343*qwk5,gc729*itvp*me343*qwk5,bv#gc729*jy86*me343*qwk5,Dead,rd#gc729*jy86*me343*qwk5,gc729*me343*qwk5,y#gc729*jy86*me343*qwk5,gc729*me343*qwk5,pd#gc729*jy86*me343*qwk5,gc729*jy86*me343*qwk5,h#gc729*jy86*me343*qwk5,itvp,wh#gc729*jy86*me343*qwk5,gc729*me343*qwk5,c#gc729*jy86*me343*qwk5,gc729*me343*qwk5,xr#itvp,Dead,vr#itvp,Dead,d#itvp,Dead,ez#itvp,Dead,bv#itvp,Dead,rd#itvp,Dead,y#itvp,qwk5,pd#itvp,Dead,h#itvp,Dead,wh#itvp,qwk5,c#itvp,Dead,xr#Dead,Dead,vr#Dead,Dead,d#Dead,Dead,ez#Dead,Dead,bv#Dead,Dead,rd#Dead,Dead,y#Dead,Dead,pd#Dead,Dead,h#Dead,Dead,wh#Dead,Dead,c#Dead,Dead,xr
+y,y,h,y,bv,h#y,bv,y,y,y,y,bv,bv,y,y,h,y,h,y,bv,bv,y,bv,h,y,bv,y,y,y,bv,y,bv,bv,y,y,h,rd,h,c,wh,xr,rd,rd,y,c,wh,h,h,y,ez,y,y,y,y,bv,y,bv,h,y,bv,y,y,bv,h,y,y,bv,y,y,h,y,y,bv,y,bv,h,y,bv,bv,y,bv,bv,y,y,bv,y,y,h,y,bv,h,y,h,y,bv,y,y,h,y,bv,h,y,h,y,y,bv,y,bv,bv,y,y,y,y,bv,h,y,bv,h,y,h,y,bv,bv,y,bv,h,y,bv,y,bv,h,y,bv,bv,y,y,y,y,bv,h,y,y,y,y,y,bv
+FBDFA constructed
+<dfh662,"y,y,h,y,bv,h">
+<dfh662,"y,bv,y,y,y,y,bv,bv,y,y,h,y,h,y,bv,bv,y,bv,h,y,bv,y,y,y,bv,y,bv,bv,y,y,h"><Error,"rd,h,c,wh,xr,rd,rd,y,c,wh,h,h,y,ez,y,y,y,y,bv,y,bv,h,y,bv,y,y,bv,h,y,y,bv,y,y,h,y,y,bv,y,bv,h,y,bv,bv,y,bv,bv,y,y,bv,y,y,h,y,bv,h,y,h,y,bv,y,y,h,y,bv,h,y,h,y,y,bv,y,bv,bv,y,y,y,y,bv,h,y,bv,h,y,h,y,bv,bv,y,bv,h,y,bv,y,bv,h,y,bv,bv,y,y,y,y,bv,h,y,y,y,y,y,bv">
+
+

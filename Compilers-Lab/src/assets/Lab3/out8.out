@@ -1,0 +1,45 @@
+FBNFA constructed
+Equivalent FBDFA:
+pj9,mem,me0*pj9*xpp,lsj*mem,rs40,lsj*me0*mem*pj9,me0*pj9*rs40,lsj*me0*mem*pj9*xpp,me0*pj9,Dead
+pj9,mem,me0*pj9*xpp,lsj*mem,rs40,lsj*me0*mem*pj9,me0*pj9*rs40,lsj*me0*mem*pj9*xpp,me0*pj9
+io839,tujno,io839,tujno,gyd568489,io839,io839,io839,io839
+dd,at,tq,i,e,yq
+pj9
+pj9,Dead,dd#pj9,Dead,at#pj9,Dead,tq#pj9,Dead,i#pj9,mem,e#pj9,Dead,yq#mem,Dead,dd#mem,Dead,at#mem,Dead,tq#mem,Dead,i#mem,me0*pj9*xpp,e#mem,Dead,yq#me0*pj9*xpp,Dead,dd#me0*pj9*xpp,lsj*mem,at#me0*pj9*xpp,rs40,tq#me0*pj9*xpp,lsj*mem,i#me0*pj9*xpp,lsj*me0*mem*pj9,e#me0*pj9*xpp,me0*pj9*rs40,yq#lsj*mem,Dead,dd#lsj*mem,Dead,at#lsj*mem,Dead,tq#lsj*mem,Dead,i#lsj*mem,me0*pj9*xpp,e#lsj*mem,Dead,yq#rs40,Dead,dd#rs40,Dead,at#rs40,Dead,tq#rs40,Dead,i#rs40,Dead,e#rs40,Dead,yq#lsj*me0*mem*pj9,Dead,dd#lsj*me0*mem*pj9,lsj*mem,at#lsj*me0*mem*pj9,rs40,tq#lsj*me0*mem*pj9,Dead,i#lsj*me0*mem*pj9,lsj*me0*mem*pj9*xpp,e#lsj*me0*mem*pj9,me0*pj9,yq#me0*pj9*rs40,Dead,dd#me0*pj9*rs40,lsj*mem,at#me0*pj9*rs40,rs40,tq#me0*pj9*rs40,Dead,i#me0*pj9*rs40,lsj*mem,e#me0*pj9*rs40,me0*pj9,yq#lsj*me0*mem*pj9*xpp,Dead,dd#lsj*me0*mem*pj9*xpp,lsj*mem,at#lsj*me0*mem*pj9*xpp,rs40,tq#lsj*me0*mem*pj9*xpp,lsj*mem,i#lsj*me0*mem*pj9*xpp,lsj*me0*mem*pj9*xpp,e#lsj*me0*mem*pj9*xpp,me0*pj9*rs40,yq#me0*pj9,Dead,dd#me0*pj9,lsj*mem,at#me0*pj9,rs40,tq#me0*pj9,Dead,i#me0*pj9,lsj*mem,e#me0*pj9,me0*pj9,yq#Dead,Dead,dd#Dead,Dead,at#Dead,Dead,tq#Dead,Dead,i#Dead,Dead,e#Dead,Dead,yq
+e,e,yq,e,e,i,e,e,e,at,e,e,e,e,at,e,e,e,e,e,at#e,e,yq,e,e,at#e,e,at,e,e,e,yq,e,e,at,e,e,tq,e,e,e,tq,e,e,i,e,e,at,e,e,e,tq,e,e,e,e,e,yq,e,e,e,e,tq,e,e,i,e#e,e,e,e,yq,e,e,e,e,at,e,e,tq,e,e,i,e,e,e,at,e,e,e,e,at,e,e,e,e,e,at,e,e,i,e,e,e,e,e,at,e#e,e,e,e,e,e,e,e,e,e,e,e,yq,e,e,yq,e,e,at,e,e,at,e,e,at,e,e,e,yq,e,e,e,e,e,e,e,e,e,e,yq,e,e,at,e,e,tq,e,e,e,e,at,e,e,e,e,at#e,e,at,e,e,e,tq,e,e,at,e,e,e,yq#e,e,e,yq,e,e,e,e,at,e,e,at,e,e,e,at,e,e,at,e,e,e,e,e,e,e,yq,e,e,yq,e,e,e,e,e,e,e,i,e,e,at,e,e,at,e,e,e,e,e,at,e#e,e,i,e,e,e,tq,e,e#e,e,at,e,e,at,e,e,e,e,e,i,e,e,e,tq,e,e,yq,e,e,e,e,tq,e,e,at,e,e,e,yq,e,e,e,e,yq,e,e,tq#e,e,at,e,e,i,e,e,e,at,e,e,e,tq,e,e,at,e,e,i,e,e,e,i,e,e,at,e,e,e,e,e,yq,e,e,e,e,e,at,e,e,e,e,e,e,e,at,e,e,e,i,e,e,yq#e,e,e,e,e,at,e,e,e,e,e,e,e,e,at,e,e,tq,yq,e,e#e,e,e,e,e,e,e,e,e,e,e,tq,e,e,tq,e,e,e,e,e,e,at,e,e,at,e,e,at#e,e,yq,e,e,e,e,e,tq,e,e,at,e,e,e,e,yq,e,e,tq,e,e,e#e,e,i,e,e,e,i,e,e,e,e,e,e,yq#e,e,at,e,e,e#e,e,e,i,e,e,yq,e,e,tq,e,e,at,e,e,e,e,e,at,e,e,at,e,e,e,e,e,e,at,e,e,e,e,e,e,e,yq,e,e,e,e,i,e,yq,e,e,at,e,e,e,yq,e,e,at,e,e,at,e#e,e,at,e,e,e,e,e,e,tq,e,e,at,e,e,at,e,e,i,e,e,e,e,e,e,at,e,e,e,e,e,at,e,e,tq,e,e#e,e,i,e,e,e,yq,e,e,e,e,at,e,e,e,yq,e,e,at,e,e,i,e,e,e,e,e,i,e,e,e,at,e,e,e,e,e,e,e,e,e,e,e,yq#e,e,i,e,e,e,e,e,e,e,e,e,e,at,e#e,e,at,e,e,e,at,e,e,e,at,e,e,e,e,at#e,e,tq,e,e,e,e,at,e,e,e,at,e,e,e,e,at#e,e,yq,e,e,tq,e,e,e,e,e,e,e,e,e,e,at#e,e,i,e,e,e,at,e,e,i,e,e,e,e,e,at,e,e,e,at,e,e,at,e,e,e,yq,e,e,at,e,e,at,e,e,tq,e,e,yq,e,e,e,e,e,e,at,e,e,at,e,e,e,e,e,e,at,e#e,e,at,e,e,e,e,e,e,at,yq,e,e,at,e,e,e,at,e,e,e,yq,e,e,at,e,e,at,e,e,e,e,e,e,e,e,e,e,at,e,e,e,e,e,i,e#e,e,yq,e,e,at,e,e,at,e,e,e,at,e,e,e,e,at,e,e,e,at,e,e,tq,e,e,at,e,e,at,e,e,e,e,e,tq,e,e,e,e,at,e,e,yq,e,e,yq,e,e#e,e,i,e,e,e,at,e,e,at,e,e,e,e,at,e,e,e,e,e,e,e,e,at,e,e,yq,e,e,e,e,e,e,e,e,yq,e,e,yq,e,e,tq,e,e,e,e,at,e,e,e,e,e,i,e#e,e,yq,e,e,at,e,e,e,at,e,e,e,at,e,e,yq,e,e,yq,e,e,at,e,e,e,e,e,at,e,e,e,yq,e,e,yq#e,e,at,e,e,i,e,e,e,tq,e,e,tq,e,e,e#e,e,at,e,e,e,i,e,e,e#e,e,e,e,e,e,e,e,at,e,e,tq,e,e,e,e,yq,e,e,e,e,e,e,e,e,tq,e,e,at,e,e,e,e,e,e,at,e,e,e,e,e,at,e#e,e,at,e,e,e,e,at,e,e,tq,e,e,e,e,yq,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,i,e,e,e#e,e,at,yq,e,e,at,e,e,at,e,e,yq,e,e,e,e,yq,e,e,at,e#e,e,yq,e,e,e,e,e,at,e,e,i,e,e,e,e,e,at,e,e,e,e,e,tq,e,e,at,e,e,at,e,e,at,e,e,e,e,e,e,e,e,at,e,e,e,e,e
+FBDFA constructed
+<tujno,"e,e,yq,e,e,i,e,e,e,at,e,e,e,e,at,e,e,e,e,e,at">
+<tujno,"e,e,yq,e,e,at">
+<gyd568489,"e,e,at,e,e,e,yq,e,e,at,e,e,tq"><gyd568489,"e,e,e,tq"><gyd568489,"e,e,i,e,e,at,e,e,e,tq"><gyd568489,"e,e,e,e,e,yq,e,e,e,e,tq"><io839,"e,e,i,e">
+<gyd568489,"e,e,e,e,yq,e,e,e,e,at,e,e,tq"><io839,"e,e,i,e,e,e,at,e,e,e,e,at,e,e,e,e,e,at,e,e"><Error,"i,e,e,e,e,e,at,e">
+<gyd568489,"e,e,e,e,e,e,e,e,e,e,e,e,yq,e,e,yq,e,e,at,e,e,at,e,e,at,e,e,e,yq,e,e,e,e,e,e,e,e,e,e,yq,e,e,at,e,e,tq"><tujno,"e,e,e,e,at,e,e,e,e,at">
+<gyd568489,"e,e,at,e,e,e,tq"><io839,"e,e,at,e,e,e,yq">
+<io839,"e,e,e,yq,e,e,e,e,at,e,e,at,e,e,e,at,e,e,at,e,e,e,e,e,e,e,yq,e,e,yq,e,e,e,e,e,e,e,i,e,e,at,e,e,at,e,e,e,e,e,at,e">
+<gyd568489,"e,e,i,e,e,e,tq"><io839,"e,e">
+<gyd568489,"e,e,at,e,e,at,e,e,e,e,e,i,e,e,e,tq"><gyd568489,"e,e,yq,e,e,e,e,tq"><gyd568489,"e,e,at,e,e,e,yq,e,e,e,e,yq,e,e,tq">
+<io839,"e,e,at,e,e"><Error,"i,e,e,e,at,e,e,e,tq,e,e,at,e,e,i,e,e,e,i,e,e,at,e,e,e,e,e,yq,e,e,e,e,e,at,e,e,e,e,e,e,e,at,e,e,e,i,e,e,yq">
+<gyd568489,"e,e,e,e,e,at,e,e,e,e,e,e,e,e,at,e,e,tq"><Error,"yq,e,e">
+<gyd568489,"e,e,e,e,e,e,e,e,e,e,e,tq"><gyd568489,"e,e,tq"><tujno,"e,e,e,e,e,e,at,e,e,at,e,e,at">
+<gyd568489,"e,e,yq,e,e,e,e,e,tq"><gyd568489,"e,e,at,e,e,e,e,yq,e,e,tq"><io839,"e,e,e">
+<io839,"e,e,i,e,e,e,i,e,e,e,e,e,e,yq">
+<io839,"e,e,at,e,e,e">
+<io839,"e,e,e"><Error,"i,e,e,yq,e,e,tq,e,e,at,e,e,e,e,e,at,e,e,at,e,e,e,e,e,e,at,e,e,e,e,e,e,e,yq,e,e,e,e,i,e,yq,e,e,at,e,e,e,yq,e,e,at,e,e,at,e">
+<gyd568489,"e,e,at,e,e,e,e,e,e,tq"><io839,"e,e,at,e,e,at,e,e"><Error,"i,e,e,e,e,e,e,at,e,e,e,e,e,at,e,e,tq,e,e">
+<io839,"e,e,i,e,e,e,yq,e,e,e,e,at,e,e,e,yq,e,e,at,e,e"><Error,"i,e,e,e,e,e,i,e,e,e,at,e,e,e,e,e,e,e,e,e,e,e,yq">
+<io839,"e,e,i,e,e,e,e,e,e,e,e,e,e,at,e">
+<tujno,"e,e,at,e,e,e,at,e,e,e,at,e,e,e,e,at">
+<gyd568489,"e,e,tq"><tujno,"e,e,e,e,at,e,e,e,at,e,e,e,e,at">
+<gyd568489,"e,e,yq,e,e,tq"><tujno,"e,e,e,e,e,e,e,e,e,e,at">
+<io839,"e,e,i,e,e,e,at,e,e"><Error,"i,e,e,e,e,e,at,e,e,e,at,e,e,at,e,e,e,yq,e,e,at,e,e,at,e,e,tq,e,e,yq,e,e,e,e,e,e,at,e,e,at,e,e,e,e,e,e,at,e">
+<tujno,"e,e,at,e,e,e,e,e,e,at"><Error,"yq,e,e,at,e,e,e,at,e,e,e,yq,e,e,at,e,e,at,e,e,e,e,e,e,e,e,e,e,at,e,e,e,e,e,i,e">
+<gyd568489,"e,e,yq,e,e,at,e,e,at,e,e,e,at,e,e,e,e,at,e,e,e,at,e,e,tq"><gyd568489,"e,e,at,e,e,at,e,e,e,e,e,tq"><io839,"e,e,e,e,at,e,e,yq,e,e,yq,e,e">
+<gyd568489,"e,e,i,e,e,e,at,e,e,at,e,e,e,e,at,e,e,e,e,e,e,e,e,at,e,e,yq,e,e,e,e,e,e,e,e,yq,e,e,yq,e,e,tq"><io839,"e,e,e,e,at,e,e,e,e,e,i,e">
+<io839,"e,e,yq,e,e,at,e,e,e,at,e,e,e,at,e,e,yq,e,e,yq,e,e,at,e,e,e,e,e,at,e,e,e,yq,e,e,yq">
+<io839,"e,e,at,e,e"><Error,"i,e,e,e,tq,e,e,tq,e,e,e">
+<io839,"e,e,at,e,e,e,i,e,e,e">
+<gyd568489,"e,e,e,e,e,e,e,e,at,e,e,tq"><gyd568489,"e,e,e,e,yq,e,e,e,e,e,e,e,e,tq"><io839,"e,e,at,e,e,e,e,e,e,at,e,e,e,e,e,at,e">
+<gyd568489,"e,e,at,e,e,e,e,at,e,e,tq"><io839,"e,e,e,e,yq,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,i,e,e,e">
+<tujno,"e,e,at"><Error,"yq,e,e,at,e,e,at,e,e,yq,e,e,e,e,yq,e,e,at,e">
+<io839,"e,e,yq,e,e,e,e,e,at,e,e"><Error,"i,e,e,e,e,e,at,e,e,e,e,e,tq,e,e,at,e,e,at,e,e,at,e,e,e,e,e,e,e,e,at,e,e,e,e,e">
+
+
