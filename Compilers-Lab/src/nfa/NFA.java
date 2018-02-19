@@ -360,7 +360,9 @@ public class NFA {
 
 	//			String[] inputActions = fbdfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
 
-	public static String rawInputFBDFAsTosOutputString(ArrayList<String> rawInputFBNFAs){
+	public static String rawInputFBDFAsToOutputString(ArrayList<String> rawInputFBNFAs){
+		
+		System.out.println("ajsjasiojaiosjiojsaiojiosa");
 		StringBuilder sb = new StringBuilder("");
 		for (int i = 0; i < rawInputFBNFAs.size(); i++) {
 			String currRawInputNFA = rawInputFBNFAs.get(i);
@@ -377,9 +379,10 @@ public class NFA {
 				String [] transitions = nfaState[5].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 				String [] inputs = nfaState[6].split(FAConsts.SECONDARY_SEPERATOR_STRING);
 
-
 				myNfa = new NFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);				
-				String nfaDFAInput = myNfa.toDfaOutput(false);
+				String nfaDFAInput = myNfa.toDfaOutput(true);
+				System.out.println(nfaDFAInput);
+				
 				sb.append(Utils.appendNewLine("FBNFA constructed"));
 				sb.append(Utils.appendNewLine("Equivalent FBDFA:"));
 				
@@ -406,11 +409,11 @@ public class NFA {
 				
 				for (int j = 0; j < splitNewDFAAcceptStates.length; j++) {					
 					String currNewDFAAcceptState = splitNewDFAAcceptStates[0];
-					String [] currNewDFAAcceptStateTokens = currNewDFAAcceptState.split(FAConsts.STAR);
+					System.out.println(currNewDFAAcceptState);
+					String [] currNewDFAAcceptStateTokens = currNewDFAAcceptState.split("\\*");
 					for (int k = 0; k < currNewDFAAcceptStateTokens.length; k++) {
 						String currStateToken = currNewDFAAcceptStateTokens[k];
 						if(acceptedStatesTreeSet.contains(currStateToken)){
-//							get action for newFBDFAActionsArray[j]
 							newFBDFAActionsArray[j] = stateActionMap.get(currStateToken);
 							break;
 						}
@@ -427,7 +430,9 @@ public class NFA {
 				
 				// actions to new actions
 				
+				sb.append(String.join(System.lineSeparator(), splitRawInputFBDFA));
 				sb.append(DFA.rawInputFBDFAToOutputString(String.join(System.lineSeparator(), splitRawInputFBDFA)));
+				sb.append("\n");
 				
 				System.out.println(sb.toString());
 				

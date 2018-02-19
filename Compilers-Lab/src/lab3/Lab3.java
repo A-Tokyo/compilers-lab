@@ -55,7 +55,7 @@ public class Lab3 {
 		
 
 		ArrayList<String> rawInputFBNFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
-		String resultFileTextFBNFAs = DFA.rawInputFBDFAsToOutputString(rawInputFBNFAs);
+		String resultFileTextFBNFAs = NFA.rawInputFBDFAsToOutputString(rawInputFBNFAs);
 		Utils.writeOutputFile(resultFileTextFBNFAs, DEFAULT_OUT_FILEPATH);
 	}
 }
