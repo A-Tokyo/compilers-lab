@@ -173,6 +173,16 @@ public class DFA {
 	public static String generateLeximStr(String action,  Iterable<? extends CharSequence> input) {
 		return "<" + action + ",\"" + String.join(",", input) + "\">";
 	}
+	
+	public String[] generateFallBackForInputs(TreeMap<String, String> actions) {
+		String[] toReturn = new String[this.inputs.length];
+		for (int i = 0; i < this.inputs.length; i++) {
+			String currInput = inputs[i];
+			String currResult = generateFallBackForInput(currInput.split(FAConsts.NORMAL_SEPERATOR_STRING), actions);
+			toReturn[i] = currResult;
+		}
+		return toReturn;
+	}
 
 	public String generateFallBackForInput(String[] input, TreeMap<String, String> actions) {
 		StringBuilder sb = new StringBuilder("");
