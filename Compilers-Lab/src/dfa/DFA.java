@@ -188,76 +188,44 @@ public class DFA {
 		StringBuilder sb = new StringBuilder("");
 		String currState = this.startState;
 
+		ArrayList<String> currInput = new ArrayList<String>(Arrays.asList(input));
 		String lastAcceptedState = null;
 		int lastAcceptedStateTerminationIndex = -1;
 
-		ArrayList<String> currInput = new ArrayList<String>(Arrays.asList(input));
-
-		for (int i = 0; i < currInput.size(); i++) {
-			String currAlphabetKey = currInput.get(i);
+		for (int i = 0; i < input.length; i++) {
+			String currAlphabetKey = input[i];
 			if (!this.alphabet.contains(currAlphabetKey)) {
 				// break due to error and append error lexim
 				break;
-				//				return "Invalid input string at " + currAlphabetKey;
 			}
-			if (hasTransitionFor(currState)) {
-//				System.out.println("index: " + i + " item: " + currInput.get(i) + " size: " + currInput.size());
-				
+			if (hasTransitionFor(currState)) {			
 				StateTransitions currStateTransition = this.transitions.get(currState);
 				String nextState = currStateTransition.getTransitionStateFor(currAlphabetKey);
 				currState = nextState;
 				// new code for fallback
 				if (isAcceptedState(currState)) {
-					System.out.println("isAcceptedState(currState) " + currState);
 					lastAcceptedState = currState;
-					lastAcceptedStateTerminationIndex = i + 1;
-				}
-				
-				
-				if (i == currInput.size() - 1) {
+					lastAcceptedStateTerminationIndex = i;
+				}			
+				if (i == input.length - 1) {
 					// rejected
 					if(lastAcceptedState != null){
-						System.out.println("lastAcceptedState != null: " + lastAcceptedState);
 						// get input array till last accepted state
-						ArrayList<String> lastAcceptedInput = new ArrayList<String>(currInput.subList(0, lastAcceptedStateTerminationIndex));				
+						ArrayList<String> lastAcceptedInput = new ArrayList<String>(currInput.subList(0, lastAcceptedStateTerminationIndex + 1));				
 						// generate Lexim with the array above  lastAcceptedInput
-						String lexim = generateLeximStr(actions.get(lastAcceptedState), lastAcceptedInput);
-						sb.append(lexim);
-						
-//						System.out.println("lastAcceptedInput");
-//						
-//						System.out.println(lastAcceptedInput);
-//						System.out.println(lastAcceptedState);
-//						System.out.println(lexim);
-//						System.out.println(actions);
-						
-						
-						System.out.println("actions get " + actions.get(lastAcceptedState));
-
-
-						/* reset loop */
-						// sublist the currInput List
-						currInput.subList(0, lastAcceptedStateTerminationIndex).clear();
-						break;
-						// reset loop counter
-//						i = -1;
-						// reset accept state tracking
-//						lastAcceptedState = null;
-//						lastAcceptedStateTerminationIndex = -1;
+						sb.append(generateLeximStr(actions.get(lastAcceptedState), lastAcceptedInput));
+						// update currInput
+						currInput = new ArrayList<String>(currInput.subList(lastAcceptedStateTerminationIndex + 1, currInput.size()));
 					}
 				}
 			} else {
-				currState = null;
-				// rejected here
+				System.err.println("Missing transition in DFA");
 			}
-
-
 		}
-		
+
 		// append error
-		if(currInput.size() != 0){
-			String lexim = generateLeximStr("Error", currInput);
-			sb.append(lexim);	
+		if(currInput.size() > 0){
+			sb.append(generateLeximStr("Error", currInput));	
 		}
 
 		return sb.toString();
