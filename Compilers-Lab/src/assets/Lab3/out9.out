@@ -1,0 +1,30 @@
+FBNFA constructed
+Equivalent FBDFA:
+mj,ct510*eqrc*kf9*mj*oi8*va,eqrc,fe3*kf9,ct510*eqrc*kf9*mj*oi8,eqrc*mj,ct510*eqrc*fe3*kf9*mj,ct510*kf9*mj*oi8,fe3*kf9*mj,ct510*mj,eqrc*fe3*kf9,ct510*eqrc*fe3*kf9*mj*oi8*va,ct510*fe3*kf9*mj,Dead
+mj,ct510*eqrc*kf9*mj*oi8*va,ct510*eqrc*kf9*mj*oi8,eqrc*mj,ct510*eqrc*fe3*kf9*mj,ct510*kf9*mj*oi8,fe3*kf9*mj,ct510*mj,ct510*eqrc*fe3*kf9*mj*oi8*va,ct510*fe3*kf9*mj
+au,au,au,au,au,au,au,au,au,au
+wb,pc,lj,ag,iw,qs,dr
+mj
+mj,Dead,wb#mj,ct510*eqrc*kf9*mj*oi8*va,pc#mj,Dead,lj#mj,eqrc,ag#mj,eqrc,iw#mj,mj,qs#mj,fe3*kf9,dr#ct510*eqrc*kf9*mj*oi8*va,Dead,wb#ct510*eqrc*kf9*mj*oi8*va,ct510*eqrc*kf9*mj*oi8*va,pc#ct510*eqrc*kf9*mj*oi8*va,ct510*eqrc*kf9*mj*oi8*va,lj#ct510*eqrc*kf9*mj*oi8*va,ct510*eqrc*kf9*mj*oi8,ag#ct510*eqrc*kf9*mj*oi8*va,ct510*eqrc*kf9*mj*oi8*va,iw#ct510*eqrc*kf9*mj*oi8*va,eqrc*mj,qs#ct510*eqrc*kf9*mj*oi8*va,ct510*eqrc*fe3*kf9*mj,dr#eqrc,Dead,wb#eqrc,Dead,pc#eqrc,Dead,lj#eqrc,ct510*kf9*mj*oi8,ag#eqrc,Dead,iw#eqrc,Dead,qs#eqrc,eqrc,dr#fe3*kf9,Dead,wb#fe3*kf9,fe3*kf9*mj,pc#fe3*kf9,fe3*kf9,lj#fe3*kf9,Dead,ag#fe3*kf9,Dead,iw#fe3*kf9,eqrc,qs#fe3*kf9,fe3*kf9,dr#ct510*eqrc*kf9*mj*oi8,Dead,wb#ct510*eqrc*kf9*mj*oi8,ct510*eqrc*kf9*mj*oi8*va,pc#ct510*eqrc*kf9*mj*oi8,ct510*mj,lj#ct510*eqrc*kf9*mj*oi8,ct510*eqrc*kf9*mj*oi8,ag#ct510*eqrc*kf9*mj*oi8,ct510*eqrc*kf9*mj*oi8,iw#ct510*eqrc*kf9*mj*oi8,eqrc*mj,qs#ct510*eqrc*kf9*mj*oi8,eqrc*fe3*kf9,dr#eqrc*mj,Dead,wb#eqrc*mj,ct510*eqrc*kf9*mj*oi8*va,pc#eqrc*mj,Dead,lj#eqrc*mj,ct510*eqrc*kf9*mj*oi8,ag#eqrc*mj,eqrc,iw#eqrc*mj,mj,qs#eqrc*mj,eqrc*fe3*kf9,dr#ct510*eqrc*fe3*kf9*mj,Dead,wb#ct510*eqrc*fe3*kf9*mj,ct510*eqrc*fe3*kf9*mj*oi8*va,pc#ct510*eqrc*fe3*kf9*mj,ct510*fe3*kf9*mj,lj#ct510*eqrc*fe3*kf9*mj,ct510*eqrc*kf9*mj*oi8,ag#ct510*eqrc*fe3*kf9*mj,ct510*eqrc*kf9*mj*oi8,iw#ct510*eqrc*fe3*kf9*mj,eqrc*mj,qs#ct510*eqrc*fe3*kf9*mj,eqrc*fe3*kf9,dr#ct510*kf9*mj*oi8,Dead,wb#ct510*kf9*mj*oi8,ct510*eqrc*kf9*mj*oi8*va,pc#ct510*kf9*mj*oi8,ct510*mj,lj#ct510*kf9*mj*oi8,eqrc,ag#ct510*kf9*mj*oi8,ct510*eqrc*kf9*mj*oi8,iw#ct510*kf9*mj*oi8,eqrc*mj,qs#ct510*kf9*mj*oi8,fe3*kf9,dr#fe3*kf9*mj,Dead,wb#fe3*kf9*mj,ct510*eqrc*fe3*kf9*mj*oi8*va,pc#fe3*kf9*mj,fe3*kf9,lj#fe3*kf9*mj,eqrc,ag#fe3*kf9*mj,eqrc,iw#fe3*kf9*mj,eqrc*mj,qs#fe3*kf9*mj,fe3*kf9,dr#ct510*mj,Dead,wb#ct510*mj,ct510*eqrc*kf9*mj*oi8*va,pc#ct510*mj,ct510*mj,lj#ct510*mj,eqrc,ag#ct510*mj,ct510*eqrc*kf9*mj*oi8,iw#ct510*mj,mj,qs#ct510*mj,fe3*kf9,dr#eqrc*fe3*kf9,Dead,wb#eqrc*fe3*kf9,fe3*kf9*mj,pc#eqrc*fe3*kf9,fe3*kf9,lj#eqrc*fe3*kf9,ct510*kf9*mj*oi8,ag#eqrc*fe3*kf9,Dead,iw#eqrc*fe3*kf9,eqrc,qs#eqrc*fe3*kf9,eqrc*fe3*kf9,dr#ct510*eqrc*fe3*kf9*mj*oi8*va,Dead,wb#ct510*eqrc*fe3*kf9*mj*oi8*va,ct510*eqrc*fe3*kf9*mj*oi8*va,pc#ct510*eqrc*fe3*kf9*mj*oi8*va,ct510*eqrc*fe3*kf9*mj*oi8*va,lj#ct510*eqrc*fe3*kf9*mj*oi8*va,ct510*eqrc*kf9*mj*oi8,ag#ct510*eqrc*fe3*kf9*mj*oi8*va,ct510*eqrc*kf9*mj*oi8*va,iw#ct510*eqrc*fe3*kf9*mj*oi8*va,eqrc*mj,qs#ct510*eqrc*fe3*kf9*mj*oi8*va,ct510*eqrc*fe3*kf9*mj,dr#ct510*fe3*kf9*mj,Dead,wb#ct510*fe3*kf9*mj,ct510*eqrc*fe3*kf9*mj*oi8*va,pc#ct510*fe3*kf9*mj,ct510*fe3*kf9*mj,lj#ct510*fe3*kf9*mj,eqrc,ag#ct510*fe3*kf9*mj,ct510*eqrc*kf9*mj*oi8,iw#ct510*fe3*kf9*mj,eqrc*mj,qs#ct510*fe3*kf9*mj,fe3*kf9,dr#Dead,Dead,wb#Dead,Dead,pc#Dead,Dead,lj#Dead,Dead,ag#Dead,Dead,iw#Dead,Dead,qs#Dead,Dead,dr
+pc,qs,pc,ag#pc,iw,pc,pc,pc,pc,pc,iw,pc,iw,pc,ag,pc,qs,pc,pc,pc,pc,iw,pc,qs#pc,iw,pc,pc,qs,pc,qs,ag,ag,pc,pc,pc,iw,pc,qs,pc,pc,pc,qs,pc,ag,pc,ag,pc,ag,pc,qs,pc,qs,pc,dr,pc,lj,qs,pc,ag#pc,ag,ag,ag,pc,qs,qs,pc,qs,pc,lj,pc,pc,pc,qs#qs,pc,qs,pc,pc#pc,pc,pc,qs,pc,dr,pc,qs,pc,iw,qs,pc,lj,pc,dr,pc,dr,pc,pc,pc,ag,pc,ag,pc,qs,qs,pc,pc,dr,pc,pc,qs#pc,qs,pc,iw,pc,pc,pc,pc,ag,ag,pc,qs,pc,pc,pc,qs,pc,dr,pc,pc,qs,pc,pc,pc,lj#pc,iw,pc,pc#ag,ag,pc,qs,pc,qs#qs,pc,pc,iw,pc,pc,pc,qs,pc,pc,pc,pc,pc,pc,iw,pc,pc,pc,qs,pc,pc,pc,qs,pc,dr,qs#pc,pc,pc#pc,pc,pc,qs,pc,pc,pc,qs,pc,pc,pc,pc,pc,ag,pc,pc,pc,qs,pc,qs,pc,qs,pc,qs,pc,qs,pc,pc,ag,ag#pc,pc,pc,qs,pc,qs#pc,dr,pc,qs,qs,pc,dr,iw,pc,iw,dr,iw,dr,lj,pc,ag,ag#pc,pc,pc,iw,pc,iw,dr,iw,dr,lj,pc,ag,ag,pc,pc,pc,iw,ag,ag,pc,ag,pc,qs,pc,qs,pc,pc,pc,pc,pc,pc,pc,ag,pc,pc,iw,pc,iw,dr,iw,dr,lj,pc,pc,pc#pc,pc,pc,pc,pc,lj,qs,pc,qs,pc,pc,pc,dr,pc,dr,pc,iw,pc,qs,pc,qs,pc,qs,ag,ag,pc#pc,iw,pc,qs,qs,pc,pc,pc,pc,qs,pc,ag,pc,qs,ag,ag,pc,dr#pc,pc,qs,pc,qs,pc,iw,pc,iw,pc,qs,pc,dr,pc,pc,pc,qs,pc,qs,pc,qs,pc,qs,pc,pc,pc,pc,pc,pc,pc,pc,pc,ag,ag,pc,ag,ag,pc,iw,iw,pc,iw,dr,iw,dr,lj,pc,pc,dr,pc,ag,pc,pc,iw,ag,ag,pc,ag,qs,pc,qs,pc,qs,ag,ag,pc,qs,pc,pc,ag,ag,pc,iw,pc,dr,pc,pc,qs,pc,iw,pc,dr,pc,qs,ag,ag,pc,qs,pc,ag,pc,qs,pc,qs
+FBDFA constructed
+<au,"pc,qs,pc,ag">
+<au,"pc,iw,pc,pc,pc,pc,pc,iw,pc,iw,pc,ag,pc,qs,pc,pc,pc,pc,iw,pc,qs">
+<au,"pc,iw,pc,pc,qs,pc,qs,ag,ag,pc,pc,pc,iw,pc,qs,pc,pc,pc,qs,pc,ag,pc,ag,pc,ag,pc,qs,pc,qs,pc,dr,pc,lj,qs,pc,ag">
+<au,"pc,ag,ag,ag,pc,qs,qs,pc,qs,pc,lj,pc,pc,pc,qs">
+<au,"qs,pc,qs,pc,pc">
+<au,"pc,pc,pc,qs,pc,dr,pc,qs,pc,iw,qs,pc,lj,pc,dr,pc,dr,pc,pc,pc,ag,pc,ag,pc,qs,qs,pc,pc,dr,pc,pc,qs">
+<au,"pc,qs,pc,iw,pc,pc,pc,pc,ag,ag,pc,qs,pc,pc,pc,qs,pc,dr,pc,pc,qs,pc,pc,pc,lj">
+<au,"pc,iw,pc,pc">
+<au,"ag,ag,pc,qs,pc,qs">
+<au,"qs,pc,pc,iw,pc,pc,pc,qs,pc,pc,pc,pc,pc,pc,iw,pc,pc,pc,qs,pc,pc,pc,qs,pc,dr,qs">
+<au,"pc,pc,pc">
+<au,"pc,pc,pc,qs,pc,pc,pc,qs,pc,pc,pc,pc,pc,ag,pc,pc,pc,qs,pc,qs,pc,qs,pc,qs,pc,qs,pc,pc,ag,ag">
+<au,"pc,pc,pc,qs,pc,qs">
+<au,"pc,dr,pc,qs,qs,pc,dr,iw,pc,iw,dr,iw,dr,lj,pc,ag,ag">
+<au,"pc,pc,pc,iw,pc,iw,dr,iw,dr,lj,pc,ag,ag,pc,pc,pc,iw,ag,ag,pc,ag,pc,qs,pc,qs,pc,pc,pc,pc,pc,pc,pc,ag,pc,pc,iw,pc,iw,dr,iw,dr,lj,pc,pc,pc">
+<au,"pc,pc,pc,pc,pc,lj,qs,pc,qs,pc,pc,pc,dr,pc,dr,pc,iw,pc,qs,pc,qs,pc,qs,ag,ag,pc">
+<au,"pc,iw,pc,qs,qs,pc,pc,pc,pc,qs,pc,ag,pc,qs,ag,ag,pc,dr">
+<au,"pc,pc,qs,pc,qs,pc,iw,pc,iw,pc,qs,pc,dr,pc,pc,pc,qs,pc,qs,pc,qs,pc,qs,pc,pc,pc,pc,pc,pc,pc,pc,pc,ag,ag,pc,ag,ag,pc,iw,iw,pc,iw,dr,iw,dr,lj,pc,pc,dr,pc,ag,pc,pc,iw,ag,ag,pc,ag,qs,pc,qs,pc,qs,ag,ag,pc,qs,pc,pc,ag,ag,pc,iw,pc,dr,pc,pc,qs,pc,iw,pc,dr,pc,qs,ag,ag,pc,qs,pc,ag,pc,qs,pc,qs">
+
+

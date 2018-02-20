@@ -1,0 +1,18 @@
+FBNFA constructed
+Equivalent FBDFA:
+dw2*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,Dead
+dw2*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro
+vb,vb,vb
+vs,nr,b,o,q,nd
+dw2*eqj0*hcy*hxt*lcy*nu3*ro
+dw2*eqj0*hcy*hxt*lcy*nu3*ro,Dead,vs#dw2*eqj0*hcy*hxt*lcy*nu3*ro,dw2*eqj0*hcy*hxt*lcy*nu3*ro,nr#dw2*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,b#dw2*eqj0*hcy*hxt*lcy*nu3*ro,dw2*eqj0*hcy*hxt*lcy*nu3*ro,o#dw2*eqj0*hcy*hxt*lcy*nu3*ro,dw2*eqj0*hcy*hxt*lcy*nu3*ro,q#dw2*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,nd#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,Dead,vs#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,nr#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,b#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,dw2*eqj0*hcy*hxt*lcy*nu3*ro,o#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,dw2*eqj0*hcy*hxt*lcy*nu3*ro,q#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,nd#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,Dead,vs#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,nr#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*ro,b#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,dw2*eqj0*hcy*hxt*lcy*nu3*ro,o#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,dw2*eqj0*hcy*hxt*lcy*nu3*ro,q#dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,dw2*dyq95*eqj0*hcy*hxt*lcy*nu3*qdt*ro,nd#Dead,Dead,vs#Dead,Dead,nr#Dead,Dead,b#Dead,Dead,o#Dead,Dead,q#Dead,Dead,nd
+nr,b,nd,nd,nr,o,nd,q,o,b,o,b,o,b,nr,nr,b,b,q,nr,o,nd,nd,o,nr,b,q,nr,o,q#nr,b,nr,b,nr,q,q,nr,o,nr,o,nr,q,nd,nr,b,nr,o,q,nr,o#nr,o,nr,o,nr,b#nr,o,nd,nr,b,nr,b#nr,b,nr,q,nr,o#nr,nr,o,b,o,b,o,b,nr,nr,b,b,q,nr,o,nd,nd,o,nr,o,nr,b,q,nr,nd,nr,b,nd,nr,o,nr,b,nr,o,nr,nr,nd,nr,b,nr,nd
+FBDFA constructed
+<vb,"nr,b,nd,nd,nr,o,nd,q,o,b,o,b,o,b,nr,nr,b,b,q,nr,o,nd,nd,o,nr,b,q,nr,o,q">
+<vb,"nr,b,nr,b,nr,q,q,nr,o,nr,o,nr,q,nd,nr,b,nr,o,q,nr,o">
+<vb,"nr,o,nr,o,nr,b">
+<vb,"nr,o,nd,nr,b,nr,b">
+<vb,"nr,b,nr,q,nr,o">
+<vb,"nr,nr,o,b,o,b,o,b,nr,nr,b,b,q,nr,o,nd,nd,o,nr,o,nr,b,q,nr,nd,nr,b,nd,nr,o,nr,b,nr,o,nr,nr,nd,nr,b,nr,nd">
+
+

@@ -1,0 +1,43 @@
+FBNFA constructed
+Equivalent FBDFA:
+cy52*kx11,cy52*kx11*pgv,Dead
+cy52*kx11,cy52*kx11*pgv
+dn,dn
+n,q,rp,g,su,r,ul,uu,ol,em
+cy52*kx11
+cy52*kx11,Dead,n#cy52*kx11,cy52*kx11,q#cy52*kx11,cy52*kx11,rp#cy52*kx11,cy52*kx11*pgv,g#cy52*kx11,Dead,su#cy52*kx11,Dead,r#cy52*kx11,cy52*kx11*pgv,ul#cy52*kx11,cy52*kx11,uu#cy52*kx11,Dead,ol#cy52*kx11,Dead,em#cy52*kx11*pgv,Dead,n#cy52*kx11*pgv,cy52*kx11,q#cy52*kx11*pgv,cy52*kx11,rp#cy52*kx11*pgv,cy52*kx11*pgv,g#cy52*kx11*pgv,Dead,su#cy52*kx11*pgv,cy52*kx11,r#cy52*kx11*pgv,cy52*kx11*pgv,ul#cy52*kx11*pgv,cy52*kx11,uu#cy52*kx11*pgv,Dead,ol#cy52*kx11*pgv,cy52*kx11*pgv,em#Dead,Dead,n#Dead,Dead,q#Dead,Dead,rp#Dead,Dead,g#Dead,Dead,su#Dead,Dead,r#Dead,Dead,ul#Dead,Dead,uu#Dead,Dead,ol#Dead,Dead,em
+uu,q,g,rp,q,rp,uu,uu,uu,q,g#q,g,ul,q,g,uu,q,g,q,g,q,ul,q,ul#q,g,q,ul,rp,q,rp,uu,q,ul,q,q,ul,q,q#q,q,uu,uu,q,g,q,g,q,q,q,g,q,q,ul,q,g#q,g,q,q,q,q,q,ul,q,g,rp,q,rp,uu,q,ul,q,g,ul#ul,uu,uu,q,g,q,g,q,g,q,g,q,g,q,g,q,q,q,g,q,ul,q,q#q,ul,uu,uu,q,q,q,g#q,ul,q,q,q,g,ul,q,ul,q,ul,q,ul,rp,q,rp,uu,q,ul,q,q,rp,q,rp,uu,ul,ul,q,ul,uu,uu,q,g,ul#uu,q,g,q,g#rp,q,rp,uu,uu,q,q,q,ul,q,ul,q,q,q,ul,q,ul,uu,ul,rp,q,rp,uu,q,q,q,g#q,g,rp,q,rp,uu,uu,q,q,rp,q,rp,uu,ul,q,g,q,g,ul,q,q,uu,uu,q,g,q,q,rp,q,rp,uu,q,q,uu,q,q#q,g,q,g,rp,q,rp,uu,q,ul,q,g,rp,q,rp,uu,rp,q,rp,uu,q,q,q,q,rp,q,rp,uu,q,ul,q,g#q,g,uu#rp,q,rp,uu,q,g,q,g,q,g,uu#uu,q,ul,q,g,rp,q,rp,uu,q,g,q,q,q,ul,q,ul,q,g#q,q,ul,uu,uu,q,g,uu,rp,q,rp,uu,q,g,uu,q,g,q,ul,uu#rp,q,rp,uu,ul,ul,q,ul,q,q,q,q,q,ul,q,q,q,ul,q,q,q,ul,q,ul#q,ul,ul,uu,ul,q,ul,q,g,q,q,ul,q,g,q,g,ul,ul,q,q,q,ul#q,q,q,q,rp,q,rp,uu,q,q,uu,ul,q,q,q,g,uu,uu,rp,q,rp,uu,rp,q,rp,uu,q,q,uu,q,ul,q,g,q,ul,q,ul,q,g,q,g#q,g,q,g#q,g,rp,q,rp,uu,q,g,ul,q,g,q,ul,q,ul,q,q,uu,q,g,q,g,q,g,q,g#uu,rp,q,rp,uu,q,g,q,ul,uu,q,g,q,ul,q,g#q,q,ul,q,q,ul,q,ul,uu,q,q#q,q,uu,ul,q,g,uu,rp,q,rp,uu,q,q,q,ul#uu,q,ul,q,q,q,g,ul,q,ul,uu,q,q,q,ul,uu,q,ul,q,g#q,q,ul,uu,q,g,q,g,q,ul,q,q,uu#ul,q,g,uu,q,ul,ul,q,g,q,q,q,g,q,q,q,q,q,g,rp,q,rp,uu,rp,q,rp,uu,q,q#uu,rp,q,rp,uu,q,q,q,ul,q,q,q,q,q,g,ul,uu,q,q,uu,q,ul,q,q,q,g#rp,q,rp,uu,q,ul,uu,q,g,q,q,rp,q,rp,uu,q,q,rp,q,rp,uu,q,ul,uu,rp,q,rp,uu#q,q,uu,uu,q,ul,q,g,q,g,rp,q,rp,uu,uu,ul,q,q,rp,q,rp,uu,rp,q,rp,uu,uu#q,q,q,g,q,g,q,ul,q,g,q,ul,ul,q,g,q,g,q,g,rp,q,rp,uu,rp,q,rp,uu,q,g,ul,q,ul,q,g,q,ul,q,ul,q,q,uu,q,ul,rp,q,rp,uu,q,q,q,ul,q,g,ul,rp,q,rp,uu,ul,q,g,rp,q,rp,uu,ul,q,ul,q,g,q,ul,ul,q,ul,q,ul,q,g,q,g,rp,q,rp,uu,q,g,q,ul,q,ul,rp,q,rp,uu,rp,q,rp,uu,rp,q,rp,uu,rp,q,rp,uu,uu,q,ul,ul,ul
+FBDFA constructed
+<dn,"uu,q,g,rp,q,rp,uu,uu,uu,q,g">
+<dn,"q,g,ul,q,g,uu,q,g,q,g,q,ul,q,ul">
+<dn,"q,g,q,ul,rp,q,rp,uu,q,ul,q,q,ul,q,q">
+<dn,"q,q,uu,uu,q,g,q,g,q,q,q,g,q,q,ul,q,g">
+<dn,"q,g,q,q,q,q,q,ul,q,g,rp,q,rp,uu,q,ul,q,g,ul">
+<dn,"ul,uu,uu,q,g,q,g,q,g,q,g,q,g,q,g,q,q,q,g,q,ul,q,q">
+<dn,"q,ul,uu,uu,q,q,q,g">
+<dn,"q,ul,q,q,q,g,ul,q,ul,q,ul,q,ul,rp,q,rp,uu,q,ul,q,q,rp,q,rp,uu,ul,ul,q,ul,uu,uu,q,g,ul">
+<dn,"uu,q,g,q,g">
+<dn,"rp,q,rp,uu,uu,q,q,q,ul,q,ul,q,q,q,ul,q,ul,uu,ul,rp,q,rp,uu,q,q,q,g">
+<dn,"q,g,rp,q,rp,uu,uu,q,q,rp,q,rp,uu,ul,q,g,q,g,ul,q,q,uu,uu,q,g,q,q,rp,q,rp,uu,q,q,uu,q,q">
+<dn,"q,g,q,g,rp,q,rp,uu,q,ul,q,g,rp,q,rp,uu,rp,q,rp,uu,q,q,q,q,rp,q,rp,uu,q,ul,q,g">
+<dn,"q,g,uu">
+<dn,"rp,q,rp,uu,q,g,q,g,q,g,uu">
+<dn,"uu,q,ul,q,g,rp,q,rp,uu,q,g,q,q,q,ul,q,ul,q,g">
+<dn,"q,q,ul,uu,uu,q,g,uu,rp,q,rp,uu,q,g,uu,q,g,q,ul,uu">
+<dn,"rp,q,rp,uu,ul,ul,q,ul,q,q,q,q,q,ul,q,q,q,ul,q,q,q,ul,q,ul">
+<dn,"q,ul,ul,uu,ul,q,ul,q,g,q,q,ul,q,g,q,g,ul,ul,q,q,q,ul">
+<dn,"q,q,q,q,rp,q,rp,uu,q,q,uu,ul,q,q,q,g,uu,uu,rp,q,rp,uu,rp,q,rp,uu,q,q,uu,q,ul,q,g,q,ul,q,ul,q,g,q,g">
+<dn,"q,g,q,g">
+<dn,"q,g,rp,q,rp,uu,q,g,ul,q,g,q,ul,q,ul,q,q,uu,q,g,q,g,q,g,q,g">
+<dn,"uu,rp,q,rp,uu,q,g,q,ul,uu,q,g,q,ul,q,g">
+<dn,"q,q,ul,q,q,ul,q,ul,uu,q,q">
+<dn,"q,q,uu,ul,q,g,uu,rp,q,rp,uu,q,q,q,ul">
+<dn,"uu,q,ul,q,q,q,g,ul,q,ul,uu,q,q,q,ul,uu,q,ul,q,g">
+<dn,"q,q,ul,uu,q,g,q,g,q,ul,q,q,uu">
+<dn,"ul,q,g,uu,q,ul,ul,q,g,q,q,q,g,q,q,q,q,q,g,rp,q,rp,uu,rp,q,rp,uu,q,q">
+<dn,"uu,rp,q,rp,uu,q,q,q,ul,q,q,q,q,q,g,ul,uu,q,q,uu,q,ul,q,q,q,g">
+<dn,"rp,q,rp,uu,q,ul,uu,q,g,q,q,rp,q,rp,uu,q,q,rp,q,rp,uu,q,ul,uu,rp,q,rp,uu">
+<dn,"q,q,uu,uu,q,ul,q,g,q,g,rp,q,rp,uu,uu,ul,q,q,rp,q,rp,uu,rp,q,rp,uu,uu">
+<dn,"q,q,q,g,q,g,q,ul,q,g,q,ul,ul,q,g,q,g,q,g,rp,q,rp,uu,rp,q,rp,uu,q,g,ul,q,ul,q,g,q,ul,q,ul,q,q,uu,q,ul,rp,q,rp,uu,q,q,q,ul,q,g,ul,rp,q,rp,uu,ul,q,g,rp,q,rp,uu,ul,q,ul,q,g,q,ul,ul,q,ul,q,ul,q,g,q,g,rp,q,rp,uu,q,g,q,ul,q,ul,rp,q,rp,uu,rp,q,rp,uu,rp,q,rp,uu,rp,q,rp,uu,uu,q,ul,ul,ul">
+
+

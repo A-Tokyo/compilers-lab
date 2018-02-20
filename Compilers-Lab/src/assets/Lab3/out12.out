@@ -1,0 +1,30 @@
+FBNFA constructed
+Equivalent FBDFA:
+fet*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,Dead
+fet*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe
+xy,ge
+51,0,74,44,4,2,3,02,97,65,9
+fet*tqe
+fet*tqe,Dead,51#fet*tqe,Dead,0#fet*tqe,Dead,74#fet*tqe,Dead,44#fet*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,4#fet*tqe,fet*tqe,2#fet*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,3#fet*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,02#fet*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,97#fet*tqe,Dead,65#fet*tqe,fet*tqe,9#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,Dead,51#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,Dead,0#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,74#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,44#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,4#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,2#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,3#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,02#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,97#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,65#fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,fet*gn*ic1*lp*nbaez*psx*pzmi*qj483*tqe,9#Dead,Dead,51#Dead,Dead,0#Dead,Dead,74#Dead,Dead,44#Dead,Dead,4#Dead,Dead,2#Dead,Dead,3#Dead,Dead,02#Dead,Dead,97#Dead,Dead,65#Dead,Dead,9
+2,3,4,44,4,44,97#3,4,74,4,4,4,4,97#4,74,3,9,2,4,44,2,74,3,4,02,97,02,4,4,3,4,44#2,4,4,4,74,97,4,4,4,44,02,4,4,74,3,02,3,97,02,4,44,9,9,3,4,4,2#97,4,44,74,3,97,97#4,4,74,02,2,4,44,4,44,2,97,97,4#4,4,74,4,44,4,4,74,3,97,74,3,3,3,9,4,74#3,9,02,9,9,4,4,4,44,4,4#9,4,44,4,44,4#97,97,02#4,3,74,3,02,3,4,74,4,74,2,4,97#4,74,2,4,4,4,44,4,44,4,44,9,3,2,2,97,2,3,2,4,44#97,4,4,9,4,74,2,4,44,02,02,3,74,3,4,74,2,3,74,3,3,4,74,4,44,97#4,74,3,4,4,74,4,74,97,4,4,3,97,02,4,74,02,4,44,9,4,4,44,4,02,9,74,3,2#74,3,4,02,2,4,44,2,97,97,4,44,2,4,4,44,97#74,3,4,44,3,4,74,2,02,97,4,44,74,3,4,4,4,44,97,3,2,2,3,97,4,44,4,44,4,9#97,4,44,4,4,4,44,74,3,4,4,97,02,4,97,2,4,4,74,2,9,9,4,74,3,02#9,97,4,4,4,4,44,74,3,4,4,3,4,02,4,44,4,3,9,4,74,3,02,74,3,3,4,44,4,74,3,4,4,74,4,44,4,44,4,44,02,97,74,3,74,3,02,97,4,44,3,97,97,4,74,2
+FBDFA constructed
+<ge,"2,3,4,44,4,44,97">
+<ge,"3,4,74,4,4,4,4,97">
+<ge,"4,74,3,9,2,4,44,2,74,3,4,02,97,02,4,4,3,4,44">
+<ge,"2,4,4,4,74,97,4,4,4,44,02,4,4,74,3,02,3,97,02,4,44,9,9,3,4,4,2">
+<ge,"97,4,44,74,3,97,97">
+<ge,"4,4,74,02,2,4,44,4,44,2,97,97,4">
+<ge,"4,4,74,4,44,4,4,74,3,97,74,3,3,3,9,4,74">
+<ge,"3,9,02,9,9,4,4,4,44,4,4">
+<ge,"9,4,44,4,44,4">
+<ge,"97,97,02">
+<ge,"4,3,74,3,02,3,4,74,4,74,2,4,97">
+<ge,"4,74,2,4,4,4,44,4,44,4,44,9,3,2,2,97,2,3,2,4,44">
+<ge,"97,4,4,9,4,74,2,4,44,02,02,3,74,3,4,74,2,3,74,3,3,4,74,4,44,97">
+<ge,"4,74,3,4,4,74,4,74,97,4,4,3,97,02,4,74,02,4,44,9,4,4,44,4,02,9,74,3,2">
+<Error,"74,3,4,02,2,4,44,2,97,97,4,44,2,4,4,44,97">
+<Error,"74,3,4,44,3,4,74,2,02,97,4,44,74,3,4,4,4,44,97,3,2,2,3,97,4,44,4,44,4,9">
+<ge,"97,4,44,4,4,4,44,74,3,4,4,97,02,4,97,2,4,4,74,2,9,9,4,74,3,02">
+<ge,"9,97,4,4,4,4,44,74,3,4,4,3,4,02,4,44,4,3,9,4,74,3,02,74,3,3,4,44,4,74,3,4,4,74,4,44,4,44,4,44,02,97,74,3,74,3,02,97,4,44,3,97,97,4,74,2">
+
+

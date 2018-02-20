@@ -1,0 +1,43 @@
+FBNFA constructed
+Equivalent FBDFA:
+fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*qk*tjray,Dead
+fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*qk*tjray
+zcc0,zcc0
+rs,cx,cz,cr,sv,t,qo,d,f,zx,p
+fbu*ii15*jz*ka*tjray
+fbu*ii15*jz*ka*tjray,Dead,rs#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*qk*tjray,cx#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*qk*tjray,cz#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*tjray,cr#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*qk*tjray,sv#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*tjray,t#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*qk*tjray,qo#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*tjray,d#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*qk*tjray,f#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*tjray,zx#fbu*ii15*jz*ka*tjray,fbu*ii15*jz*ka*tjray,p#fbu*ii15*jz*ka*qk*tjray,Dead,rs#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*qk*tjray,cx#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*qk*tjray,cz#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*tjray,cr#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*qk*tjray,sv#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*tjray,t#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*qk*tjray,qo#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*tjray,d#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*qk*tjray,f#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*tjray,zx#fbu*ii15*jz*ka*qk*tjray,fbu*ii15*jz*ka*tjray,p#Dead,Dead,rs#Dead,Dead,cx#Dead,Dead,cz#Dead,Dead,cr#Dead,Dead,sv#Dead,Dead,t#Dead,Dead,qo#Dead,Dead,d#Dead,Dead,f#Dead,Dead,zx#Dead,Dead,p
+sv,f,f#t,cr,cr,cz,t,zx,cr,sv,cx,d,cz,t,qo,t,sv,cx,cx#cx,sv,sv#d,f,sv,f,cz,t,zx,zx,cz,t,zx,sv,d,cx,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx#cx,cz,cz,cr,t,cx,f,f,cr,cx,sv,cr,cx,d,cx,d,cr,cz,qo,cz#f,t,sv,qo,zx,d,cx,cr,cx,cz,t,sv,sv,t,t,cr,cz,t,zx,zx#cz,cz,sv,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,qo,t,qo,f,cx#cr,cx,cz,f,sv,sv,f,cx,sv,t,cr,cr,cr,d,f,cx#cr,sv,f,cr,f,sv#cz,cx,d,f,cx,zx,cx,cz#cx,sv,f,cr,d,sv,cr,d,zx,cz,t,t#f,cr,qo,zx,qo,qo,cz,sv,cz,d,zx,cz,cx,t,f,f#f,cz,cz,qo,zx,cz,sv,zx,cz,zx,cr,t,zx,qo,f,zx,qo,cx,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx#cr,cz,cx,f,cr,zx,f,d,f,d,cz,t,sv,cz,qo,t,cz,sv#d,t,f,zx,f,sv,t#zx,sv,cz,f,cz,cr,f,cr#sv,qo,cz,cx,f,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,cx,cr,cx,f#f,zx,zx,qo,cz,d,t,sv,cr,t,cr,sv,t,zx,cx,cr,cz,sv,qo#d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,f,zx,qo,cx,f,zx,zx,t,qo,zx,t,zx,f,qo,cz,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx#f,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,t,sv,cx,cz,t,f,cz,cz,f,f,f,qo,cx,cz,cz#qo,qo,cr,f,sv,cz,cx,d,cx,qo,t,cx,zx,zx,cr,qo#cr,cx,cr,t,qo,t,t,sv,qo,d,zx,qo,f,qo#f,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,f,cx,cz,cz,sv,cz,cr,cz#cz,sv,f,cz,cx,sv,cz#cz,cx,sv,zx,cz,cz,zx,sv,cx,cr,cr,f,d,zx,cr,cx,cz,sv,qo,t,zx#cr,qo,f,cx,zx,zx#t,zx,cr,sv,cx,cr,cz,zx,f#cx,cz,cx,cr,cx,f,cz,zx,sv,f,zx,zx,zx,f,cz,zx#t,qo,sv,cx,t#cx,t,cz,cx#cx,t,cz,zx,qo,cr,t,cr,cr,cx,cz,cr,d,d,cr,cr,cz,qo,cx,f,cr,f,sv,d,t,sv,sv,t,f,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,qo,d,cr,f
+FBDFA constructed
+<zcc0,"sv,f,f">
+<zcc0,"t,cr,cr,cz,t,zx,cr,sv,cx,d,cz,t,qo,t,sv,cx,cx">
+<zcc0,"cx,sv,sv">
+<zcc0,"d,f,sv,f,cz,t,zx,zx,cz,t,zx,sv,d,cx,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx">
+<zcc0,"cx,cz,cz,cr,t,cx,f,f,cr,cx,sv,cr,cx,d,cx,d,cr,cz,qo,cz">
+<zcc0,"f,t,sv,qo,zx,d,cx,cr,cx,cz,t,sv,sv,t,t,cr,cz,t,zx,zx">
+<zcc0,"cz,cz,sv,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,qo,t,qo,f,cx">
+<zcc0,"cr,cx,cz,f,sv,sv,f,cx,sv,t,cr,cr,cr,d,f,cx">
+<zcc0,"cr,sv,f,cr,f,sv">
+<zcc0,"cz,cx,d,f,cx,zx,cx,cz">
+<zcc0,"cx,sv,f,cr,d,sv,cr,d,zx,cz,t,t">
+<zcc0,"f,cr,qo,zx,qo,qo,cz,sv,cz,d,zx,cz,cx,t,f,f">
+<zcc0,"f,cz,cz,qo,zx,cz,sv,zx,cz,zx,cr,t,zx,qo,f,zx,qo,cx,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx">
+<zcc0,"cr,cz,cx,f,cr,zx,f,d,f,d,cz,t,sv,cz,qo,t,cz,sv">
+<zcc0,"d,t,f,zx,f,sv,t">
+<zcc0,"zx,sv,cz,f,cz,cr,f,cr">
+<zcc0,"sv,qo,cz,cx,f,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,cx,cr,cx,f">
+<zcc0,"f,zx,zx,qo,cz,d,t,sv,cr,t,cr,sv,t,zx,cx,cr,cz,sv,qo">
+<zcc0,"d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,f,zx,qo,cx,f,zx,zx,t,qo,zx,t,zx,f,qo,cz,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx">
+<zcc0,"f,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,t,sv,cx,cz,t,f,cz,cz,f,f,f,qo,cx,cz,cz">
+<zcc0,"qo,qo,cr,f,sv,cz,cx,d,cx,qo,t,cx,zx,zx,cr,qo">
+<zcc0,"cr,cx,cr,t,qo,t,t,sv,qo,d,zx,qo,f,qo">
+<zcc0,"f,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,f,cx,cz,cz,sv,cz,cr,cz">
+<zcc0,"cz,sv,f,cz,cx,sv,cz">
+<zcc0,"cz,cx,sv,zx,cz,cz,zx,sv,cx,cr,cr,f,d,zx,cr,cx,cz,sv,qo,t,zx">
+<zcc0,"cr,qo,f,cx,zx,zx">
+<zcc0,"t,zx,cr,sv,cx,cr,cz,zx,f">
+<zcc0,"cx,cz,cx,cr,cx,f,cz,zx,sv,f,zx,zx,zx,f,cz,zx">
+<zcc0,"t,qo,sv,cx,t">
+<zcc0,"cx,t,cz,cx">
+<zcc0,"cx,t,cz,zx,qo,cr,t,cr,cr,cx,cz,cr,d,d,cr,cr,cz,qo,cx,f,cr,f,sv,d,t,sv,sv,t,f,d,d,t,d,p,p,cx,d,p,f,cz,qo,f,cz,f,f,zx,qo,d,cr,f">
+
+

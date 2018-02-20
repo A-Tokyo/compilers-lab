@@ -1,0 +1,19 @@
+FBNFA constructed
+Equivalent FBDFA:
+ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,ex0*gj*lj*lpl*oja58,gj*oja58,ex0*gj*lj*lpl*oja58*uf,lj,Dead
+ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,ex0*gj*lj*lpl*oja58,gj*oja58,ex0*gj*lj*lpl*oja58*uf,lj
+gp,gcw8,yg77305240,gcw8,zcdz
+06,4,05,58,54,84,45,9
+ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq
+ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,Dead,06#ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,ex0*gj*lj*lpl*oja58,4#ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,gj*oja58,05#ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,58#ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,54#ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,84#ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,45#ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,ex0*gj*lj*lpl*oja58*uf,9#ex0*gj*lj*lpl*oja58,Dead,06#ex0*gj*lj*lpl*oja58,ex0*gj*lj*lpl*oja58,4#ex0*gj*lj*lpl*oja58,Dead,05#ex0*gj*lj*lpl*oja58,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,58#ex0*gj*lj*lpl*oja58,ex0*gj*lj*lpl*oja58,54#ex0*gj*lj*lpl*oja58,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,84#ex0*gj*lj*lpl*oja58,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,45#ex0*gj*lj*lpl*oja58,ex0*gj*lj*lpl*oja58,9#gj*oja58,Dead,06#gj*oja58,lj,4#gj*oja58,Dead,05#gj*oja58,ex0*gj*lj*lpl*oja58,58#gj*oja58,gj*oja58,54#gj*oja58,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,84#gj*oja58,Dead,45#gj*oja58,Dead,9#ex0*gj*lj*lpl*oja58*uf,Dead,06#ex0*gj*lj*lpl*oja58*uf,ex0*gj*lj*lpl*oja58,4#ex0*gj*lj*lpl*oja58*uf,lj,05#ex0*gj*lj*lpl*oja58*uf,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,58#ex0*gj*lj*lpl*oja58*uf,ex0*gj*lj*lpl*oja58,54#ex0*gj*lj*lpl*oja58*uf,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,84#ex0*gj*lj*lpl*oja58*uf,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,45#ex0*gj*lj*lpl*oja58*uf,ex0*gj*lj*lpl*oja58,9#lj,Dead,06#lj,ex0*gj*lj*lpl*oja58,4#lj,Dead,05#lj,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,58#lj,Dead,54#lj,Dead,84#lj,ex0*gj*hs5*lj*lpl*lu519*oja58*wm*zq,45#lj,ex0*gj*lj*lpl*oja58,9#Dead,Dead,06#Dead,Dead,4#Dead,Dead,05#Dead,Dead,58#Dead,Dead,54#Dead,Dead,84#Dead,Dead,45#Dead,Dead,9
+4,9,4,4,4,9,54,4,58,54,05,45,58,84,9,05,84,9,4,54,54,4,58,4,4,54,4,4#05,4,4,9,4,58,54,4,58,4,9,05,54,05,45,58,84,9,05,84,9,4,4,58,9,54,05,45,58,84,9,05,84,9,4,9,9,05,9#4,05,4,58,54,05,4,4,58,05,05,9,4,58,4,4,9,4,9#54,4,58,4,4,4,58,9,54,05,45,58,84,9,05,84,9,4,4,4,4,58,4,54#54,9,05,4,58,4,58,4,58#4,4,54,54,05,9,9,54,4,4,58,4,4,4,4,05,54,54,4,4,54,4,54,05,45,58,84,9,05,84,9,4,05,4,4#54,4,58,9,54,54,05,9,4,58,4,4,4,4,54,9,4,58,9,54,05,54,05,45,58,84,9,05,84,9,4,4,58,4,4,4,58,54,4,58,54,05,45,58,84,9,05,84,9,4,4,4,4,4,58,9,9
+FBDFA constructed
+<yg77305240,"4,9,4,4,4,9,54,4,58,54,05"><zcdz,"45,58,84,9,05"><gcw8,"84,9,4,54,54,4,58,4,4,54,4,4">
+<gcw8,"05,4,4,9,4,58,54,4,58,4,9"><yg77305240,"05,54"><yg77305240,"05"><zcdz,"45,58,84,9,05"><gcw8,"84,9,4,4,58,9,54"><yg77305240,"05"><zcdz,"45,58,84,9,05"><gcw8,"84,9,4,9,9"><yg77305240,"05"><gcw8,"9">
+<Error,"4,05,4,58,54,05,4,4,58,05,05,9,4,58,4,4,9,4,9">
+<gcw8,"54,4,58,4,4,4,58,9,54"><yg77305240,"05"><zcdz,"45,58,84,9,05"><gcw8,"84,9,4,4,4,4,58,4,54">
+<gp,"54,9,05,4,58,4,58,4,58">
+<gcw8,"4,4,54,54"><yg77305240,"05"><gcw8,"9,9,54,4,4,58,4,4,4,4"><gcw8,"05,54,54,4,4,54,4,54"><yg77305240,"05"><zcdz,"45,58,84,9,05"><gcw8,"84,9,4"><gcw8,"05,4,4">
+<gcw8,"54,4,58,9,54,54"><yg77305240,"05"><gcw8,"9,4,58,4,4,4,4,54,9,4,58,9,54"><yg77305240,"05,54"><yg77305240,"05"><zcdz,"45,58,84,9,05"><yg77305240,"84,9,4,4,58,4,4,4,58,54,4,58,54,05"><zcdz,"45,58,84,9,05"><gcw8,"84,9,4,4,4,4,4,58,9,9">
+
+
