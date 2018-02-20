@@ -310,7 +310,7 @@ public class NFA {
 		if(toDFAInput){
 			return resultSB.toString();
 		}
-		
+
 		resultSB.append(DFA.constructorInputDFAToOutputString(DFA_states.toArray(new String[0]), DFA_acceptedStates.toArray(new String[0]),
 				DFA_alphabet,
 				DFA_startState,
@@ -361,7 +361,7 @@ public class NFA {
 	//			String[] inputActions = fbdfaState[2].split(FAConsts.NORMAL_SEPERATOR_STRING);
 
 	public static String rawInputFBDFAsToOutputString(ArrayList<String> rawInputFBNFAs){
-		
+
 		System.out.println("ajsjasiojaiosjiojsaiojiosa");
 		StringBuilder sb = new StringBuilder("");
 		for (int i = 0; i < rawInputFBNFAs.size(); i++) {
@@ -382,44 +382,53 @@ public class NFA {
 				myNfa = new NFA(states, acceptedStates, alphabet, acceptState, transitions, inputs);				
 				String nfaDFAInput = myNfa.toDfaOutput(true);
 				System.out.println(nfaDFAInput);
-				
+
 				sb.append(Utils.appendNewLine("FBNFA constructed"));
 				sb.append(Utils.appendNewLine("Equivalent FBDFA:"));
-				
+
 				String [] splitNfaDFAInput = nfaDFAInput.split(System.lineSeparator());
-				
+
 				String [] splitRawInputFBDFA = new String [7];
-				
+
 				TreeMap<String, String> stateActionMap = new TreeMap<String, String>();
-				for (int j = 0; j < inputActions.length; j++) {
+				for (int j = 0; j < acceptedStates.length; j++) {
 					stateActionMap.put(acceptedStates[j], inputActions[j]);
 				}
-				
+				System.err.println("stateActionMap" + stateActionMap);
+
 				TreeSet<String> acceptedStatesTreeSet = new TreeSet<String>();
 				for (int j = 0; j < acceptedStates.length; j++) {
 					acceptedStatesTreeSet.add(acceptedStates[j]);
+					//					System.out.println(acceptedStatesTreeSet);
+					System.err.println(acceptedStatesTreeSet);
 				}
-				
-				
+
+
 				String newDFAAcceptStates = splitNfaDFAInput[1];
-								
+
 				String [] splitNewDFAAcceptStates = newDFAAcceptStates.split(FAConsts.NORMAL_SEPERATOR_STRING);
-				
+
 				String [] newFBDFAActionsArray = new String[splitNewDFAAcceptStates.length];
-				
-				for (int j = 0; j < splitNewDFAAcceptStates.length; j++) {					
-					String currNewDFAAcceptState = splitNewDFAAcceptStates[0];
-					System.out.println(currNewDFAAcceptState);
+
+				for (int j = 0; j < splitNewDFAAcceptStates.length; j++) {			
+					String currNewDFAAcceptState = splitNewDFAAcceptStates[j];
+					System.out.println("currNewDFAAcceptState: " + currNewDFAAcceptState);
 					String [] currNewDFAAcceptStateTokens = currNewDFAAcceptState.split("\\*");
+
+					System.out.println("^ with length: " + currNewDFAAcceptStateTokens.length);
+
 					for (int k = 0; k < currNewDFAAcceptStateTokens.length; k++) {
 						String currStateToken = currNewDFAAcceptStateTokens[k];
 						if(acceptedStatesTreeSet.contains(currStateToken)){
+							System.err.println("currStateToken: "+currStateToken);
 							newFBDFAActionsArray[j] = stateActionMap.get(currStateToken);
 							break;
 						}
 					}
+
+					System.err.println(j);
 				}
-				
+
 				splitRawInputFBDFA[0] = splitNfaDFAInput[0];
 				splitRawInputFBDFA[1] = newDFAAcceptStates;
 				splitRawInputFBDFA[2] = String.join(FAConsts.NORMAL_SEPERATOR_STRING, newFBDFAActionsArray);
@@ -427,15 +436,15 @@ public class NFA {
 				splitRawInputFBDFA[4] = splitNfaDFAInput[3];
 				splitRawInputFBDFA[5] = splitNfaDFAInput[4];
 				splitRawInputFBDFA[6] = splitNfaDFAInput[5];
-				
+
 				// actions to new actions
-				
+
 				sb.append(String.join(System.lineSeparator(), splitRawInputFBDFA));
 				sb.append(DFA.rawInputFBDFAToOutputString(String.join(System.lineSeparator(), splitRawInputFBDFA)));
 				sb.append("\n");
-				
+
 				System.out.println(sb.toString());
-				
+
 			} catch (Error e) {
 				sb.append(Utils.appendNewLine(e.getMessage()));
 			}
