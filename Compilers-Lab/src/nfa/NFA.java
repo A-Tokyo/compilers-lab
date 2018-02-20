@@ -439,17 +439,14 @@ public class NFA {
 
 				// actions to new actions
 
-				sb.append(String.join(System.lineSeparator(), splitRawInputFBDFA));
-				sb.append(DFA.rawInputFBDFAToOutputString(String.join(System.lineSeparator(), splitRawInputFBDFA)));
-				sb.append("\n");
-
-				System.out.println(sb.toString());
-
+				sb.append(Utils.appendNewLine(String.join(System.lineSeparator(), splitRawInputFBDFA)));
+				sb.append(Utils.appendNewLine("FBDFA constructed"));
+				sb.append(Utils.appendNewLine(DFA.rawInputFBDFAToOutputString(String.join(System.lineSeparator(), splitRawInputFBDFA))));
 			} catch (Error e) {
 				sb.append(Utils.appendNewLine(e.getMessage()));
 			}
 		}
-		return Utils.trimLastChar(sb.toString());
+		return sb.toString();
 	}
 
 }
