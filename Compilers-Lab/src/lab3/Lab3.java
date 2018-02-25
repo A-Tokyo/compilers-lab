@@ -11,8 +11,8 @@ import nfa.NFA;
 import utils.Utils;
 
 public class Lab3 {
-	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/NFAin.in";
-	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/myNFAout.out";
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/in0.in";
+	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/myOut0.out";
 	
 	public static ArrayList<String> parseFileToDFAs(String inFilePath) throws FileNotFoundException, IOException{
 		BufferedReader br;
