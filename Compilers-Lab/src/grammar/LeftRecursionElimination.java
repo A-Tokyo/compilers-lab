@@ -1,6 +1,8 @@
 package grammar;
 import java.util.ArrayList;
 
+import utils.GRConsts;
+
 public class LeftRecursionElimination {
 	public Grammar leftRecursionEliminator(Grammar inGrammar) {
 		Grammar grammar = inGrammar;
@@ -99,8 +101,6 @@ public class LeftRecursionElimination {
 			GrammarRule rulePrime = new GrammarRule(rulePrimeHead);
 			ArrayList<String> rulePrimeBody = rulePrime.getBody();
 
-			String epsilon = "!";
-
 			for (String beta : currentRuleBetas) {
 				String newBodyElement;
 				if (currentRuleAlphas.isEmpty()) {
@@ -116,7 +116,7 @@ public class LeftRecursionElimination {
 				rulePrimeBody.add(newBodyElement);
 			}
 
-			rulePrimeBody.add(epsilon);
+			rulePrimeBody.add(GRConsts.EPSILON);
 			newRules.add(ruleReCreated);
 			if (rulePrime.getBody().size() > 1) {
 				primeRules.add(rulePrime);
