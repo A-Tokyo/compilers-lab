@@ -31,7 +31,7 @@ public class LeftRecursionEliminator {
 						}
 					}
 
-					if (currSubString.length() > 0) {
+					if (!currSubString.isEmpty()) {
 						int targetIndex = ruleBody.indexOf(currentProduction);
 						String targtElement = "";
 						GrammarRule matchingRule = null;
@@ -66,8 +66,8 @@ public class LeftRecursionEliminator {
 			ArrayList<String> currentRuleAlphas = currentRule.getAlphas();
 
 			for (String bodyElement : currentRuleBody) {
-				if (ruleHead.length() == 0){
-					break;
+				if (ruleHead.isEmpty()){
+					continue;
 				}
 				if (ruleHead.length() == 1) {
 					if (ruleHead.equals(bodyElement.charAt(0) + "")) {
@@ -94,23 +94,17 @@ public class LeftRecursionEliminator {
 			ArrayList<String> rulePrimeBody = rulePrime.getBody();
 
 			for (String beta : currentRuleBetas) {
-				String newBodyElement;
-				if (currentRuleAlphas.isEmpty()) {
-					newBodyElement = beta;
-				} else {
-					newBodyElement = beta + rulePrimeHead;
-				}
+				String newBodyElement = currentRuleAlphas.isEmpty() ? beta : beta + rulePrimeHead;
 				ruleReCreatedBody.add(newBodyElement);
 			}
 
 			for (String alpha : currentRuleAlphas) {
-				String newBodyElement = alpha + rulePrimeHead;
-				rulePrimeBody.add(newBodyElement);
+				rulePrimeBody.add(alpha + rulePrimeHead);
 			}
 
 			rulePrimeBody.add(GRConsts.EPSILON);
 			newRules.add(ruleReCreated);
-			if (rulePrime.getBody().size() > 1) {
+			if (rulePrimeBody.size() > 1) {
 				primeRules.add(rulePrime);
 			}
 		}
