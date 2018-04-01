@@ -1,0 +1,8 @@
+rexpr
+rexprUrterm|rterm
+rterm
+rtermrfactor|rfactor
+rfactor
+rfactor*|rprimary
+rprimary
+a|b

@@ -10,6 +10,10 @@ public class Utils {
 		return str + System.lineSeparator();
 	}
 	
+	public static String appendSpace(String str){
+		return str + " ";
+	}
+	
 	public static void writeOutputFile(String fileText, String outFilePath)
 			throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(outFilePath));
