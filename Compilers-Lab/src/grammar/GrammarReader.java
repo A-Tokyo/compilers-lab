@@ -9,29 +9,30 @@ public class GrammarReader {
 	public Grammar read(String filename) throws IOException {
 		Grammar grammar = new Grammar();
 		GrammarRule rule = null;
-		FileReader file1 = new FileReader(filename);
-		FileReader file2 = new FileReader(filename);
-		BufferedReader br1 = new BufferedReader(file1);
-		BufferedReader br2 = new BufferedReader(file2);
+		BufferedReader br = null;
 		GrammarRule currentRule = null;
 		boolean isTerminal = true;
 		String substring = "";
 		String lineString;
 
-		int currLineIndex = 1;
-		while ((lineString = br1.readLine()) != null) {
-			if ((currLineIndex & 1) != 0) {
+		br = new BufferedReader(new FileReader(filename));
+		
+		int currLineIndex = 0;
+		while ((lineString = br.readLine()) != null) {
+			if ((currLineIndex & 1) == 0) {
 				rule = new GrammarRule(lineString);
 				grammar.getNonTerminals().add(lineString);
 				grammar.getRules().add(rule);
 			}
 			currLineIndex++;
 		}
-		file1.close();
+		
+		br.close();
+		br = new BufferedReader(new FileReader(filename));
 
-		currLineIndex = 1;
-		while ((lineString = br2.readLine()) != null) {
-			if ((currLineIndex & 1) != 0) {
+		currLineIndex = 0;
+		while ((lineString = br.readLine()) != null) {
+			if ((currLineIndex & 1) == 0) {
 				for (int i = 0; i < grammar.getRules().size(); i++) {
 					if (grammar.getRules().get(i).getHead().equals(lineString)) {
 						currentRule = grammar.getRules().get(i);
@@ -87,7 +88,7 @@ public class GrammarReader {
 			}
 			currLineIndex++;
 		}
-		file2.close();
+		br.close();
 
 		return grammar;
 	}
