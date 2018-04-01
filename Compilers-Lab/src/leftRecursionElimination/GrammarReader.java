@@ -6,7 +6,7 @@ import java.io.IOException;
 public class GrammarReader {
 	private static final String GRAMMAR_RULE_SPLITTER = "\\|";
 	
-	public Grammar reader(String filename) throws IOException {
+	public Grammar read(String filename) throws IOException {
 		Grammar grammar = new Grammar();
 		GrammarRule rule = null;
 		FileReader file1 = new FileReader(filename);
