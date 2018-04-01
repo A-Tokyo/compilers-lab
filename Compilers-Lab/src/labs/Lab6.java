@@ -6,20 +6,20 @@ import java.io.IOException;
 
 import grammar.Grammar;
 import grammar.GrammarReader;
-import grammar.LeftRecursionElimination;
+import grammar.LeftRecursionEliminator;
 
 public class Lab6 {
 	private static String DEFAULT_IN_FILEPATH_PREFIX = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab6/";
 	
 	public static void runTask() throws IOException {
-		LeftRecursionElimination leftRecursuionEliminator = new LeftRecursionElimination();
+		LeftRecursionEliminator leftRecursuionEliminator = new LeftRecursionEliminator();
 		BufferedWriter br = null;
 		for (int i = 1; i < 8; i++) {
 			String inFilePath = DEFAULT_IN_FILEPATH_PREFIX + "test"+i+".in";
 			String outFilePath = DEFAULT_IN_FILEPATH_PREFIX + "test"+i+".out";
 
 			Grammar inGrammar = new GrammarReader().read(inFilePath);
-			Grammar outGrammar = leftRecursuionEliminator.leftRecursionEliminator(inGrammar);
+			Grammar outGrammar = leftRecursuionEliminator.eliminateLeftRecursion(inGrammar);
 			
 			br = new BufferedWriter(new FileWriter(outFilePath));
 			br.write(outGrammar.toString());

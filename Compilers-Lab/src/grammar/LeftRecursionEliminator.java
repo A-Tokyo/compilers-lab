@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 import utils.GRConsts;
 
-public class LeftRecursionElimination {
-	public Grammar leftRecursionEliminator(Grammar inGrammar) {
+public class LeftRecursionEliminator {
+	public Grammar eliminateLeftRecursion(Grammar inGrammar) {
 		Grammar grammar = inGrammar;
 		ArrayList<GrammarRule> rules = grammar.getRules();
 		ArrayList<String> nonTerminals = grammar.getNonTerminals();
@@ -12,53 +12,53 @@ public class LeftRecursionElimination {
 		for (int i = 1; i < rules.size(); i++) {
 			GrammarRule rule = rules.get(i);
 			ArrayList<String> ruleBody = rule.getBody();
-
 			for (int j = 0; j < ruleBody.size(); j++) {
 				String currentProduction = ruleBody.get(j);
 
 				for (int k = 0; k < i; k++) {
-					String currentNonTerminal = nonTerminals.get(k);
-					String subString = "";
+					String currNonTerminal = nonTerminals.get(k);
+					String currSubString = "";
 
-					if (currentNonTerminal.length() == 1) {
-						if (currentNonTerminal.equals(currentProduction.charAt(0) + "")) {
+					if (currNonTerminal.length() == 1) {
+						if (currNonTerminal.equals(currentProduction.charAt(0) + "")) {
 							int subStringEnd = currentProduction.length();
-							subString = currentProduction.substring(1, subStringEnd);
+							currSubString = currentProduction.substring(1, subStringEnd);
 						}
-					} else if (currentNonTerminal.length() > 1) {
-						int nonTerminalEndIndex = currentNonTerminal.length();
+					} else if (currNonTerminal.length() > 1) {
+						int nonTerminalEndIndex = currNonTerminal.length();
 						if (nonTerminalEndIndex > currentProduction.length()) {
 							nonTerminalEndIndex = currentProduction.length();
 						}
-						if (currentNonTerminal.equals(currentProduction.substring(0, nonTerminalEndIndex))) {
-							subString = currentProduction.substring(nonTerminalEndIndex, currentProduction.length());
+						if (currNonTerminal.equals(currentProduction.substring(0, nonTerminalEndIndex))) {
+							currSubString = currentProduction.substring(nonTerminalEndIndex, currentProduction.length());
 						}
 					}
 
-					if (subString.length() > 0) {
+					if (currSubString.length() > 0) {
 						int targetIndex = ruleBody.indexOf(currentProduction);
 						String targtElement = "";
 						GrammarRule matchingRule = null;
 
 						for (GrammarRule currentRule : rules) {
-							if (currentRule.getHead().equals(currentNonTerminal)) {
+							if (currentRule.getHead().equals(currNonTerminal)) {
 								matchingRule = currentRule;
 								break;
 							}
 						}
-						int startingIndex = matchingRule.getBody().size() - 1;
+						
+						int startIndex = matchingRule.getBody().size() - 1;
 						ruleBody.remove(targetIndex);
 
-						for (int l = startingIndex; l >= 0; l--) {
+						for (int l = startIndex; l >= 0; l--) {
 							String bodyElement = matchingRule.getBody().get(l);
-							targtElement = bodyElement + subString;
+							targtElement = bodyElement + currSubString;
 							ruleBody.add(targetIndex, targtElement);
 						}
 					}
 				}
-
 			}
 		}
+		
 		ArrayList<GrammarRule> newRules = new ArrayList<GrammarRule>();
 		ArrayList<GrammarRule> primeRules = new ArrayList<GrammarRule>();
 

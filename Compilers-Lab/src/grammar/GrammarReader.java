@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class GrammarReader {
 	private static final String GRAMMAR_RULE_SPLITTER = "\\|";
-	
+
 	public Grammar read(String filename) throws IOException {
 		Grammar grammar = new Grammar();
 		GrammarRule rule = null;
@@ -39,40 +39,38 @@ public class GrammarReader {
 					}
 				}
 			} else {
-				String[] sts = lineString.split(GRAMMAR_RULE_SPLITTER);
+				String[] splitLineString = lineString.split(GRAMMAR_RULE_SPLITTER);
 
-				for (int i = 0; i < sts.length; i++) {
-					currentRule.getBody().add(sts[i]);
-
-					for (int j = 0; j < sts[i].length(); j++) {
+				for (int i = 0; i < splitLineString.length; i++) {
+					currentRule.getBody().add(splitLineString[i]);
+					for (int j = 0; j < splitLineString[i].length(); j++) {
 						for (int k = 0; k < grammar.getNonTerminals().size(); k++) {
 							String currentNonTerminal = grammar.getNonTerminals().get(k);
 							if (currentNonTerminal.length() == 1) {
-								if (currentNonTerminal.equals(sts[i].charAt(j) + "")) {
+								if (currentNonTerminal.equals(splitLineString[i].charAt(j) + "")) {
 									isTerminal = false;
 									break;
 								}
 							} else {
-								if (currentNonTerminal.length() <= sts[i].length()) {
+								if (currentNonTerminal.length() <= splitLineString[i].length()) {
 									int endIndex = j + currentNonTerminal.length();
-									if (endIndex > sts[i].length()) {
-										endIndex = sts[i].length();
+									if (endIndex > splitLineString[i].length()) {
+										endIndex = splitLineString[i].length();
 									}
-									String comparedString = sts[i].substring(j, endIndex);
+									String comparedString = splitLineString[i].substring(j, endIndex);
 									if (currentNonTerminal.equals(comparedString)) {
 										j = endIndex - 1;
 										isTerminal = false;
 										break;
 									}
 								}
-
 							}
 						}
 
 						if (isTerminal) {
-							substring += sts[i].charAt(j);
+							substring += splitLineString[i].charAt(j);
 
-							if (j == sts[i].length() - 1 && !grammar.getTerminals().contains(substring)) {
+							if (j == splitLineString[i].length() - 1 && !grammar.getTerminals().contains(substring)) {
 								grammar.getTerminals().add(substring);
 								isTerminal = true;
 								substring = "";
@@ -90,7 +88,7 @@ public class GrammarReader {
 			currLineIndex++;
 		}
 		file2.close();
-		
+
 		return grammar;
 	}
 }
