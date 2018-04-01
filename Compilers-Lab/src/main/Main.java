@@ -10,6 +10,6 @@ public class Main {
 //		Lab1.runTask();
 //		Lab2.runTask();
 //		Lab3.runTask();
-		Lab6.runTask();
+		Lab7.runTask();
 	}
 }

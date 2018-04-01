@@ -8,7 +8,7 @@ import grammar.Grammar;
 import grammar.GrammarReader;
 import grammar.LeftRecursionEliminator;
 
-public class Lab6 {
+public class Lab7 {
 	private static String DEFAULT_IN_FILEPATH_PREFIX = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab6/";
 	
 	public static void runTask() throws IOException {
