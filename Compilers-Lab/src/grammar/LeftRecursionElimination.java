@@ -1,4 +1,4 @@
-package leftRecursionElimination;
+package grammar;
 import java.util.ArrayList;
 
 public class LeftRecursionElimination {

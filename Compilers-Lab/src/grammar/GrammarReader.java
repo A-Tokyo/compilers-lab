@@ -1,4 +1,4 @@
-package leftRecursionElimination;
+package grammar;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

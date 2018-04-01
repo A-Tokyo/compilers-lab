@@ -4,9 +4,9 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import leftRecursionElimination.Grammar;
-import leftRecursionElimination.GrammarReader;
-import leftRecursionElimination.LeftRecursionElimination;
+import grammar.Grammar;
+import grammar.GrammarReader;
+import grammar.LeftRecursionElimination;
 
 public class Lab6 {
 	private static String DEFAULT_IN_FILEPATH_PREFIX = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab6/";
