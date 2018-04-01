@@ -38,7 +38,7 @@ public class GrammarReader {
 						break;
 					}
 				}
-			} else if ((currLineIndex & 1) == 0) {
+			} else {
 				String[] sts = lineString.split(GRAMMAR_RULE_SPLITTER);
 
 				for (int i = 0; i < sts.length; i++) {
