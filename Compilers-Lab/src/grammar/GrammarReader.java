@@ -2,6 +2,7 @@ package grammar;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GrammarReader {
 	private static final String GRAMMAR_RULE_SPLITTER = "\\|";
@@ -14,11 +15,17 @@ public class GrammarReader {
 		boolean isTerminal = true;
 		String substring = "";
 		String lineString;
-
+		
+		ArrayList<String> fileList = new ArrayList<String>();
 		br = new BufferedReader(new FileReader(filename));
+		while ((lineString = br.readLine()) != null) {
+			fileList.add(lineString);
+		}
+		br.close();
 		
 		int currLineIndex = 0;
-		while ((lineString = br.readLine()) != null) {
+		while (currLineIndex < fileList.size()) {
+			lineString = fileList.get(currLineIndex);
 			if ((currLineIndex & 1) == 0) {
 				rule = new GrammarRule(lineString);
 				grammar.getNonTerminals().add(lineString);
@@ -26,12 +33,10 @@ public class GrammarReader {
 			}
 			currLineIndex++;
 		}
-		
-		br.close();
-		br = new BufferedReader(new FileReader(filename));
 
 		currLineIndex = 0;
-		while ((lineString = br.readLine()) != null) {
+		while (currLineIndex < fileList.size()) {
+			lineString = fileList.get(currLineIndex);
 			if ((currLineIndex & 1) == 0) {
 				for (int i = 0; i < grammar.getRules().size(); i++) {
 					if (grammar.getRules().get(i).getHead().equals(lineString)) {
@@ -88,7 +93,6 @@ public class GrammarReader {
 			}
 			currLineIndex++;
 		}
-		br.close();
 
 		return grammar;
 	}
