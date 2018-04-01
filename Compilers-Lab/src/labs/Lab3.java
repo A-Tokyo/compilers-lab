@@ -1,4 +1,4 @@
-package lab1;
+package labs;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -6,12 +6,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import dfa.DFA;
+import nfa.NFA;
+//import nfa.NFA;
 import utils.Utils;
 
-public class Lab1 {
-	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab1/in1.in";
-	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab1/myout1.out";
-
+public class Lab3 {
+	private static String DEFAULT_IN_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/in0.in";
+	private static String DEFAULT_OUT_FILEPATH = "/Users/Tokyo/Dev/Eclipse/compilers-lab/Compilers-Lab/src/assets/Lab3/myOut0.out";
+	
 	public static ArrayList<String> parseFileToDFAs(String inFilePath) throws FileNotFoundException, IOException{
 		BufferedReader br;
 		String currentDFA = "";
@@ -23,7 +25,7 @@ public class Lab1 {
 				String currLine;
 				while ( (currLine = br.readLine()) != null ) {
 					currLineIndex ++;
-					if(currLineIndex%7 == 0 && currLine.isEmpty() ){
+					if(currLineIndex%8 == 0 && currLine.isEmpty() ){
 						dfasToReturn.add(currentDFA.trim());
 						currentDFA = "";
 					} else {
@@ -47,8 +49,13 @@ public class Lab1 {
 	}
 	
 	public static void runTask() throws FileNotFoundException, IOException{
-		ArrayList<String> rawInputDFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
-		String resultFileText = DFA.rawInputDFAsToOutputString(rawInputDFAs);
-		Utils.writeOutputFile(resultFileText, DEFAULT_OUT_FILEPATH);
+//		ArrayList<String> rawInputFBDFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
+//		String resultFileTextFBDFAs = DFA.rawInputFBDFAsToOutputString(rawInputFBDFAs);
+//		Utils.writeOutputFile(resultFileTextFBDFAs, DEFAULT_OUT_FILEPATH);
+		
+
+		ArrayList<String> rawInputFBNFAs = parseFileToDFAs(DEFAULT_IN_FILEPATH);
+		String resultFileTextFBNFAs = NFA.rawInputFBDFAsToOutputString(rawInputFBNFAs);
+		Utils.writeOutputFile(resultFileTextFBNFAs, DEFAULT_OUT_FILEPATH);
 	}
 }
