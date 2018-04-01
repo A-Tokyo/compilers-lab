@@ -10,7 +10,7 @@ import lab6.Lab6;
 
 public class Main {
 	public static void main(String [] args) throws FileNotFoundException, IOException {
-		// Lab1.runTask();
+//		Lab1.runTask();
 //		Lab2.runTask();
 //		Lab3.runTask();
 		Lab6.runTask();
