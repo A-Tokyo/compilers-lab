@@ -7,45 +7,44 @@ import java.util.ArrayList;
 public class GrammarReader {
 	private static final String GRAMMAR_RULE_SPLITTER = "\\|";
 
-	public Grammar read(String filename) throws IOException {
+	public ArrayList<String> parseFile(String filepath) throws IOException{
+		ArrayList<String> fileList = new ArrayList<String>();
+		BufferedReader br = new BufferedReader(new FileReader(filepath));
+		String brCurrLine;
+		while ((brCurrLine = br.readLine()) != null) {
+			fileList.add(brCurrLine);
+		}
+		br.close();
+		return fileList;
+	}
+
+	public Grammar read(String filepath) throws IOException {
+		ArrayList<String> fileList = parseFile(filepath);
 		Grammar grammar = new Grammar();
-		GrammarRule rule = null;
-		BufferedReader br = null;
 		GrammarRule currentRule = null;
 		boolean isTerminal = true;
 		String substring = "";
-		String lineString;
-		
-		ArrayList<String> fileList = new ArrayList<String>();
-		br = new BufferedReader(new FileReader(filename));
-		while ((lineString = br.readLine()) != null) {
-			fileList.add(lineString);
-		}
-		br.close();
-		
-		int currLineIndex = 0;
-		while (currLineIndex < fileList.size()) {
-			lineString = fileList.get(currLineIndex);
+
+		for (int currLineIndex = 0; currLineIndex < fileList.size(); currLineIndex++) {
 			if ((currLineIndex & 1) == 0) {
-				rule = new GrammarRule(lineString);
-				grammar.getNonTerminals().add(lineString);
+				String currLine = fileList.get(currLineIndex);
+				GrammarRule rule = new GrammarRule(currLine);
+				grammar.getNonTerminals().add(currLine);
 				grammar.getRules().add(rule);
 			}
-			currLineIndex++;
 		}
 
-		currLineIndex = 0;
-		while (currLineIndex < fileList.size()) {
-			lineString = fileList.get(currLineIndex);
+		for (int currLineIndex = 0; currLineIndex < fileList.size(); currLineIndex++) {
+			String currLine = fileList.get(currLineIndex);
 			if ((currLineIndex & 1) == 0) {
 				for (int i = 0; i < grammar.getRules().size(); i++) {
-					if (grammar.getRules().get(i).getHead().equals(lineString)) {
+					if (grammar.getRules().get(i).getHead().equals(currLine)) {
 						currentRule = grammar.getRules().get(i);
 						break;
 					}
 				}
 			} else {
-				String[] splitLineString = lineString.split(GRAMMAR_RULE_SPLITTER);
+				String[] splitLineString = currLine.split(GRAMMAR_RULE_SPLITTER);
 
 				for (int i = 0; i < splitLineString.length; i++) {
 					currentRule.getBody().add(splitLineString[i]);
@@ -91,7 +90,6 @@ public class GrammarReader {
 					}
 				}
 			}
-			currLineIndex++;
 		}
 
 		return grammar;
