@@ -20,7 +20,7 @@ public class GrammarReader {
 
 		int currLineIndex = 1;
 		while ((lineString = br1.readLine()) != null) {
-			if (currLineIndex % 2 != 0) {
+			if ((currLineIndex & 1) != 0) {
 				rule = new GrammarRule(lineString);
 				grammar.getNonTerminals().add(lineString);
 				grammar.getRules().add(rule);
@@ -31,14 +31,14 @@ public class GrammarReader {
 
 		currLineIndex = 1;
 		while ((lineString = br2.readLine()) != null) {
-			if (currLineIndex % 2 != 0) {
+			if ((currLineIndex & 1) != 0) {
 				for (int i = 0; i < grammar.getRules().size(); i++) {
 					if (grammar.getRules().get(i).getHead().equals(lineString)) {
 						currentRule = grammar.getRules().get(i);
 						break;
 					}
 				}
-			} else if (currLineIndex % 2 == 0) {
+			} else if ((currLineIndex & 1) == 0) {
 				String[] sts = lineString.split(GRAMMAR_RULE_SPLITTER);
 
 				for (int i = 0; i < sts.length; i++) {
