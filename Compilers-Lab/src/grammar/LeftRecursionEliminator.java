@@ -25,10 +25,7 @@ public class LeftRecursionEliminator {
 							currSubString = currentProduction.substring(1, subStringEnd);
 						}
 					} else if (currNonTerminal.length() > 1) {
-						int nonTerminalEndIndex = currNonTerminal.length();
-						if (nonTerminalEndIndex > currentProduction.length()) {
-							nonTerminalEndIndex = currentProduction.length();
-						}
+						int nonTerminalEndIndex = Math.min(currNonTerminal.length(), currentProduction.length());
 						if (currNonTerminal.equals(currentProduction.substring(0, nonTerminalEndIndex))) {
 							currSubString = currentProduction.substring(nonTerminalEndIndex, currentProduction.length());
 						}
@@ -45,7 +42,7 @@ public class LeftRecursionEliminator {
 								break;
 							}
 						}
-						
+
 						int startIndex = matchingRule.getBody().size() - 1;
 						ruleBody.remove(targetIndex);
 
@@ -58,7 +55,7 @@ public class LeftRecursionEliminator {
 				}
 			}
 		}
-		
+
 		ArrayList<GrammarRule> newRules = new ArrayList<GrammarRule>();
 		ArrayList<GrammarRule> primeRules = new ArrayList<GrammarRule>();
 
@@ -69,24 +66,19 @@ public class LeftRecursionEliminator {
 			ArrayList<String> currentRuleAlphas = currentRule.getAlphas();
 
 			for (String bodyElement : currentRuleBody) {
+				if (ruleHead.length() == 0){
+					break;
+				}
 				if (ruleHead.length() == 1) {
 					if (ruleHead.equals(bodyElement.charAt(0) + "")) {
 						currentRuleAlphas.add(bodyElement.substring(1, bodyElement.length()));
 					} else {
 						currentRuleBetas.add(bodyElement);
 					}
-				} else if (ruleHead.length() > 1) {
-					int endIndex = ruleHead.length();
-
-					if (endIndex > bodyElement.length()) {
-						endIndex = bodyElement.length();
-					}
+				} else {
+					int endIndex = Math.min(ruleHead.length(), bodyElement.length());
 					if (ruleHead.equals(bodyElement.substring(0, endIndex))) {
-						int endIndex2 = endIndex + bodyElement.length();
-
-						if (endIndex2 > bodyElement.length()) {
-							endIndex2 = bodyElement.length();
-						}
+						int endIndex2 = Math.min(endIndex + bodyElement.length(), bodyElement.length());
 						currentRuleAlphas.add(bodyElement.substring(endIndex, endIndex2));
 					} else {
 						currentRuleBetas.add(bodyElement);
