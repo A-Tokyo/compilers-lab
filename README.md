@@ -6,20 +6,25 @@ Compilers Lab tasks
 - In the main method of the Main class, Each task is run individually using a function
 - Each Lab has it's own file to run the task
 
-## Lab 1
-- To run the task on the given input file, Run the Main Class
-
-## Lab 2
+## Lab 1, 2, 3, 7
 - To run the task on the given input file, Run the Main Class
 
 ### Structure
 - assets
   - Lab1
   - Lab2
-- lab1
+  - Lab3
+  - Lab7
+- labs
   - Lab1
-- lab2
   - Lab2
+  - Lab3
+  - Lab7
+- grammar
+  - Grammar
+  - GrammarReader
+  - GrammarRule
+  - LeftRecursionEliminator
 - dfa
   - DFA
   - StateTransitions
@@ -27,6 +32,7 @@ Compilers Lab tasks
   - NFA
   - StateTransitions
 - utils
+  - GRConsts
   - FAConsts
   - Utils
 - main
