@@ -1,7 +1,6 @@
 package grammar;
 import java.util.ArrayList;
 
-import utils.GRConsts;
 import utils.Utils;
 
 public class Grammar {
